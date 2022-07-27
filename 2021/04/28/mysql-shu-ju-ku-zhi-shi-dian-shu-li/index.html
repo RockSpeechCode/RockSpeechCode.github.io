@@ -1,109 +1,441 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
 <head>
-  <meta charset="utf-8">
-  
+    <meta charset="utf-8">
+    <meta name="keywords" content="MySQL数据库知识点梳理, SilentSpeechCoder">
+    <meta name="description" content="MySQL数据库知识点梳理1. 数据库基本命令MYSQL -UROOT -P123456 -- 连接数据库
+UPDATE MYSQL.USER SET AUTHENTICATION_STRING&amp;#x3D;PASSWORD(&amp;#39;123">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  
-  <title>MySQL数据库知识点梳理 | SilentSpeechCoder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL数据库知识点梳理1. 数据库基本命令MYSQL -UROOT -P123456 -- 连接数据库 UPDATE MYSQL.USER SET AUTHENTICATION_STRING&#x3D;PASSWORD(&#39;123456&#39;) WHERE USER&#x3D;&#39;ROOT&#39; AND HOST&#x3D;&#39;LOCALHOST&#39;; -- 修改用户密码 FLUSH PRIVILEGES; -- 刷新权限 SHOW DA">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据库知识点梳理">
-<meta property="og:url" content="http://example.com/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/index.html">
-<meta property="og:site_name" content="SilentSpeechCoder">
-<meta property="og:description" content="MySQL数据库知识点梳理1. 数据库基本命令MYSQL -UROOT -P123456 -- 连接数据库 UPDATE MYSQL.USER SET AUTHENTICATION_STRING&#x3D;PASSWORD(&#39;123456&#39;) WHERE USER&#x3D;&#39;ROOT&#39; AND HOST&#x3D;&#39;LOCALHOST&#39;; -- 修改用户密码 FLUSH PRIVILEGES; -- 刷新权限 SHOW DA">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/qizhongjon.png">
-<meta property="article:published_time" content="2021-04-28T03:27:30.000Z">
-<meta property="article:modified_time" content="2022-07-21T04:46:44.654Z">
-<meta property="article:author" content="Yangzk">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/qizhongjon.png">
-  
-    <link rel="alternate" href="/atom.xml" title="SilentSpeechCoder" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.1"></head>
+    
+
+    <title>MySQL数据库知识点梳理 | SilentSpeechCoder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="SilentSpeechCoder" type="application/atom+xml">
+</head>
+
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">SilentSpeechCoder</a>
-      </h1>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">SilentSpeechCoder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
       
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">SilentSpeechCoder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+
+    <ul class="menu-list mobile-menu-list">
         
-          <a class="main-nav-link" href="/">Home</a>
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
         
-      </nav>
-      <nav id="sub-nav">
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-MySQL数据库知识点梳理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/" class="article-date">
-  <time datetime="2021-04-28T03:27:30.000Z" itemprop="datePublished">2021-04-28</time>
-</a>
+
     
-  </div>
-  <div class="article-inner">
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">MySQL数据库知识点梳理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
     
-    
-      <header class="article-header">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-04-28
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
         
-  
-    <h1 class="article-title" itemprop="name">
-      MySQL数据库知识点梳理
-    </h1>
-  
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MySQL数据库知识点梳理"><a href="#MySQL数据库知识点梳理" class="headerlink" title="MySQL数据库知识点梳理"></a>MySQL数据库知识点梳理</h1><h2 id="1-数据库基本命令"><a href="#1-数据库基本命令" class="headerlink" title="1. 数据库基本命令"></a>1. 数据库基本命令</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">MYSQL <span class="token operator">-</span>UROOT <span class="token operator">-</span>P123456 <span class="token comment">-- 连接数据库</span>
-<span class="token keyword">UPDATE</span> MYSQL<span class="token punctuation">.</span><span class="token keyword">USER</span> <span class="token keyword">SET</span> AUTHENTICATION_STRING<span class="token operator">=</span>PASSWORD<span class="token punctuation">(</span><span class="token string">'123456'</span><span class="token punctuation">)</span> <span class="token keyword">WHERE</span> <span class="token keyword">USER</span><span class="token operator">=</span><span class="token string">'ROOT'</span> <span class="token operator">AND</span> HOST<span class="token operator">=</span><span class="token string">'LOCALHOST'</span><span class="token punctuation">;</span> <span class="token comment">-- 修改用户密码</span>
-FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span> <span class="token comment">-- 刷新权限</span>
-<span class="token keyword">SHOW</span> <span class="token keyword">DATABASES</span><span class="token punctuation">;</span> <span class="token comment">-- 查看所有数据库</span>
-<span class="token keyword">USE</span> 数据库名<span class="token punctuation">;</span> <span class="token comment">-- 切换数据库；</span>
-<span class="token keyword">SHOW</span> <span class="token keyword">TABLES</span><span class="token punctuation">;</span> <span class="token comment">-- 查看数据库中所有表</span>
-<span class="token keyword">DESCRIBE</span> 表名<span class="token punctuation">;</span> <span class="token comment">-- 显示数据库中所有的表信息</span>
-<span class="token keyword">SHOW</span> <span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> <span class="token identifier"><span class="token punctuation">`</span>库名<span class="token punctuation">`</span></span><span class="token punctuation">;</span> <span class="token comment">-- 查看创建数据库语句</span>
-<span class="token keyword">SHOW</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>表名;<span class="token punctuation">`</span></span> <span class="token comment">-- 查看创建数据表语句</span>
-<span class="token keyword">DESC</span> <span class="token identifier"><span class="token punctuation">`</span>表名<span class="token punctuation">`</span></span><span class="token punctuation">;</span> <span class="token comment">-- 查看表结构</span>
-<span class="token keyword">EXIT</span><span class="token punctuation">;</span> <span class="token comment">-- 退出连接</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="MySQL数据库知识点梳理"><a href="#MySQL数据库知识点梳理" class="headerlink" title="MySQL数据库知识点梳理"></a>MySQL数据库知识点梳理</h1><h2 id="1-数据库基本命令"><a href="#1-数据库基本命令" class="headerlink" title="1. 数据库基本命令"></a>1. 数据库基本命令</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">MYSQL -UROOT -P123456 -- 连接数据库
+UPDATE MYSQL.USER SET AUTHENTICATION_STRING&#x3D;PASSWORD(&#39;123456&#39;) WHERE USER&#x3D;&#39;ROOT&#39; AND HOST&#x3D;&#39;LOCALHOST&#39;; -- 修改用户密码
+FLUSH PRIVILEGES; -- 刷新权限
+SHOW DATABASES; -- 查看所有数据库
+USE 数据库名; -- 切换数据库；
+SHOW TABLES; -- 查看数据库中所有表
+DESCRIBE 表名; -- 显示数据库中所有的表信息
+SHOW CREATE DATABASE &#96;库名&#96;; -- 查看创建数据库语句
+SHOW CREATE TABLE &#96;表名;&#96; -- 查看创建数据表语句
+DESC &#96;表名&#96;; -- 查看表结构
+EXIT; -- 退出连接<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h2 id="2-数据库操作"><a href="#2-数据库操作" class="headerlink" title="2. 数据库操作"></a>2. 数据库操作</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> 数据库名<span class="token punctuation">;</span> <span class="token comment">-- 创建数据库</span>
-<span class="token keyword">DROP</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> 数据库名<span class="token punctuation">;</span> <span class="token comment">-- 删除数据库</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="2-数据库操作"><a href="#2-数据库操作" class="headerlink" title="2. 数据库操作"></a>2. 数据库操作</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE DATABASE [IF NOT EXISTS] 数据库名; -- 创建数据库
+DROP DATABASE [IF EXISTS] 数据库名; -- 删除数据库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -162,18 +494,18 @@ FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuatio
 </ul>
 <h2 id="5-数据表操作"><a href="#5-数据表操作" class="headerlink" title="5. 数据表操作"></a>5. 数据表操作</h2><ol>
 <li><p>创建表</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> <span class="token identifier"><span class="token punctuation">`</span>表名<span class="token punctuation">`</span></span><span class="token punctuation">(</span>
- <span class="token identifier"><span class="token punctuation">`</span>字段名<span class="token punctuation">`</span></span> 列类型 <span class="token punctuation">[</span>属性<span class="token punctuation">]</span> <span class="token punctuation">[</span>索引<span class="token punctuation">]</span> <span class="token punctuation">[</span>注释<span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">)</span><span class="token punctuation">[</span>表类型<span class="token punctuation">]</span><span class="token punctuation">[</span>字符集<span class="token punctuation">]</span><span class="token punctuation">[</span>注释<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE TABLE [IF NOT EXISTS] &#96;表名&#96;(
+ &#96;字段名&#96; 列类型 [属性] [索引] [注释],
+)[表类型][字符集][注释];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>修改表</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名 <span class="token keyword">RENAME</span> <span class="token keyword">AS</span> 表名<span class="token punctuation">;</span> <span class="token comment">-- 修改表名 </span>
-<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名 <span class="token keyword">ADD</span> 字段名 列属性<span class="token punctuation">;</span> <span class="token comment">-- 表增加字段</span>
-<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名 <span class="token keyword">MODIFY</span> 字段名 列属性<span class="token punctuation">;</span> <span class="token comment">-- 表修改约束</span>
-<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名 CHANGE 字段名 字段名 列属性<span class="token punctuation">;</span> <span class="token comment">-- 表字段重命名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER TABLE 表名 RENAME AS 表名; -- 修改表名 
+ALTER TABLE 表名 ADD 字段名 列属性; -- 表增加字段
+ALTER TABLE 表名 MODIFY 字段名 列属性; -- 表修改约束
+ALTER TABLE 表名 CHANGE 字段名 字段名 列属性; -- 表字段重命名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>删除表字段</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名 <span class="token keyword">DROP</span> 字段名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ALTER TABLE 表名 DROP 字段名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>删除表</p>
- <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTs</span> 表名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+ <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">DROP TABLE IF EXISTs 表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ol>
 <h2 id="6-引擎"><a href="#6-引擎" class="headerlink" title="6. 引擎"></a>6. 引擎</h2><ul>
 <li>INNODB（默认使用）：安全性高，事务处理。多表多用户操作<ul>
@@ -195,59 +527,59 @@ FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuatio
 </ul>
 <h2 id="7-DML"><a href="#7-DML" class="headerlink" title="7. DML"></a>7. DML</h2><ul>
 <li><p>插入</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> 表名<span class="token punctuation">(</span><span class="token punctuation">[</span>字段<span class="token number">1</span><span class="token punctuation">,</span>字段<span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'值1'</span><span class="token punctuation">,</span><span class="token string">'值2'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'值1'</span><span class="token punctuation">,</span><span class="token string">'值2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">INSERT INTO 表名([字段1,字段2]) values (&#39;值1&#39;,&#39;值2&#39;),(&#39;值1&#39;,&#39;值2&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>修改</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> 表名 <span class="token keyword">SET</span> 字段<span class="token number">1</span> <span class="token operator">=</span> 值<span class="token number">1</span><span class="token punctuation">,</span> 字段<span class="token number">2</span> <span class="token operator">=</span> 值<span class="token number">2</span><span class="token punctuation">,</span> <span class="token keyword">WHERE</span> <span class="token punctuation">[</span>条件<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">UPDATE 表名 SET 字段1 &#x3D; 值1, 字段2 &#x3D; 值2, WHERE [条件];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>删除</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> 表名 <span class="token keyword">WHERE</span> <span class="token punctuation">[</span>条件<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">DELETE FROM 表名 WHERE [条件];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">TRUNCATE</span> 表名<span class="token punctuation">;</span> <span class="token comment">-- 清空表数据，重置自增列，不影响事务</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">TRUNCATE 表名; -- 清空表数据，重置自增列，不影响事务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>查询    </p>
-  <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">[</span><span class="token keyword">ALL</span><span class="token operator">|</span><span class="token keyword">DISTINCT</span><span class="token operator">|</span><span class="token keyword">DISTINCTROW</span><span class="token operator">|</span><span class="token keyword">TOP</span><span class="token punctuation">]</span>
-&#123;<span class="token operator">*</span><span class="token operator">|</span>talbe<span class="token punctuation">.</span><span class="token operator">*</span><span class="token operator">|</span><span class="token punctuation">[</span><span class="token keyword">table</span><span class="token punctuation">.</span><span class="token punctuation">]</span>field1<span class="token punctuation">[</span><span class="token keyword">AS</span> alias1<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token keyword">table</span><span class="token punctuation">.</span><span class="token punctuation">]</span>field2<span class="token punctuation">[</span><span class="token keyword">AS</span> alias2<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">,</span>…<span class="token punctuation">]</span><span class="token punctuation">]</span>&#125;
-<span class="token keyword">FROM</span> <span class="token keyword">TABLE</span> <span class="token punctuation">[</span><span class="token keyword">AS</span> 别名<span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token keyword">LEFT</span> <span class="token operator">|</span> <span class="token keyword">RIGHT</span> <span class="token operator">|</span> <span class="token keyword">INNER</span> <span class="token keyword">join</span> <span class="token keyword">TABLE</span> <span class="token keyword">on</span> …<span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token keyword">WHERE</span>…<span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token keyword">GROUP</span> <span class="token keyword">BY</span>…<span class="token punctuation">]</span> <span class="token comment">-- 通过哪个字段分组</span>
-<span class="token punctuation">[</span><span class="token keyword">HAVING</span>…<span class="token punctuation">]</span> <span class="token comment">-- 过滤分组的记录必须满足的次要条件</span>
-<span class="token punctuation">[</span><span class="token keyword">ORDER</span> <span class="token keyword">BY</span> 字段名 <span class="token keyword">ASC</span><span class="token operator">|</span><span class="token keyword">DESC</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token keyword">LIMIT</span> 查询起始下标<span class="token punctuation">,</span>数量<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-  <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> @<span class="token variable">@auto_increment_increment</span><span class="token punctuation">;</span> <span class="token comment">-- 查询自增步长</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+  <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT [ALL|DISTINCT|DISTINCTROW|TOP]
+&#123;*|talbe.*|[table.]field1[AS alias1][,[table.]field2[AS alias2][,…]]&#125;
+FROM TABLE [AS 别名]
+[LEFT | RIGHT | INNER join TABLE on …]
+[WHERE…]
+[GROUP BY…] -- 通过哪个字段分组
+[HAVING…] -- 过滤分组的记录必须满足的次要条件
+[ORDER BY 字段名 ASC|DESC]
+[LIMIT 查询起始下标,数量];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT @@auto_increment_increment; -- 查询自增步长<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <h2 id="8-七种JOIN"><a href="#8-七种JOIN" class="headerlink" title="8. 七种JOIN"></a>8. 七种JOIN</h2><img src="/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/qizhongjon.png" class="">
 
 
 
 <h2 id="9-MYSQL常用函数"><a href="#9-MYSQL常用函数" class="headerlink" title="9. MYSQL常用函数"></a>9. MYSQL常用函数</h2><ul>
-<li>数学运算函数<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ABS<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span>  <span class="token comment">-- 8，绝对值</span>
-CEILING<span class="token punctuation">(</span><span class="token number">9.4</span><span class="token punctuation">)</span> <span class="token comment">-- 10，向上取整</span>
-FLOOR<span class="token punctuation">(</span><span class="token number">9.4</span><span class="token punctuation">)</span> <span class="token comment">-- 9，向下取整</span>
-RAND<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- 返回0-1的随机数</span>
-SIGN<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- 返回一个数的符号，正数1，负数-1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>字符串函数<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CHAR_LENGTH<span class="token punctuation">(</span><span class="token string">'字符串长度'</span><span class="token punctuation">)</span> <span class="token comment">-- 返回字符串长度</span>
-CONCAT<span class="token punctuation">(</span><span class="token string">'拼接'</span><span class="token punctuation">,</span><span class="token string">'多个'</span><span class="token punctuation">,</span><span class="token string">'字符串'</span><span class="token punctuation">)</span> <span class="token comment">-- 拼接字符串</span>
-<span class="token keyword">INSERT</span><span class="token punctuation">(</span>源字符串<span class="token punctuation">,</span>位置<span class="token punctuation">,</span>长度<span class="token punctuation">,</span>插入字符串<span class="token punctuation">)</span> <span class="token comment">-- 查找位置替换对应长度的字符串</span>
-LOWER<span class="token punctuation">(</span>字符串<span class="token punctuation">)</span> <span class="token comment">-- 转小写</span>
-UPPER<span class="token punctuation">(</span>字符串<span class="token punctuation">)</span> <span class="token comment">-- 转大写</span>
-INSTR<span class="token punctuation">(</span>字符串<span class="token punctuation">,</span>子串<span class="token punctuation">)</span> <span class="token comment">-- 返回第一次出现的子串的位置</span>
-<span class="token keyword">REPLACE</span><span class="token punctuation">(</span>字符串<span class="token punctuation">,</span>被替换<span class="token punctuation">,</span>需替换<span class="token punctuation">)</span> <span class="token comment">-- 替换指定字符串</span>
-SUBSTR<span class="token punctuation">(</span>字符串<span class="token punctuation">,</span>截取起始位置<span class="token punctuation">,</span>长度<span class="token punctuation">)</span> <span class="token comment">-- 截取指定位置和长度的字符串</span>
-REVERSE<span class="token punctuation">(</span>字符串<span class="token punctuation">)</span> <span class="token comment">-- 反转</span>
-MD5<span class="token punctuation">(</span>明文<span class="token punctuation">)</span> <span class="token comment">-- MD5 加密</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>时间和日期函数<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CURRENT_DATE</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- 获取当前日期</span>
-CURDATE<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- 获取当前日期</span>
-<span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- 获取当前时间，时分秒</span>
-LOCALTIME <span class="token comment">-- 获取本地时间，时分秒</span>
-SYSDATE<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- 系统时间</span>
-<span class="token keyword">YEAR</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">MONTH</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">DAY</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">HOUR</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">MINUTE</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">SECOND</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>系统函数<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SYSTEM_USER</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">USER</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-VERSION<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- 获取版本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>数学运算函数<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">ABS(-8)  -- 8，绝对值
+CEILING(9.4) -- 10，向上取整
+FLOOR(9.4) -- 9，向下取整
+RAND() -- 返回0-1的随机数
+SIGN() -- 返回一个数的符号，正数1，负数-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>字符串函数<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CHAR_LENGTH(&#39;字符串长度&#39;) -- 返回字符串长度
+CONCAT(&#39;拼接&#39;,&#39;多个&#39;,&#39;字符串&#39;) -- 拼接字符串
+INSERT(源字符串,位置,长度,插入字符串) -- 查找位置替换对应长度的字符串
+LOWER(字符串) -- 转小写
+UPPER(字符串) -- 转大写
+INSTR(字符串,子串) -- 返回第一次出现的子串的位置
+REPLACE(字符串,被替换,需替换) -- 替换指定字符串
+SUBSTR(字符串,截取起始位置,长度) -- 截取指定位置和长度的字符串
+REVERSE(字符串) -- 反转
+MD5(明文) -- MD5 加密<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>时间和日期函数<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CURRENT_DATE() -- 获取当前日期
+CURDATE() -- 获取当前日期
+NOW() -- 获取当前时间，时分秒
+LOCALTIME -- 获取本地时间，时分秒
+SYSDATE() -- 系统时间
+YEAR()
+MONTH()
+DAY()
+HOUR()
+MINUTE()
+SECOND()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>系统函数<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SYSTEM_USER()
+USER()
+VERSION() -- 获取版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li>聚合函数</li>
 </ul>
 <pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">COUNT() -- 统计数量，count(字段)忽略null，count(*),count(1)不会忽略null
@@ -280,15 +612,15 @@ MIN() -- 求最小<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </ul>
 </li>
 <li><p>手动处理事务</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SET</span> autocommit <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 关闭事务自动提交
-<span class="token keyword">START</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span> <span class="token comment">-- 标记一个事务开始</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">COMMIT</span><span class="token punctuation">;</span> <span class="token comment">-- 提交</span>
-<span class="token keyword">ROLLBACK</span><span class="token punctuation">;</span> <span class="token comment">-- 回滚</span>
-<span class="token keyword">SET</span> autocommit <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> 开启事务自动提交
-<span class="token keyword">SAVEPOINT</span><span class="token punctuation">;</span> <span class="token comment">-- 保存点</span>
-<span class="token keyword">ROLLBACK</span> <span class="token keyword">TO</span> <span class="token keyword">SAVEPOINT</span><span class="token punctuation">;</span> <span class="token comment">-- 回滚到保存点</span>
-<span class="token keyword">RELEASE</span>  <span class="token keyword">SAVEPOINT</span><span class="token punctuation">;</span> <span class="token comment">-- 撤销保存点</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SET autocommit &#x3D; 0; 关闭事务自动提交
+START TRANSACTION; -- 标记一个事务开始
+...
+COMMIT; -- 提交
+ROLLBACK; -- 回滚
+SET autocommit &#x3D; 1; 开启事务自动提交
+SAVEPOINT; -- 保存点
+ROLLBACK TO SAVEPOINT; -- 回滚到保存点
+RELEASE  SAVEPOINT; -- 撤销保存点<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="11-索引"><a href="#11-索引" class="headerlink" title="11. 索引"></a>11. 索引</h2><p>索引（index）是帮助MYSQL高效获取数据的数据结构。</p>
 <ol>
@@ -301,12 +633,12 @@ MIN() -- 求最小<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </ul>
 </li>
 <li><p>索引的使用</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">INDEX</span> <span class="token keyword">FROM</span> 表名<span class="token punctuation">;</span> <span class="token comment">-- 显示所有索引信息</span>
-<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名 <span class="token keyword">ADD</span> 索引类型 <span class="token keyword">index</span> 索引名<span class="token punctuation">(</span>字段名<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">-- 添加索引</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> 索引名 <span class="token keyword">on</span> 表名<span class="token punctuation">(</span>字段名<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">-- 添加索引</span>
-<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> 表名 <span class="token keyword">use</span> <span class="token keyword">index</span><span class="token punctuation">(</span>索引名<span class="token punctuation">)</span> <span class="token keyword">WHERE</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">-- 提示SQL使用索引</span>
-<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> 表名 <span class="token keyword">ignore</span> <span class="token keyword">index</span><span class="token punctuation">(</span>索引名<span class="token punctuation">)</span> <span class="token keyword">WHERE</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">-- 提示SQL忽略使用索引</span>
-<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> 表名 <span class="token keyword">force</span> <span class="token keyword">index</span><span class="token punctuation">(</span>索引名<span class="token punctuation">)</span> <span class="token keyword">WHERE</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">-- 提示SQL必须使用索引</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SHOW INDEX FROM 表名; -- 显示所有索引信息
+ALTER TABLE 表名 ADD 索引类型 index 索引名(字段名); -- 添加索引
+CREATE INDEX 索引名 on 表名(字段名); -- 添加索引
+SELECT * FROM 表名 use index(索引名) WHERE ...; -- 提示SQL使用索引
+SELECT * FROM 表名 ignore index(索引名) WHERE ...; -- 提示SQL忽略使用索引
+SELECT * FROM 表名 force index(索引名) WHERE ...; -- 提示SQL必须使用索引<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>索引原则</p>
 <ul>
 <li>索引不是越多越好</li>
@@ -329,15 +661,15 @@ MIN() -- 求最小<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </li>
 </ol>
 <h2 id="12-用户管理"><a href="#12-用户管理" class="headerlink" title="12. 用户管理"></a>12. 用户管理</h2><p>用户表：mysql.user</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> 用户名 IDENTIFIED <span class="token keyword">BY</span> 密码<span class="token punctuation">;</span> <span class="token comment">-- 创建用户</span>
-<span class="token keyword">SET</span> PASSWORD <span class="token operator">=</span> PASSWORD<span class="token punctuation">(</span>密码<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">-- 修改当前用户密码</span>
-<span class="token keyword">SET</span> PASSWORD <span class="token keyword">FOR</span> 用户名 <span class="token operator">=</span> PASSWORD<span class="token punctuation">(</span>密码<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">-- 修改指定用户密码</span>
-<span class="token keyword">RENAME</span> <span class="token keyword">USER</span> 用户名 <span class="token keyword">TO</span> 新用户名<span class="token punctuation">;</span> <span class="token comment">-- 重命名</span>
-<span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> 库<span class="token punctuation">.</span>表 <span class="token keyword">TO</span> 用户<span class="token punctuation">;</span> <span class="token comment">-- 用户授权所有权限</span>
-<span class="token keyword">SHOW</span> GRANTS <span class="token keyword">FOR</span> 用户<span class="token punctuation">;</span> <span class="token comment">-- 查询权限</span>
-<span class="token keyword">SHOW</span> GRANTS <span class="token keyword">FOR</span> root<span class="token variable">@localhost</span><span class="token punctuation">;</span> <span class="token comment">-- 查询权限</span>
-<span class="token keyword">REVOKE</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> 库<span class="token punctuation">.</span>表 <span class="token keyword">FROM</span> 用户<span class="token punctuation">;</span> <span class="token comment">-- 撤销权限</span>
-<span class="token keyword">DROP</span> <span class="token keyword">USER</span> 用户名<span class="token punctuation">;</span> <span class="token comment">-- 删除用户</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE USER 用户名 IDENTIFIED BY 密码; -- 创建用户
+SET PASSWORD &#x3D; PASSWORD(密码); -- 修改当前用户密码
+SET PASSWORD FOR 用户名 &#x3D; PASSWORD(密码); -- 修改指定用户密码
+RENAME USER 用户名 TO 新用户名; -- 重命名
+GRANT ALL PRIVILEGES ON 库.表 TO 用户; -- 用户授权所有权限
+SHOW GRANTS FOR 用户; -- 查询权限
+SHOW GRANTS FOR root@localhost; -- 查询权限
+REVOKE ALL PRIVILEGES ON 库.表 FROM 用户; -- 撤销权限
+DROP USER 用户名; -- 删除用户<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>命令行导出数据库：mysqldump -h主机名 -uroot -p密码 库名 表名1 表名2  &gt; 磁盘名/文件名</p>
 <p>命令行导入数据库：source 磁盘名/文件名</p>
@@ -346,72 +678,72 @@ MIN() -- 求最小<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>第二范式（2NF）：（满足第一范式）数据库表中的每一列都和主键相关，而不是只与主键的某一列相关</li>
 <li>第三范式（3NF）：（满足第一范式和第二范式）数据库表的每一列都与主键直接相关，而不是间接相关</li>
 </ul>
-<h2 id="14-JDBC"><a href="#14-JDBC" class="headerlink" title="14. JDBC"></a>14. JDBC</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>jdbc<span class="token punctuation">.</span>db</span><span class="token punctuation">;</span>
+<h2 id="14-JDBC"><a href="#14-JDBC" class="headerlink" title="14. JDBC"></a>14. JDBC</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.jdbc.db;
 
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">Connection</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">DriverManager</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">ResultSet</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">SQLException</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>mysql<span class="token punctuation">.</span>jdbc<span class="token punctuation">.</span></span><span class="token class-name">Statement</span><span class="token punctuation">;</span>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import com.mysql.jdbc.Statement;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> DBUTIL <span class="token punctuation">&#123;</span>
-	<span class="token keyword">private</span>	<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> URL <span class="token operator">=</span> <span class="token string">"jdbc:mysql://localhost:3306/database"</span><span class="token punctuation">;</span>
-	<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> USERNAME <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
-	<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> PASSWORD <span class="token operator">=</span> <span class="token string">"password"</span><span class="token punctuation">;</span>
+public class DBUTIL &#123;
+	private	static final String URL &#x3D; &quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;database&quot;;
+	private static final String USERNAME &#x3D; &quot;root&quot;;
+	private static final String PASSWORD &#x3D; &quot;password&quot;;
 	
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">ClassNotFoundException</span><span class="token punctuation">,</span> <span class="token class-name">SQLException</span> <span class="token punctuation">&#123;</span>
-		<span class="token comment">// JDBC 的三要素文件，加载驱动，获取连接，</span>
-		<span class="token comment">//1. 加载驱动程序</span>
-		<span class="token class-name">Class</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"com.mysql.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">//2. 获取数据库的连接 Connection 数据库连接对象</span>
-		<span class="token class-name">Connection</span> connection <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>URL<span class="token punctuation">,</span>USERNAME<span class="token punctuation">,</span>PASSWORD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">//3. 通过数据库的连接操作数据库，实现增删改查，Statement SQL执行对象</span>
-		<span class="token class-name">Statement</span> statement <span class="token operator">=</span> connection<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">//4. 返回 ResultSet 对象，编写 sql 语句，实现最简单的增删改查</span>
-		<span class="token class-name">ResultSet</span> resultSet <span class="token operator">=</span> statement<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token string">"select username,password from user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">//打印数据</span>
-		<span class="token keyword">while</span><span class="token punctuation">(</span>resultSet<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			<span class="token comment">//返回字符串</span>
-			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span> <span class="token operator">+</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-        <span class="token comment">//5. 释放连接</span>
-        resultSet<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        statement<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        connection<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	public static void main(String[] args) throws ClassNotFoundException, SQLException &#123;
+		&#x2F;&#x2F; JDBC 的三要素文件，加载驱动，获取连接，
+		&#x2F;&#x2F;1. 加载驱动程序
+		Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+		&#x2F;&#x2F;2. 获取数据库的连接 Connection 数据库连接对象
+		Connection connection &#x3D; DriverManager.getConnection(URL,USERNAME,PASSWORD);
+		&#x2F;&#x2F;3. 通过数据库的连接操作数据库，实现增删改查，Statement SQL执行对象
+		Statement statement &#x3D; connection.createStatement();
+		&#x2F;&#x2F;4. 返回 ResultSet 对象，编写 sql 语句，实现最简单的增删改查
+		ResultSet resultSet &#x3D; statement.executeQuery(&quot;select username,password from user&quot;);
+		&#x2F;&#x2F;打印数据
+		while(resultSet.next()) &#123;
+			&#x2F;&#x2F;返回字符串
+			System.out.println(rs.getString(&quot;username&quot;) + rs.getString(&quot;password&quot;));
+		&#125;
+        &#x2F;&#x2F;5. 释放连接
+        resultSet.close();
+        statement.close();
+        connection.close();
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>thb<span class="token punctuation">.</span>study3</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.thb.study3;
 
-<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>thb<span class="token punctuation">.</span>study2<span class="token punctuation">.</span></span><span class="token class-name">Utils<span class="token punctuation">.</span>JdbcUtils</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">Connection</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">PreparedStatement</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">SQLException</span><span class="token punctuation">;</span>
+import com.thb.study2.Utils.JdbcUtils;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test03</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">Connection</span> connection <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token class-name">PreparedStatement</span> preparedStatement <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span><span class="token comment">// 预执行</span>
-        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-            connection <span class="token operator">=</span> <span class="token class-name">JdbcUtils</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            connection<span class="token punctuation">.</span><span class="token function">setAutoCommit</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 关闭自动提交，开启事务</span>
-            <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"update account set money=money-100 where `name`='A'"</span><span class="token punctuation">;</span>
-            preparedStatement <span class="token operator">=</span> connection<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            preparedStatement<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">String</span> sql2 <span class="token operator">=</span> <span class="token string">"update account set money=money+100 where `name`='B'"</span><span class="token punctuation">;</span>
-            preparedStatement <span class="token operator">=</span> connection<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            preparedStatement<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            connection<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">SQLException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">//默认失败会回滚</span>
-            connection<span class="token punctuation">.</span><span class="token function">rollback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span><span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-            <span class="token class-name">JdbcUtils</span><span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span>connection<span class="token punctuation">,</span>preparedStatement<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+public class Test03 &#123;
+    public static void main(String[] args) &#123;
+        Connection connection &#x3D; null;
+        PreparedStatement preparedStatement &#x3D; null;&#x2F;&#x2F; 预执行
+        try &#123;
+            connection &#x3D; JdbcUtils.getConnection();
+            connection.setAutoCommit(false);&#x2F;&#x2F; 关闭自动提交，开启事务
+            String sql &#x3D; &quot;update account set money&#x3D;money-100 where &#96;name&#96;&#x3D;&#39;A&#39;&quot;;
+            preparedStatement &#x3D; connection.prepareStatement(sql);
+            preparedStatement.executeUpdate();
+            String sql2 &#x3D; &quot;update account set money&#x3D;money+100 where &#96;name&#96;&#x3D;&#39;B&#39;&quot;;
+            preparedStatement &#x3D; connection.prepareStatement(sql2);
+            preparedStatement.executeUpdate();
+            connection.commit();
+            System.out.println(&quot;成功&quot;);
+        &#125; catch (SQLException e) &#123;
+            &#x2F;&#x2F;默认失败会回滚
+            connection.rollback();
+            e.printStackTrace();
+        &#125;finally &#123;
+            JdbcUtils.release(connection,preparedStatement,null);
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -419,124 +751,124 @@ MIN() -- 求最小<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <p>作用：1. 简化用户对数据的理解，也简化用户的操作。2. 设定视图用户的操作权限。3. 屏蔽真实表结构变化带来的影响</p>
 <ul>
 <li><p>创建</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CERATE <span class="token keyword">VIEW</span> 视图名 <span class="token keyword">AS</span> <span class="token keyword">SELECT</span>语句  <span class="token punctuation">[</span><span class="token keyword">WITH</span><span class="token punctuation">[</span><span class="token keyword">CASCADED</span> <span class="token operator">|</span> <span class="token keyword">LOCAL</span><span class="token punctuation">]</span> <span class="token keyword">CHECK</span> <span class="token keyword">OPTION</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">-- CASCADED 检查依赖的视图，LOCAL不检查依赖的视图</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CERATE VIEW 视图名 AS SELECT语句  [WITH[CASCADED | LOCAL] CHECK OPTION]; -- CASCADED 检查依赖的视图，LOCAL不检查依赖的视图<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>查询</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> 视图名<span class="token punctuation">;</span>
-<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> 视图名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SHOW CREATE VIEW 视图名;
+SELECT * FROM 视图名;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>修改</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CERATE <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">VIEW</span> 视图名 <span class="token keyword">AS</span> <span class="token keyword">SELECT</span>语句  <span class="token punctuation">[</span><span class="token keyword">WITH</span><span class="token punctuation">[</span><span class="token keyword">CASCADED</span> <span class="token operator">|</span> <span class="token keyword">LOCAL</span><span class="token punctuation">]</span> <span class="token keyword">CHECK</span> <span class="token keyword">OPTION</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">-- 方式一</span>
-<span class="token keyword">ALTER</span> <span class="token keyword">VIEW</span> 视图名 <span class="token keyword">AS</span> <span class="token keyword">SELECT</span>语句 <span class="token punctuation">[</span><span class="token keyword">WITH</span><span class="token punctuation">[</span><span class="token keyword">CASCADED</span> <span class="token operator">|</span> <span class="token keyword">LOCAL</span><span class="token punctuation">]</span> <span class="token keyword">CHECK</span> <span class="token keyword">OPTION</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">-- 方式二</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CERATE OR REPLACE VIEW 视图名 AS SELECT语句  [WITH[CASCADED | LOCAL] CHECK OPTION]; -- 方式一
+ALTER VIEW 视图名 AS SELECT语句 [WITH[CASCADED | LOCAL] CHECK OPTION]; -- 方式二<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>删除</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">VIEW</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> 视图名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">DROP VIEW [IF EXISTS] 视图名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <h2 id="16-存储过程"><a href="#16-存储过程" class="headerlink" title="16. 存储过程"></a>16. 存储过程</h2><p>数据库sql语言层面的代码封装和重用。</p>
 <ul>
 <li><p>创建</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DELIMITER</span> $$ <span class="token comment">-- 定义结束符</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> 存储过程名称<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">IN</span><span class="token operator">|</span><span class="token keyword">OUT</span><span class="token operator">|</span><span class="token keyword">INOUT</span> 参数名 参数类型<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">BEGIN</span> 
-	<span class="token comment">-- SQL语句</span>
-<span class="token keyword">END</span>$$
-<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span> <span class="token comment">-- 重置结束符</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">DELIMITER $$ -- 定义结束符
+CREATE PROCEDURE 存储过程名称([IN|OUT|INOUT 参数名 参数类型])
+BEGIN 
+	-- SQL语句
+END$$
+DELIMITER ; -- 重置结束符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>调用</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CALL</span> 名称<span class="token punctuation">(</span><span class="token punctuation">[</span>参数<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CALL 名称([参数])<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>查看</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> INFORMATION_SCHEMA_ROUTINES <span class="token keyword">WHERE</span> ROUTINE_SCHEMA <span class="token operator">=</span> <span class="token string">'xxx'</span><span class="token punctuation">;</span>  <span class="token comment">-- 查询指定数据库的存储过程及状态信息</span>
-<span class="token keyword">SHOW</span> <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> 存储过程名称<span class="token punctuation">;</span>  <span class="token comment">-- 查询存储过程的定义</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SELECT * FROM INFORMATION_SCHEMA_ROUTINES WHERE ROUTINE_SCHEMA &#x3D; &#39;xxx&#39;;  -- 查询指定数据库的存储过程及状态信息
+SHOW CREATE PROCEDURE 存储过程名称;  -- 查询存储过程的定义<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>删除</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> 存储过程名称<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">DROP PROCEDURE [IF EXISTS] 存储过程名称;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>变量</p>
 <ul>
 <li><p>系统变量</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token punctuation">[</span><span class="token keyword">SESSION</span> <span class="token operator">|</span> <span class="token keyword">GLOBAL</span><span class="token punctuation">]</span> VARIABLES<span class="token punctuation">;</span> <span class="token comment">-- 查看所有系统变量</span>
-<span class="token keyword">SELECT</span> @@<span class="token punctuation">[</span><span class="token keyword">SESSION</span> <span class="token operator">|</span> <span class="token keyword">GLOBAL</span><span class="token punctuation">]</span> 系统变量名<span class="token punctuation">;</span> <span class="token comment">-- 查看指定变量的值</span>
-<span class="token keyword">SET</span> <span class="token punctuation">[</span><span class="token keyword">SESSION</span> <span class="token operator">|</span> <span class="token keyword">GLOBAL</span><span class="token punctuation">]</span> 系统变量名 <span class="token operator">=</span> 值<span class="token punctuation">;</span> <span class="token comment">-- 设置系统变量</span>
-<span class="token keyword">SET</span> @@<span class="token punctuation">[</span><span class="token keyword">SESSION</span> <span class="token operator">|</span> <span class="token keyword">GLOBAL</span><span class="token punctuation">]</span> 系统变量名 <span class="token operator">=</span> 值<span class="token punctuation">;</span> <span class="token comment">-- 设置系统变量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SHOW [SESSION | GLOBAL] VARIABLES; -- 查看所有系统变量
+SELECT @@[SESSION | GLOBAL] 系统变量名; -- 查看指定变量的值
+SET [SESSION | GLOBAL] 系统变量名 &#x3D; 值; -- 设置系统变量
+SET @@[SESSION | GLOBAL] 系统变量名 &#x3D; 值; -- 设置系统变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>自定义变量</p>
 <p>作用域：当前连接</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SET</span> <span class="token variable">@var_name</span>  <span class="token operator">=</span> expr<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token variable">@var_name</span>  <span class="token operator">=</span> expr<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">-- 赋值</span>
-<span class="token keyword">SET</span> <span class="token variable">@var_name</span>  :<span class="token operator">=</span> expr<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token variable">@var_name</span>  :<span class="token operator">=</span> expr<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">-- 赋值</span>
-<span class="token keyword">SELECT</span> <span class="token variable">@var_name</span>  <span class="token operator">=</span> expr<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token variable">@var_name</span>  <span class="token operator">=</span> expr<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">-- 赋值</span>
-<span class="token keyword">SELECT</span> 字段名 <span class="token keyword">INTO</span> <span class="token variable">@var_name</span> <span class="token keyword">FROM</span> 表名<span class="token punctuation">;</span> <span class="token comment">-- 赋值</span>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SET @var_name  &#x3D; expr[,@var_name  &#x3D; expr]...; -- 赋值
+SET @var_name  :&#x3D; expr[,@var_name  :&#x3D; expr]...; -- 赋值
+SELECT @var_name  &#x3D; expr[,@var_name  &#x3D; expr]...; -- 赋值
+SELECT 字段名 INTO @var_name FROM 表名; -- 赋值
 
-<span class="token keyword">SELECT</span> <span class="token variable">@var_name</span><span class="token punctuation">;</span> <span class="token comment">-- 使用</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+SELECT @var_name; -- 使用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>局部变量</p>
 <p>作用域：BEGIN … END块;</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DECLARE</span> 变量名 变量类型<span class="token punctuation">[</span><span class="token keyword">DEFAULT</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">-- 声明</span>
-<span class="token keyword">SET</span> 变量名 <span class="token operator">=</span> 值<span class="token punctuation">;</span> <span class="token comment">-- 赋值</span>
-<span class="token keyword">SET</span> 变量名 :<span class="token operator">=</span> 值<span class="token punctuation">;</span> <span class="token comment">-- 赋值</span>
-<span class="token keyword">SELECT</span> 字段名 <span class="token keyword">INTO</span> 变量名 <span class="token keyword">FROM</span> 表名<span class="token punctuation">;</span> <span class="token comment">-- 赋值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">DECLARE 变量名 变量类型[DEFAULT]; -- 声明
+SET 变量名 &#x3D; 值; -- 赋值
+SET 变量名 :&#x3D; 值; -- 赋值
+SELECT 字段名 INTO 变量名 FROM 表名; -- 赋值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>语句</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 判断</span>
-<span class="token comment">-- if</span>
-<span class="token keyword">IF</span> 条件<span class="token number">1</span> <span class="token keyword">THEN</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">ELSEIF</span> 条件<span class="token number">2</span> <span class="token keyword">THEN</span>
-<span class="token keyword">ELSE</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">-- 判断
+-- if
+IF 条件1 THEN
+...
+ELSEIF 条件2 THEN
+ELSE
+...
+END IF;
 
-<span class="token comment">-- case</span>
-<span class="token keyword">CASE</span> case_value
-	<span class="token keyword">WHEN</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">THEN</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-	<span class="token keyword">ELSE</span>
-<span class="token keyword">END</span> <span class="token keyword">CASE</span><span class="token punctuation">;</span>
+-- case
+CASE case_value
+	WHEN ... THEN ...
+	ELSE
+END CASE;
 
-<span class="token comment">-- 循环</span>
-<span class="token comment">-- while</span>
-<span class="token keyword">WHILE</span> 条件 <span class="token keyword">DO</span>
-	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">sql</span>
-<span class="token keyword">END</span> <span class="token keyword">WHILE</span><span class="token punctuation">;</span>
+-- 循环
+-- while
+WHILE 条件 DO
+	... sql
+END WHILE;
 
-<span class="token comment">-- repeat</span>
-<span class="token keyword">REPEAT</span>
-	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">sql</span>
+-- repeat
+REPEAT
+	... sql
 	UNTIL 条件
-<span class="token keyword">END</span> <span class="token keyword">REPEAT</span><span class="token punctuation">;</span>
+END REPEAT;
 
-<span class="token comment">-- loop</span>
-<span class="token punctuation">[</span>begin_label:<span class="token punctuation">]</span><span class="token keyword">LOOP</span>
-	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token keyword">sql</span>
-<span class="token keyword">END</span> <span class="token keyword">LOOP</span> <span class="token punctuation">[</span>end_label<span class="token punctuation">]</span><span class="token punctuation">;</span>
+-- loop
+[begin_label:]LOOP
+	...sql
+END LOOP [end_label];
 
-<span class="token comment">-- 游标</span>
-<span class="token keyword">DECLARE</span> 游标名称 <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span> 查询语句<span class="token punctuation">;</span> <span class="token comment">-- 声明游标</span>
-<span class="token keyword">OPEN</span> 游标名称<span class="token punctuation">;</span> <span class="token comment">-- 打开游标</span>
-<span class="token keyword">FETCH</span> 游标名称 <span class="token keyword">INTO</span> 变量<span class="token punctuation">[</span><span class="token punctuation">,</span>变量<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">-- 获取游标记录</span>
+-- 游标
+DECLARE 游标名称 CURSOR FOR 查询语句; -- 声明游标
+OPEN 游标名称; -- 打开游标
+FETCH 游标名称 INTO 变量[,变量]; -- 获取游标记录
 
-<span class="token comment">-- handler</span>
-<span class="token keyword">DECLARE</span> handler_action <span class="token keyword">HANDLER</span> <span class="token keyword">FOR</span> condition_value<span class="token punctuation">[</span><span class="token punctuation">,</span>condition_value<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> statement<span class="token punctuation">;</span> 
-<span class="token comment">-- handler_action</span>
-	<span class="token keyword">CONTINUE</span><span class="token punctuation">;</span> <span class="token comment">-- 继续执行程序</span>
-	<span class="token keyword">EXIT</span><span class="token punctuation">;</span> <span class="token comment">-- 终止程序</span>
-<span class="token comment">-- condition_value</span>
-	SQLSTATE sqlstate_value<span class="token punctuation">;</span> <span class="token comment">-- 状态码</span>
-	SQLWARNING<span class="token punctuation">;</span> <span class="token comment">-- 所有以01开头的SQLSTATE代码的缩写</span>
-	<span class="token operator">NOT</span> FOUND<span class="token punctuation">;</span> <span class="token comment">-- 所有以02开头的SQLSTATE代码的缩写</span>
-	SQLEXCEPTION<span class="token punctuation">;</span> <span class="token comment">-- 所有没被SQLWARNING和NOT FOUND捕获</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+-- handler
+DECLARE handler_action HANDLER FOR condition_value[,condition_value]... statement; 
+-- handler_action
+	CONTINUE; -- 继续执行程序
+	EXIT; -- 终止程序
+-- condition_value
+	SQLSTATE sqlstate_value; -- 状态码
+	SQLWARNING; -- 所有以01开头的SQLSTATE代码的缩写
+	NOT FOUND; -- 所有以02开头的SQLSTATE代码的缩写
+	SQLEXCEPTION; -- 所有没被SQLWARNING和NOT FOUND捕获<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>存储函数</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">FUNCTION</span> 存储函数名称<span class="token punctuation">(</span><span class="token punctuation">[</span>参数列表<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">RETURNS</span> <span class="token keyword">TYPE</span> <span class="token punctuation">[</span><span class="token keyword">DETERMINISTIC</span> <span class="token operator">|</span> <span class="token keyword">NO</span> <span class="token keyword">SQL</span> <span class="token operator">|</span><span class="token keyword">READS</span> <span class="token keyword">SQL</span> <span class="token keyword">DATA</span><span class="token punctuation">]</span>
-<span class="token keyword">BEGIN</span> 
-	<span class="token comment">-- SQL语句</span>
-	<span class="token keyword">RETURN</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
-<span class="token keyword">END</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE FUNCTION 存储函数名称([参数列表])
+RETURNS TYPE [DETERMINISTIC | NO SQL |READS SQL DATA]
+BEGIN 
+	-- SQL语句
+	RETURN ...;
+END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h2 id="17-触发器"><a href="#17-触发器" class="headerlink" title="17. 触发器"></a>17. 触发器</h2><p>触发器是指与表有关的数据库对象，指在insert/update/delete之前或者之后，触发并执行触发器中定义的SQL集合。OLD，NEW指发生变化的记录内容</p>
 <ul>
 <li><p>创建</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> trigger_name
-BEFORE<span class="token operator">|</span><span class="token keyword">AFTER</span> <span class="token keyword">INSERT</span><span class="token operator">|</span><span class="token keyword">UPDATE</span><span class="token operator">|</span><span class="token keyword">DELETE</span>
-<span class="token keyword">ON</span> tb_name <span class="token keyword">FOR EACH ROW</span> <span class="token comment">-- 行级触发器</span>
-<span class="token keyword">BEGIN</span>
-	trigger_stmt<span class="token punctuation">;</span>
-<span class="token keyword">END</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE TRIGGER trigger_name
+BEFORE|AFTER INSERT|UPDATE|DELETE
+ON tb_name FOR EACH ROW -- 行级触发器
+BEGIN
+	trigger_stmt;
+END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>查看</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SHOW</span> TRIGGERS<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SHOW TRIGGERS;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>删除</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TRIGGER</span> <span class="token punctuation">[</span>schema_name<span class="token punctuation">]</span> trigger_name<span class="token punctuation">;</span> <span class="token comment">-- 如果没有指定schema_name，默认当前数据库</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">DROP TRIGGER [schema_name] trigger_name; -- 如果没有指定schema_name，默认当前数据库<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <h2 id="18-锁"><a href="#18-锁" class="headerlink" title="18. 锁"></a>18. 锁</h2><p>计算机协调多个进程或线程并发访问某一资源的机制。</p>
 <ul>
@@ -601,7 +933,7 @@ unlock tables; -- 释放锁<span aria-hidden="true" class="line-numbers-rows"><s
 </ul>
 <h2 id="19-SQL性能分析"><a href="#19-SQL性能分析" class="headerlink" title="19. SQL性能分析"></a>19. SQL性能分析</h2><ul>
 <li><p>SQL执行频率</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">GLOBAL</span> <span class="token keyword">STATUS</span> <span class="token operator">LIKE</span> <span class="token string">'Com_______)'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">SHOW GLOBAL STATUS LIKE &#39;Com_______)&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>开启慢查询日志</p>
 </li>
 </ul>
@@ -610,8 +942,8 @@ unlock tables; -- 释放锁<span aria-hidden="true" class="line-numbers-rows"><s
 <p>​        long_query_time = 2 # 设置SQL执行时间</p>
 <ul>
 <li><p>profile耗时详情</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">show</span> profiles<span class="token punctuation">;</span>
-<span class="token keyword">show</span> profile <span class="token punctuation">[</span>cpu<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token keyword">for</span> query query_id<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">-- 耗时情况</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">show profiles;
+show profile [cpu] [for query query_id]; -- 耗时情况<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>expain</p>
 <p>sql语句前加上explain/desc</p>
 <ul>
@@ -655,130 +987,566 @@ unlock tables; -- 释放锁<span aria-hidden="true" class="line-numbers-rows"><s
 </li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/" data-id="cl63lm6fb000d18vz9kaad6tb" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2021/07/13/java-xiang-mu-fen-ceng/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JAVA项目分层
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/06/29/java-ji-he/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JAVA集合</div>
-    </a>
-  
-</nav>
+                
+            </div>
+            <hr/>
 
-  
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Yangzk</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://silentspeechcoder.github.io/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/">https://silentspeechcoder.github.io/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Yangzk</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/07/13/java-xiang-mu-fen-ceng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="JAVA项目分层">
+                        
+                        <span class="card-title">JAVA项目分层</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yangzk
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/29/java-ji-he/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="JAVA集合">
+                        
+                        <span class="card-title">JAVA集合</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yangzk
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+</div>
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li></ul>
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
     </div>
-  </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
 
 
-  
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/07/21/fan-she-fan-xu-lie-hua/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/10/12/java-she-ji-mo-shi/">设计模式（Group Of Four 23）【待补充】</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/13/java-xiang-mu-fen-ceng/">JAVA项目分层</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/">MySQL数据库知识点梳理</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/29/java-ji-he/">JAVA集合</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 Yangzk<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2018-2022</span>
+            
+            <a href="/about" target="_blank">Yangzk</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">15.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/SilentSpeechCoder" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:yangzengkai_work@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1107949651" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1107949651" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
     </div>
-  </div>
 </footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
 
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
 
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    
 
+    <!-- Baidu Analytics -->
 
+    <!-- Baidu Push -->
 
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
 
-<script src="/js/script.js"></script>
+    
 
+    
 
+    <!--腾讯兔小巢-->
+    
+    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
 
-  </div>
-</body>
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('fenlei');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><a class="magnet_link_more"  href="https://silentspeechcoder.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><!-- hexo injector body_end end --></body>
+
 </html>

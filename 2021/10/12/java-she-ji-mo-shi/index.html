@@ -1,92 +1,433 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
 <head>
-  <meta charset="utf-8">
-  
+    <meta charset="utf-8">
+    <meta name="keywords" content="设计模式（Group Of Four 23）【待补充】, SilentSpeechCoder">
+    <meta name="description" content="设计模式（Group Of Four 23）【待补充】设计模式分类
+创建者模式
+单例模式、工厂模式、抽象工厂模式、建造者模式、原型模式
 
-  
-  <title>设计模式（Group Of Four 23）【待补充】 | SilentSpeechCoder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="设计模式（Group Of Four 23）【待补充】设计模式分类 创建者模式 单例模式、工厂模式、抽象工厂模式、建造者模式、原型模式  结构型模式 适配器模式、桥接模式、装饰模式、组合模式、外观模式、享元模式、代理模式  行为型模式 模板方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式、状态模式、策略模式、职责链模式、访问者模式   创建者模式单例模式 - Sing">
-<meta property="og:type" content="article">
-<meta property="og:title" content="设计模式（Group Of Four 23）【待补充】">
-<meta property="og:url" content="http://example.com/2021/10/12/java-she-ji-mo-shi/index.html">
-<meta property="og:site_name" content="SilentSpeechCoder">
-<meta property="og:description" content="设计模式（Group Of Four 23）【待补充】设计模式分类 创建者模式 单例模式、工厂模式、抽象工厂模式、建造者模式、原型模式  结构型模式 适配器模式、桥接模式、装饰模式、组合模式、外观模式、享元模式、代理模式  行为型模式 模板方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式、状态模式、策略模式、职责链模式、访问者模式   创建者模式单例模式 - Sing">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-12T08:24:43.000Z">
-<meta property="article:modified_time" content="2022-07-27T12:37:40.036Z">
-<meta property="article:author" content="Yangzk">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="SilentSpeechCoder" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+结构型模式
+适配器模式、桥接模式、装饰模式、组合模式、外观模式、享元模式、代理模式
 
-<meta name="generator" content="Hexo 5.4.1"></head>
+行为型模式
+模板">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>设计模式（Group Of Four 23）【待补充】 | SilentSpeechCoder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="SilentSpeechCoder" type="application/atom+xml">
+</head>
+
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">SilentSpeechCoder</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-JAVA设计模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/10/12/java-she-ji-mo-shi/" class="article-date">
-  <time datetime="2021-10-12T08:24:43.000Z" itemprop="datePublished">2021-10-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      设计模式（Group Of Four 23）【待补充】
-    </h1>
-  
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">SilentSpeechCoder</span>
+                </a>
+            </div>
+            
 
-      </header>
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <div class="article-entry" itemprop="articleBody">
+    <a href="/" class="waves-effect waves-light">
       
-        <h1 id="设计模式（Group-Of-Four-23）【待补充】"><a href="#设计模式（Group-Of-Four-23）【待补充】" class="headerlink" title="设计模式（Group Of Four 23）【待补充】"></a>设计模式（Group Of Four 23）【待补充】</h1><h2 id="设计模式分类"><a href="#设计模式分类" class="headerlink" title="设计模式分类"></a>设计模式分类</h2><ul>
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">SilentSpeechCoder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">设计模式（Group Of Four 23）【待补充】</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-10-12
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="设计模式（Group-Of-Four-23）【待补充】"><a href="#设计模式（Group-Of-Four-23）【待补充】" class="headerlink" title="设计模式（Group Of Four 23）【待补充】"></a>设计模式（Group Of Four 23）【待补充】</h1><h2 id="设计模式分类"><a href="#设计模式分类" class="headerlink" title="设计模式分类"></a>设计模式分类</h2><ul>
 <li><p>创建者模式</p>
 <p>单例模式、工厂模式、抽象工厂模式、建造者模式、原型模式</p>
 </li>
@@ -113,83 +454,83 @@
 <li><p>常见的实现方式</p>
 <ul>
 <li><p>饿汉式（线程安全、调用效率高。但是，不能延时加载）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;*
     饿汉式单例实现：
     1. 私有化构造器
     2. 提供一个私有的static变量，存放唯一对象
     3. 提供开放的方法访问对象
-* */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingletonDemo1</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 类初始化时。立即加载这个对象。存在问题：如果不调用getInstance()则会造成资源浪费</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token comment">/*final*/</span> <span class="token class-name">SingletonDemo1</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SingletonDemo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">SingletonDemo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+* *&#x2F;
+public class SingletonDemo1 &#123;
+    &#x2F;&#x2F; 类初始化时。立即加载这个对象。存在问题：如果不调用getInstance()则会造成资源浪费
+    private static &#x2F;*final*&#x2F; SingletonDemo1 instance &#x3D; new SingletonDemo1();
+    private SingletonDemo1()&#123;
 
-    <span class="token punctuation">&#125;</span>
+    &#125;
 
-    <span class="token comment">// static变量在类加载时初始化,不会发生并发访问的问题</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token comment">/*synchronized*/</span> <span class="token class-name">SingletonDemo1</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    &#x2F;&#x2F; static变量在类加载时初始化,不会发生并发访问的问题
+    public static &#x2F;*synchronized*&#x2F; SingletonDemo1 getInstance()&#123;
+        return instance;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>懒汉式（线程安全、调用效率不高。但是，能延时加载）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;*
     懒汉式单例实现：
     1. 提供一个私有的不初始化static变量，
     2. 私有化构造器
     3. 调用getInstance时new一个对象
-* */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingletonDemo2</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 延迟加载</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">SingletonDemo2</span> instance<span class="token punctuation">;</span>
+* *&#x2F;
+public class SingletonDemo2 &#123;
+    &#x2F;&#x2F; 延迟加载
+    private static SingletonDemo2 instance;
 
-    <span class="token keyword">private</span> <span class="token class-name">SingletonDemo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    private SingletonDemo2()&#123;
 
-    <span class="token punctuation">&#125;</span>
-    <span class="token comment">//每次调用getInstance()都要同步，并发效率低</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> <span class="token class-name">SingletonDemo2</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SingletonDemo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    &#125;
+    &#x2F;&#x2F;每次调用getInstance()都要同步，并发效率低
+    public static synchronized SingletonDemo2 getInstance()&#123;
+        if(instance &#x3D;&#x3D; null)&#123;
+            instance &#x3D; new SingletonDemo2();
+        &#125;
+        return instance;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>双重检测锁式（JVM底层内部的原因，不建议使用）</p>
 </li>
 <li><p>静态内部类式（线程安全、调用效率高。能延时加载）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;*
     静态内部类单例实现：
     1. 私有化构造器
     2. 创建静态内部类，在其中提供一个私有的static变量，存放唯一对象
     3. 提供开放的方法访问对象
-* */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingletonDemo3</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 外部类没有static属性，则不会立即加载对象，也不会加载静态内部类</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">SingletonClassInstance</span><span class="token punctuation">&#123;</span>
-        <span class="token comment">// 调用时加载静态内部类，加载类时天然线程安全。instance是static final修饰，保证内存中只有一个实例存在并且不能被修改</span>
-        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">SingletonDemo3</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SingletonDemo3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+* *&#x2F;
+public class SingletonDemo3 &#123;
+    &#x2F;&#x2F; 外部类没有static属性，则不会立即加载对象，也不会加载静态内部类
+    private static class SingletonClassInstance&#123;
+        &#x2F;&#x2F; 调用时加载静态内部类，加载类时天然线程安全。instance是static final修饰，保证内存中只有一个实例存在并且不能被修改
+        private static final SingletonDemo3 instance &#x3D; new SingletonDemo3();
+    &#125;
 
-    <span class="token keyword">private</span> <span class="token class-name">SingletonDemo3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    private SingletonDemo3()&#123;
 
-    <span class="token punctuation">&#125;</span>
+    &#125;
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SingletonDemo3</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token class-name">SingletonClassInstance</span><span class="token punctuation">.</span>instance<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    public static SingletonDemo3 getInstance()&#123;
+        return SingletonClassInstance.instance;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>枚举单例（线程安全、调用效率高。但是，不能延时加载。避免通过反射和序列化产生的漏洞）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;*
     枚举式单例实现：
     1. 定义一个枚举的元素
-* */</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">SingletonDemo4</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 枚举类即单例模式。定义一个枚举的元素，代表一个实例</span>
-    INSTANCE<span class="token punctuation">;</span>
+* *&#x2F;
+public enum SingletonDemo4 &#123;
+    &#x2F;&#x2F; 枚举类即单例模式。定义一个枚举的元素，代表一个实例
+    INSTANCE;
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">singletonOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token comment">// 对实例的操作</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    public void singletonOperation()&#123;
+        &#x2F;&#x2F; 对实例的操作
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>选用</p>
@@ -199,38 +540,38 @@
 <li><p>反射反序列化测试单例漏洞（枚举类型除外）</p>
 <ul>
 <li><p>反射</p>
-  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SingletonDemo1</span><span class="token punctuation">></span></span> clazz <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SingletonDemo1</span><span class="token punctuation">></span></span><span class="token punctuation">)</span> 		<span class="token class-name">Class</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"SingletonDemo.ehan.SingletonDemo1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">Constructor</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SingletonDemo1</span><span class="token punctuation">></span></span> c <span class="token operator">=</span> clazz<span class="token punctuation">.</span><span class="token function">getDeclaredConstructor</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">SingletonDemo1</span> a <span class="token operator">=</span>c<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">SingletonDemo1</span> b <span class="token operator">=</span>c<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false,两个不同的对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java">Class&lt;SingletonDemo1&gt; clazz &#x3D; (Class&lt;SingletonDemo1&gt;) 		Class.forName(&quot;SingletonDemo.ehan.SingletonDemo1&quot;);
+Constructor&lt;SingletonDemo1&gt; c &#x3D; clazz.getDeclaredConstructor(null);
+c.setAccessible(true);
+SingletonDemo1 a &#x3D;c.newInstance();
+SingletonDemo1 b &#x3D;c.newInstance();
+System.out.println(a &#x3D;&#x3D; b); &#x2F;&#x2F; false,两个不同的对象<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>  解决：私有化构造器加入异常判断</p>
-  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token class-name">SingletonDemo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java">private SingletonDemo1()&#123;
+    if(instance !&#x3D; null)&#123;
+        throw new RuntimeException();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>反序列化</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// SingletonDemo1需要实现Serializable</span>
-<span class="token class-name">SingletonDemo1</span> a <span class="token operator">=</span> <span class="token class-name">SingletonDemo1</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 序列化</span>
-<span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"d:/a.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">ObjectOutputStream</span> oos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>fos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-oos<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-oos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 反序列化</span>
-<span class="token class-name">ObjectInputStream</span> ois <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"d:/a.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">SingletonDemo1</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">SingletonDemo1</span><span class="token punctuation">)</span>ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; SingletonDemo1需要实现Serializable
+SingletonDemo1 a &#x3D; SingletonDemo1.getInstance();
+&#x2F;&#x2F; 序列化
+FileOutputStream fos &#x3D; new FileOutputStream(&quot;d:&#x2F;a.txt&quot;);
+ObjectOutputStream oos &#x3D; new ObjectOutputStream(fos);
+oos.writeObject(a);
+oos.close();
+fos.close();
+&#x2F;&#x2F; 反序列化
+ObjectInputStream ois &#x3D; new ObjectInputStream(new FileInputStream(&quot;d:&#x2F;a.txt&quot;));
+SingletonDemo1 b &#x3D; (SingletonDemo1)ois.readObject();
+System.out.println(a &#x3D;&#x3D; b); &#x2F;&#x2F; false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解决：添加readResolve方法</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 反序列化时，返回单例对象</span>
-<span class="token keyword">private</span> <span class="token class-name">Object</span> <span class="token function">readResolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">ObjectStreamException</span><span class="token punctuation">&#123;</span>
-	<span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 反序列化时，返回单例对象
+private Object readResolve() throws ObjectStreamException&#123;
+	return instance;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 </ol>
@@ -251,155 +592,155 @@ fos<span class="token punctuation">.</span><span class="token function">close</s
 <li><p>简单工厂模式（静态工厂模式）</p>
 <p>描述：工厂类一般使用静态方法，通过接收的参数不同来返回不同的对象实例</p>
 <p>问题：对于增加新产品，不修改代码的话无法扩展（不满足OCP）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestObjectSimpleFactory</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">TestObject</span> <span class="token function">createTestObject</span><span class="token punctuation">(</span><span class="token class-name">String</span> type<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ChildObjectOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"two"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ChildObjectTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> client <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">TestObject</span> a <span class="token operator">=</span> <span class="token class-name">TestObjectSimpleFactory</span><span class="token punctuation">.</span><span class="token function">createTestObject</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">TestObject</span> b <span class="token operator">=</span> <span class="token class-name">TestObjectSimpleFactory</span><span class="token punctuation">.</span><span class="token function">createTestObject</span><span class="token punctuation">(</span><span class="token string">"two"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        b<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class TestObjectSimpleFactory &#123;
+    public static TestObject createTestObject(String type)&#123;
+        if(type.equals(&quot;one&quot;))&#123;
+            return new ChildObjectOne();
+        &#125; else if(type.equals(&quot;two&quot;)) &#123;
+            return new ChildObjectTwo();
+        &#125;
+        return null;
+    &#125;
+&#125;
+public class client &#123;
+    public static void main(String[] args) &#123;
+        TestObject a &#x3D; TestObjectSimpleFactory.createTestObject(&quot;one&quot;);
+        TestObject b &#x3D; TestObjectSimpleFactory.createTestObject(&quot;two&quot;);
+        a.run();
+        b.run();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>工厂方法模式</p>
 <p>描述：简单工厂模式只有一个工厂类，工厂方法模式有一组实现了相同接口的工厂类</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">TestObjectMethodFactory</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">TestObject</span> <span class="token function">createTestObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface TestObjectMethodFactory &#123;
+    TestObject createTestObject();
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ChildObjectOneFactory</span> <span class="token keyword">implements</span> <span class="token class-name">TestObjectMethodFactory</span> <span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">TestObject</span> createTestObject  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ChildObjectOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+public class ChildObjectOneFactory implements TestObjectMethodFactory &#123;
+    @Override
+    public TestObject createTestObject  () &#123;
+        return new ChildObjectOne();
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ChildObjectTwoFactory</span> <span class="token keyword">implements</span> <span class="token class-name">TestObjectMethodFactory</span> <span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">TestObject</span> createTestObject  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ChildObjectTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+public class ChildObjectTwoFactory implements TestObjectMethodFactory &#123;
+    @Override
+    public TestObject createTestObject  () &#123;
+        return new ChildObjectTwo();
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">TestObject</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChildObjectOneFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createTestObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">TestObject</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChildObjectTwoFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createTestObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    a<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    b<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+public static void main(String[] args) &#123;
+    TestObject a &#x3D; new ChildObjectOneFactory().createTestObject();
+    TestObject b &#x3D; new ChildObjectTwoFactory().createTestObject();
+    a.run();
+    b.run();
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>抽象工厂模式</p>
 <p>描述：用来生产不同产品族的全部产品。是工厂方法模式的升级版本。提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</p>
 <p>问题：对于增加新的产品，无能为力。支持增加产品族</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">TestObjectOne</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface TestObjectOne &#123;
+    public void runOne();
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+    public void runTwo();
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestObjectOneHigher</span> <span class="token keyword">implements</span> <span class="token class-name">TestObjectOne</span> <span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TestObjectOneHigher runOne"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TestObjectOneHigher runTwo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+public class TestObjectOneHigher implements TestObjectOne &#123;
+    @Override
+    public void runOne() &#123;
+        System.out.println(&quot;TestObjectOneHigher runOne&quot;);
+    &#125;
+    @Override
+    public void runTwo() &#123;
+        System.out.println(&quot;TestObjectOneHigher runTwo&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestObjectOneLower</span> <span class="token keyword">implements</span> <span class="token class-name">TestObjectOne</span> <span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TestObjectOneLower runOne"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TestObjectOneLower runTwo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+public class TestObjectOneLower implements TestObjectOne &#123;
+    @Override
+    public void runOne() &#123;
+        System.out.println(&quot;TestObjectOneLower runOne&quot;);
+    &#125;
+    @Override
+    public void runTwo() &#123;
+        System.out.println(&quot;TestObjectOneLower runTwo&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">TestObjectTwo</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+public interface TestObjectTwo &#123;
+    public void runOne();
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+    public void runTwo();
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestObjectTwoHigher</span> <span class="token keyword">implements</span> <span class="token class-name">TestObjectTwo</span> <span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TestObjectTwoHigher runOne"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+public class TestObjectTwoHigher implements TestObjectTwo &#123;
+    @Override
+    public void runOne() &#123;
+        System.out.println(&quot;TestObjectTwoHigher runOne&quot;);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TestObjectTwoHigher runTwo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public void runTwo() &#123;
+        System.out.println(&quot;TestObjectTwoHigher runTwo&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestObjectTwoLower</span> <span class="token keyword">implements</span> <span class="token class-name">TestObjectTwo</span> <span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TestObjectTwo runOne"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+public class TestObjectTwoLower implements TestObjectTwo &#123;
+    @Override
+    public void runOne() &#123;
+        System.out.println(&quot;TestObjectTwo runOne&quot;);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">runTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TestObjectTwo runTwo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public void runTwo() &#123;
+        System.out.println(&quot;TestObjectTwo runTwo&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">TestAbstractFactory</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">TestObjectOne</span> <span class="token function">createTestObjectOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+public interface TestAbstractFactory &#123;
+    TestObjectOne createTestObjectOne();
 
-    <span class="token class-name">TestObjectTwo</span> <span class="token function">createTestObjectTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+    TestObjectTwo createTestObjectTwo();
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestHigherFactory</span> <span class="token keyword">implements</span> <span class="token class-name">TestAbstractFactory</span> <span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">TestObjectOne</span> <span class="token function">createTestObjectOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">TestObjectOneHigher</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+public class TestHigherFactory implements TestAbstractFactory &#123;
+    @Override
+    public TestObjectOne createTestObjectOne() &#123;
+        return new TestObjectOneHigher();
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">TestObjectTwo</span> <span class="token function">createTestObjectTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">TestObjectTwoHigher</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public TestObjectTwo createTestObjectTwo() &#123;
+        return new TestObjectTwoHigher();
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestLowerFactory</span> <span class="token keyword">implements</span> <span class="token class-name">TestAbstractFactory</span><span class="token punctuation">&#123;</span>
+public class TestLowerFactory implements TestAbstractFactory&#123;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">TestObjectOne</span> <span class="token function">createTestObjectOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">TestObjectOneLower</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    @Override
+    public TestObjectOne createTestObjectOne() &#123;
+        return new TestObjectOneLower();
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">TestObjectTwo</span> <span class="token function">createTestObjectTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">TestObjectTwoLower</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public TestObjectTwo createTestObjectTwo() &#123;
+        return new TestObjectTwoLower();
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> client <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">TestAbstractFactory</span> lowerFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestLowerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">TestAbstractFactory</span> higherFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestHigherFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">TestObjectOne</span> a <span class="token operator">=</span> lowerFactory<span class="token punctuation">.</span><span class="token function">createTestObjectOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">TestObjectOne</span> b <span class="token operator">=</span> higherFactory<span class="token punctuation">.</span><span class="token function">createTestObjectOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+public class client &#123;
+    public static void main(String[] args) &#123;
+        TestAbstractFactory lowerFactory &#x3D; new TestLowerFactory();
+        TestAbstractFactory higherFactory &#x3D; new TestHigherFactory();
+        TestObjectOne a &#x3D; lowerFactory.createTestObjectOne();
+        TestObjectOne b &#x3D; higherFactory.createTestObjectOne();
 
-        a<span class="token punctuation">.</span><span class="token function">runOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">.</span><span class="token function">runTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        b<span class="token punctuation">.</span><span class="token function">runOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        b<span class="token punctuation">.</span><span class="token function">runTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+        a.runOne();
+        a.runTwo();
+        b.runOne();
+        b.runTwo();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>比较：</p>
@@ -490,85 +831,85 @@ public class TestObjectDirectorImpl implements TestObjectDirector&#123;
 <li><p>优点：效率高，避免了重新执行构造过程的步骤</p>
 </li>
 <li><p>实现方式：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShallowCloneObject</span> <span class="token keyword">implements</span> <span class="token class-name">Cloneable</span><span class="token punctuation">,</span><span class="token class-name">Serializable</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class ShallowCloneObject implements Cloneable,Serializable&#123;
+    private String name;
 
-    <span class="token keyword">private</span> <span class="token class-name">Date</span> createTime<span class="token punctuation">;</span>
+    private Date createTime;
 
-    <span class="token keyword">public</span> <span class="token class-name">ShallowCloneObject</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">Date</span> createTime<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>createTime <span class="token operator">=</span> createTime<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    public ShallowCloneObject(String name, Date createTime)&#123;
+        this.name &#x3D; name;
+        this.createTime &#x3D; createTime;
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">CloneNotSupportedException</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    protected Object clone() throws CloneNotSupportedException &#123;
+        return super.clone();
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DeepCloneObject</span> <span class="token keyword">implements</span> <span class="token class-name">Cloneable</span><span class="token punctuation">&#123;</span>
+public class DeepCloneObject implements Cloneable&#123;
 
-    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    private String name;
 
-    <span class="token keyword">private</span> <span class="token class-name">Date</span> createTime<span class="token punctuation">;</span>
+    private Date createTime;
 
-    <span class="token keyword">public</span> <span class="token class-name">DeepCloneObject</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">Date</span> createTime<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>createTime <span class="token operator">=</span> createTime<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    public DeepCloneObject(String name, Date createTime)&#123;
+        this.name &#x3D; name;
+        this.createTime &#x3D; createTime;
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">CloneNotSupportedException</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">Object</span> object <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">DeepCloneObject</span> deepCloneObject <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">DeepCloneObject</span><span class="token punctuation">)</span> object<span class="token punctuation">;</span>
-        deepCloneObject<span class="token punctuation">.</span>createTime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Date</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>createTime<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> object<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    protected Object clone() throws CloneNotSupportedException &#123;
+        Object object &#x3D; super.clone();
+        DeepCloneObject deepCloneObject &#x3D; (DeepCloneObject) object;
+        deepCloneObject.createTime &#x3D; ((Date) this.createTime.clone());
+        return object;
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">CloneNotSupportedException</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 浅克隆，克隆对象的时间字段与原型对象指向同一个date，修改后互相影响</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"浅克隆--------------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">Date</span> date1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">ShallowCloneObject</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShallowCloneObject</span><span class="token punctuation">(</span><span class="token string">"原型对象"</span><span class="token punctuation">,</span>date1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> s<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">ShallowCloneObject</span> shallowCloneObject <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">ShallowCloneObject</span><span class="token punctuation">)</span>s<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>shallowCloneObject<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> shallowCloneObject<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    shallowCloneObject<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"克隆对象"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    date1<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span><span class="token number">1000000000000L</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> s<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>shallowCloneObject<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> shallowCloneObject<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+public static void main(String[] args) throws CloneNotSupportedException &#123;
+    &#x2F;&#x2F; 浅克隆，克隆对象的时间字段与原型对象指向同一个date，修改后互相影响
+    System.out.println(&quot;浅克隆--------------------------&quot;);
+    Date date1 &#x3D; new Date();
+    ShallowCloneObject s &#x3D; new ShallowCloneObject(&quot;原型对象&quot;,date1);
+    System.out.println(s.getName() + s.getCreateTime());
+    ShallowCloneObject shallowCloneObject &#x3D; (ShallowCloneObject)s.clone();
+    System.out.println(shallowCloneObject.getName() + shallowCloneObject.getCreateTime());
+    shallowCloneObject.setName(&quot;克隆对象&quot;);
+    date1.setTime(1000000000000L);
+    System.out.println(s.getName() + s.getCreateTime());
+    System.out.println(shallowCloneObject.getName() + shallowCloneObject.getCreateTime());
 
-    <span class="token comment">// 深复制</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"深复制--------------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">Date</span> date2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">DeepCloneObject</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DeepCloneObject</span><span class="token punctuation">(</span><span class="token string">"原型对象"</span><span class="token punctuation">,</span>date2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> d<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">DeepCloneObject</span> deepCloneObject <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">DeepCloneObject</span><span class="token punctuation">)</span>d<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>deepCloneObject<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> deepCloneObject<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    deepCloneObject<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"克隆对象"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    date2<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span><span class="token number">1000000000000L</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> d<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>deepCloneObject<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> deepCloneObject<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+    &#x2F;&#x2F; 深复制
+    System.out.println(&quot;深复制--------------------------&quot;);
+    Date date2 &#x3D; new Date();
+    DeepCloneObject d &#x3D; new DeepCloneObject(&quot;原型对象&quot;,date2);
+    System.out.println(d.getName() + d.getCreateTime());
+    DeepCloneObject deepCloneObject &#x3D; (DeepCloneObject)d.clone();
+    System.out.println(deepCloneObject.getName() + deepCloneObject.getCreateTime());
+    deepCloneObject.setName(&quot;克隆对象&quot;);
+    date2.setTime(1000000000000L);
+    System.out.println(d.getName() + d.getCreateTime());
+    System.out.println(deepCloneObject.getName() + deepCloneObject.getCreateTime());
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">,</span> <span class="token class-name">ClassNotFoundException</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 使用序列化和反序列化</span>
-    <span class="token class-name">Date</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">ShallowCloneObject</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShallowCloneObject</span><span class="token punctuation">(</span><span class="token string">"原型对象"</span><span class="token punctuation">,</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">ByteArrayOutputStream</span> bos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">ObjectOutputStream</span> oos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>bos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    oos<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> bos<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">ByteArrayInputStream</span> bis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayInputStream</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">ObjectInputStream</span> ois <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span>bis<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">ShallowCloneObject</span> deepCloneBySerialization <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">ShallowCloneObject</span><span class="token punctuation">)</span>ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> s<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>deepCloneBySerialization<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> deepCloneBySerialization<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    date<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span><span class="token number">12121212121212L</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> s<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>deepCloneBySerialization<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> deepCloneBySerialization<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+public static void main(String[] args) throws IOException, ClassNotFoundException &#123;
+    &#x2F;&#x2F; 使用序列化和反序列化
+    Date date &#x3D; new Date();
+    ShallowCloneObject s &#x3D; new ShallowCloneObject(&quot;原型对象&quot;,date);
+    ByteArrayOutputStream bos &#x3D; new ByteArrayOutputStream();
+    ObjectOutputStream oos &#x3D; new ObjectOutputStream(bos);
+    oos.writeObject(s);
+    byte[] bytes &#x3D; bos.toByteArray();
+    ByteArrayInputStream bis &#x3D; new ByteArrayInputStream(bytes);
+    ObjectInputStream ois &#x3D; new ObjectInputStream(bis);
+    ShallowCloneObject deepCloneBySerialization &#x3D; (ShallowCloneObject)ois.readObject();
+    System.out.println(s.getName() + s.getCreateTime());
+    System.out.println(deepCloneBySerialization.getName() + deepCloneBySerialization.getCreateTime());
+    date.setTime(12121212121212L);
+    System.out.println(s.getName() + s.getCreateTime());
+    System.out.println(deepCloneBySerialization.getName() + deepCloneBySerialization.getCreateTime());
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h2><h3 id="适配器模式-Adapter"><a href="#适配器模式-Adapter" class="headerlink" title="适配器模式-Adapter"></a>适配器模式-Adapter</h3><ol>
 <li><p>描述：将一个类的接口转换成客户希望的另外一个接口。使得原本由于接口不兼容而不能一起工作的类可以一起工作</p>
@@ -583,64 +924,64 @@ public class TestObjectDirectorImpl implements TestObjectDirector&#123;
 </ul>
 </li>
 <li><p>实现方式：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;*
 * 被适配的类
-* */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adaptee</span> <span class="token punctuation">&#123;</span>
+* *&#x2F;
+public class Adaptee &#123;
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"被适配的类提供客户端需要的功能"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    public void request()&#123;
+        System.out.println(&quot;被适配的类提供客户端需要的功能&quot;);
+    &#125;
+&#125;
 
-<span class="token comment">/*
+&#x2F;*
 * 适配器(类适配器方式)
-* */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adapter</span> <span class="token keyword">extends</span> <span class="token class-name">Adaptee</span> <span class="token keyword">implements</span> <span class="token class-name">Target</span><span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+* *&#x2F;
+public class Adapter extends Adaptee implements Target&#123;
+    @Override
+    public void handleRequest() &#123;
+        super.request();
+    &#125;
+&#125;
 
-<span class="token comment">/*
+&#x2F;*
  * 适配器(对象适配器方式)
- * */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adapter2</span> <span class="token keyword">implements</span> <span class="token class-name">Target</span><span class="token punctuation">&#123;</span>
+ * *&#x2F;
+public class Adapter2 implements Target&#123;
 
-    <span class="token keyword">private</span> <span class="token class-name">Adaptee</span> adaptee<span class="token punctuation">;</span>
+    private Adaptee adaptee;
 
-    <span class="token keyword">public</span> <span class="token class-name">Adapter2</span><span class="token punctuation">(</span><span class="token class-name">Adaptee</span> a<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>adaptee <span class="token operator">=</span> a<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        adaptee<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    public Adapter2(Adaptee a)&#123;
+        super();
+        this.adaptee &#x3D; a;
+    &#125;
+    @Override
+    public void handleRequest() &#123;
+        adaptee.request();
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Target</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">void</span> <span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+public interface Target &#123;
+    void handleRequest();
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">Target</span> t<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        t<span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+public class Client &#123;
+    public void test(Target t)&#123;
+        t.handleRequest();
+    &#125;
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 1. 类适配器</span>
-        <span class="token class-name">Client</span> c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Client</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Target</span> t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Adapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        c1<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>t1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// 2. 对象组合适配器</span>
-        <span class="token class-name">Client</span> c2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Client</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Adaptee</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Adaptee</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Target</span> t2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Adapter2</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        c2<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>t2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    public static void main(String[] args) &#123;
+        &#x2F;&#x2F; 1. 类适配器
+        Client c1 &#x3D; new Client();
+        Target t1 &#x3D; new Adapter();
+        c1.test(t1);
+        &#x2F;&#x2F; 2. 对象组合适配器
+        Client c2 &#x3D; new Client();
+        Adaptee a &#x3D; new Adaptee();
+        Target t2 &#x3D; new Adapter2(a);
+        c2.test(t2);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h3 id="代理模式-Proxy"><a href="#代理模式-Proxy" class="headerlink" title="代理模式 - Proxy"></a>代理模式 - Proxy</h3><ol>
 <li><p>描述：通过代理控制对对象的访问，在调用某个对象方法前做前置处理，调用过后做后置处理。将统一的流程控制放在代理类中处理</p>
@@ -662,124 +1003,124 @@ public class TestObjectDirectorImpl implements TestObjectDirector&#123;
 <li><p>实现方式：</p>
 <ul>
 <li><p>静态代理</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">AbstractRole</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface AbstractRole &#123;
 
-    <span class="token keyword">void</span> <span class="token function">step1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    void step1();
 
-    <span class="token keyword">void</span> <span class="token function">step2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    void step2();
 
-    <span class="token keyword">void</span> <span class="token function">step3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+    void step3();
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RealRole</span> <span class="token keyword">implements</span> <span class="token class-name">AbstractRole</span><span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实角色-步骤1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+public class RealRole implements AbstractRole&#123;
+    @Override
+    public void step1() &#123;
+        System.out.println(&quot;真实角色-步骤1&quot;);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实角色-步骤2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    @Override
+    public void step2() &#123;
+        System.out.println(&quot;真实角色-步骤2&quot;);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实角色-步骤3,代理角色没有的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public void step3() &#123;
+        System.out.println(&quot;真实角色-步骤3,代理角色没有的方法&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProxyRole</span> <span class="token keyword">implements</span> <span class="token class-name">AbstractRole</span><span class="token punctuation">&#123;</span>
+public class ProxyRole implements AbstractRole&#123;
 
-    <span class="token class-name">AbstractRole</span> abstractRole<span class="token punctuation">;</span>
+    AbstractRole abstractRole;
 
-    <span class="token keyword">public</span> <span class="token class-name">ProxyRole</span><span class="token punctuation">(</span><span class="token class-name">AbstractRole</span> abstractRole<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>abstractRole <span class="token operator">=</span> abstractRole<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    public ProxyRole(AbstractRole abstractRole)&#123;
+        super();
+        this.abstractRole &#x3D; abstractRole;
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"代理角色-步骤1,代替真实角色执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    @Override
+    public void step1() &#123;
+        System.out.println(&quot;代理角色-步骤1,代替真实角色执行&quot;);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"代理角色-步骤2,代替真实角色执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    @Override
+    public void step2() &#123;
+        System.out.println(&quot;代理角色-步骤2,代替真实角色执行&quot;);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        abstractRole<span class="token punctuation">.</span><span class="token function">step3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public void step3() &#123;
+        abstractRole.step3();
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">AbstractRole</span> realRole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RealRole</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">AbstractRole</span> proxyRole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ProxyRole</span><span class="token punctuation">(</span>realRole<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        proxyRole<span class="token punctuation">.</span><span class="token function">step1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        proxyRole<span class="token punctuation">.</span><span class="token function">step2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        proxyRole<span class="token punctuation">.</span><span class="token function">step3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+public class Client &#123;
+    public static void main(String[] args) &#123;
+        AbstractRole realRole &#x3D; new RealRole();
+        AbstractRole proxyRole &#x3D; new ProxyRole(realRole);
+        proxyRole.step1();
+        proxyRole.step2();
+        proxyRole.step3();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>动态代理（JDK实现）</p>
 <p>java.lang.reflect.Proxy：动态生成代理类和对象</p>
 <p>java.lang.reflect.InvocationHandler：处理器接口</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">AbstractRole</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface AbstractRole &#123;
 
-    <span class="token keyword">void</span> <span class="token function">step1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    void step1();
 
-    <span class="token keyword">void</span> <span class="token function">step2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    void step2();
 
-    <span class="token keyword">void</span> <span class="token function">step3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+    void step3();
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RealRole</span> <span class="token keyword">implements</span> <span class="token class-name">AbstractRole</span> <span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实角色-步骤1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+public class RealRole implements AbstractRole &#123;
+    @Override
+    public void step1() &#123;
+        System.out.println(&quot;真实角色-步骤1&quot;);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实角色-步骤2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    @Override
+    public void step2() &#123;
+        System.out.println(&quot;真实角色-步骤2&quot;);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">step3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实角色-步骤3,代理角色没有的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public void step3() &#123;
+        System.out.println(&quot;真实角色-步骤3,代理角色没有的方法&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AbstractRoleHandler</span> <span class="token keyword">implements</span> <span class="token class-name">InvocationHandler</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">AbstractRole</span> abstractRole<span class="token punctuation">;</span>
+public class AbstractRoleHandler implements InvocationHandler &#123;
+    AbstractRole abstractRole;
 
-    <span class="token keyword">public</span> <span class="token class-name">AbstractRoleHandler</span><span class="token punctuation">(</span><span class="token class-name">AbstractRole</span> abstractRole<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>abstractRole <span class="token operator">=</span> abstractRole<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    public AbstractRoleHandler(AbstractRole abstractRole)&#123;
+        this.abstractRole &#x3D; abstractRole;
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">invoke</span><span class="token punctuation">(</span><span class="token class-name">Object</span> proxy<span class="token punctuation">,</span> <span class="token class-name">Method</span> method<span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"invoke流程控制"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Object</span> object <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实角色方法执行前"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>method<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"step3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            object <span class="token operator">=</span> method<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>abstractRole<span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实角色方法执行后"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> object<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable &#123;
+        System.out.println(&quot;invoke流程控制&quot;);
+        Object object &#x3D; null;
+        System.out.println(&quot;真实角色方法执行前&quot;);
+        if(method.getName().equals(&quot;step3&quot;))&#123;
+            object &#x3D; method.invoke(abstractRole,args);
+        &#125;
+        System.out.println(&quot;真实角色方法执行后&quot;);
+        return object;
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">AbstractRole</span> realRole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RealRole</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">AbstractRoleHandler</span> handler <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AbstractRoleHandler</span><span class="token punctuation">(</span>realRole<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">AbstractRole</span> proxyRole<span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">AbstractRole</span><span class="token punctuation">)</span><span class="token class-name">Proxy</span><span class="token punctuation">.</span><span class="token function">newProxyInstance</span><span class="token punctuation">(</span><span class="token class-name">ClassLoader</span><span class="token punctuation">.</span><span class="token function">getSystemClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token class-name">AbstractRole</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        proxyRole<span class="token punctuation">.</span><span class="token function">step3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+public class Client &#123;
+    public static void main(String[] args) &#123;
+        AbstractRole realRole &#x3D; new RealRole();
+        AbstractRoleHandler handler &#x3D; new AbstractRoleHandler(realRole);
+        AbstractRole proxyRole&#x3D; (AbstractRole)Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),new Class[]&#123;AbstractRole.class&#125;,handler);
+        proxyRole.step3();
 
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>比较：</p>
@@ -794,205 +1135,641 @@ public class TestObjectDirectorImpl implements TestObjectDirector&#123;
 <li><p>角色：</p>
 </li>
 <li><p>实现方式：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Veidoo1</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">void</span> <span class="token function">veidoo1Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface Veidoo1 &#123;
+    void veidoo1Method();
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Veidoo2</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">protected</span> <span class="token class-name">Veidoo1</span> veidoo1<span class="token punctuation">;</span>
+public class Veidoo2 &#123;
+    protected Veidoo1 veidoo1;
 
-    <span class="token keyword">public</span> <span class="token class-name">Veidoo2</span><span class="token punctuation">(</span><span class="token class-name">Veidoo1</span> veidoo1<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>veidoo1 <span class="token operator">=</span> veidoo1<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    public Veidoo2(Veidoo1 veidoo1)&#123;
+        this.veidoo1 &#x3D; veidoo1;
+    &#125;
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        veidoo1<span class="token punctuation">.</span><span class="token function">veidoo1Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    public void veidoo2Method()&#123;
+        veidoo1.veidoo1Method();
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Veidoo1Classify1</span> <span class="token keyword">implements</span> <span class="token class-name">Veidoo1</span><span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">veidoo1Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"#####################"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Veidoo1Classify1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+public class Veidoo1Classify1 implements Veidoo1&#123;
+    @Override
+    public void veidoo1Method() &#123;
+        System.out.println(&quot;#####################&quot;);
+        System.out.println(&quot;Veidoo1Classify1&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Veidoo1Classify2</span> <span class="token keyword">implements</span> <span class="token class-name">Veidoo1</span><span class="token punctuation">&#123;</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">veidoo1Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"#####################"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Veidoo1Classify2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+public class Veidoo1Classify2 implements Veidoo1&#123;
+    @Override
+    public void veidoo1Method() &#123;
+        System.out.println(&quot;#####################&quot;);
+        System.out.println(&quot;Veidoo1Classify2&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Veidoo2Classify1</span> <span class="token keyword">extends</span> <span class="token class-name">Veidoo2</span><span class="token punctuation">&#123;</span>
+public class Veidoo2Classify1 extends Veidoo2&#123;
 
-    <span class="token keyword">public</span> <span class="token class-name">Veidoo2Classify1</span><span class="token punctuation">(</span><span class="token class-name">Veidoo1</span> veidoo1<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span>veidoo1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    public Veidoo2Classify1(Veidoo1 veidoo1)&#123;
+        super(veidoo1);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Veidoo2Classify1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public void veidoo2Method()&#123;
+        super.veidoo2Method();
+        System.out.println(&quot;Veidoo2Classify1&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Veidoo2Classify2</span> <span class="token keyword">extends</span> <span class="token class-name">Veidoo2</span><span class="token punctuation">&#123;</span>
+public class Veidoo2Classify2 extends Veidoo2&#123;
 
-    <span class="token keyword">public</span> <span class="token class-name">Veidoo2Classify2</span><span class="token punctuation">(</span><span class="token class-name">Veidoo1</span> veidoo1<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span>veidoo1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    public Veidoo2Classify2(Veidoo1 veidoo1)&#123;
+        super(veidoo1);
+    &#125;
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Veidoo2Classify2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+    @Override
+    public void veidoo2Method()&#123;
+        super.veidoo2Method();
+        System.out.println(&quot;Veidoo2Classify2&quot;);
+    &#125;
+&#125;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">Veidoo2</span> o1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Veidoo2Classify1</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Veidoo1Classify1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Veidoo2</span> o2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Veidoo2Classify2</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Veidoo1Classify1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Veidoo2</span> o3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Veidoo2Classify1</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Veidoo1Classify2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Veidoo2</span> o4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Veidoo2Classify2</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Veidoo1Classify2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        o1<span class="token punctuation">.</span><span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        o2<span class="token punctuation">.</span><span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        o3<span class="token punctuation">.</span><span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        o4<span class="token punctuation">.</span><span class="token function">veidoo2Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+public class Client &#123;
+    public static void main(String[] args) &#123;
+        Veidoo2 o1 &#x3D; new Veidoo2Classify1(new Veidoo1Classify1());
+        Veidoo2 o2 &#x3D; new Veidoo2Classify2(new Veidoo1Classify1());
+        Veidoo2 o3 &#x3D; new Veidoo2Classify1(new Veidoo1Classify2());
+        Veidoo2 o4 &#x3D; new Veidoo2Classify2(new Veidoo1Classify2());
+        o1.veidoo2Method();
+        o2.veidoo2Method();
+        o3.veidoo2Method();
+        o4.veidoo2Method();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h3 id="组合模式-Composite"><a href="#组合模式-Composite" class="headerlink" title="组合模式 - Composite"></a>组合模式 - Composite</h3><ol>
 <li>描述：把部分和整体的关系用树形结构来表示，从而使客户端可以使用统一的方式处理部分对象和整体对象</li>
 </ol>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/12/java-she-ji-mo-shi/" data-id="cl63lm6fa000c18vzdwha8h5y" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/07/21/fan-she-fan-xu-lie-hua/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/07/13/java-xiang-mu-fen-ceng/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JAVA项目分层</div>
-    </a>
-  
-</nav>
+                
+            </div>
+            <hr/>
 
-  
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Yangzk</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://silentspeechcoder.github.io/2021/10/12/java-she-ji-mo-shi/">https://silentspeechcoder.github.io/2021/10/12/java-she-ji-mo-shi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Yangzk</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/07/21/fan-she-fan-xu-lie-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yangzk
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/13/java-xiang-mu-fen-ceng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="JAVA项目分层">
+                        
+                        <span class="card-title">JAVA项目分层</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yangzk
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+</div>
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li></ul>
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
     </div>
-  </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
 
 
-  
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/07/21/fan-she-fan-xu-lie-hua/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/10/12/java-she-ji-mo-shi/">设计模式（Group Of Four 23）【待补充】</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/13/java-xiang-mu-fen-ceng/">JAVA项目分层</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/">MySQL数据库知识点梳理</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/29/java-ji-he/">JAVA集合</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 Yangzk<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2018-2022</span>
+            
+            <a href="/about" target="_blank">Yangzk</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">15.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/SilentSpeechCoder" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:yangzengkai_work@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1107949651" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1107949651" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
     </div>
-  </div>
 </footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
 
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
 
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    
 
+    <!-- Baidu Analytics -->
 
+    <!-- Baidu Push -->
 
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
 
-<script src="/js/script.js"></script>
+    
 
+    
 
+    <!--腾讯兔小巢-->
+    
+    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
 
-  </div>
-</body>
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('fenlei');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><a class="magnet_link_more"  href="https://silentspeechcoder.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><!-- hexo injector body_end end --></body>
+
 </html>
