@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JAVA项目分层 | SilentSpeechCoder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考阿里规范，优秀的 Java 项目代码该如何分层？来源：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;bainannan&#x2F;p&#x2F;14418277.html 1.背景说起应用分层，大部分人都会认为这个不是很简单嘛 就controller，service, mapper三层。看起来简单，很多人其实并没有把他们职责划分开，在很多代码中, controller做的逻辑比service还多, servic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA项目分层">
+<meta property="og:url" content="http://example.com/2021/07/13/java-xiang-mu-fen-ceng/index.html">
+<meta property="og:site_name" content="SilentSpeechCoder">
+<meta property="og:description" content="参考阿里规范，优秀的 Java 项目代码该如何分层？来源：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;bainannan&#x2F;p&#x2F;14418277.html 1.背景说起应用分层，大部分人都会认为这个不是很简单嘛 就controller，service, mapper三层。看起来简单，很多人其实并没有把他们职责划分开，在很多代码中, controller做的逻辑比service还多, servic">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/07/13/java-xiang-mu-fen-ceng/1626175175_1.png">
+<meta property="og:image" content="http://example.com/2021/07/13/java-xiang-mu-fen-ceng/1626175175_2.png">
+<meta property="og:image" content="http://example.com/2021/07/13/java-xiang-mu-fen-ceng/1626175175_3.png">
+<meta property="og:image" content="http://example.com/2021/07/13/java-xiang-mu-fen-ceng/1626175175_4.png">
+<meta property="og:image" content="http://example.com/2021/07/13/java-xiang-mu-fen-ceng/1626175175_5.png">
+<meta property="article:published_time" content="2021-07-13T11:19:35.000Z">
+<meta property="article:modified_time" content="2022-07-21T04:46:44.645Z">
+<meta property="article:author" content="Yangzk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/07/13/java-xiang-mu-fen-ceng/1626175175_1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SilentSpeechCoder" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SilentSpeechCoder</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JAVA项目分层" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/07/13/java-xiang-mu-fen-ceng/" class="article-date">
+  <time datetime="2021-07-13T11:19:35.000Z" itemprop="datePublished">2021-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JAVA项目分层
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考阿里规范，优秀的-Java-项目代码该如何分层？"><a href="#参考阿里规范，优秀的-Java-项目代码该如何分层？" class="headerlink" title="参考阿里规范，优秀的 Java 项目代码该如何分层？"></a>参考阿里规范，优秀的 Java 项目代码该如何分层？</h1><p>来源：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/bainannan/p/14418277.html">https://www.cnblogs.com/bainannan/p/14418277.html</a></p>
+<h3 id="1-背景"><a href="#1-背景" class="headerlink" title="1.背景"></a>1.背景</h3><p>说起应用分层，大部分人都会认为这个不是很简单嘛 就controller，service, mapper三层。看起来简单，很多人其实并没有把他们职责划分开，在很多代码中, controller做的逻辑比service还多, service往往当成透传了。<br>这其实是很多人开发代码都没有注意到的地方，反正功能也能用，至于放哪无所谓呗。这样往往造成后面代码无法复用，层级关系混乱，对后续代码的维护非常麻烦。<br>的确在这些人眼中分层只是一个形式，前辈们的代码这么写的，其他项目代码这么写的，那么我也这么跟着写。<br>但是在真正的团队开发中每个人的习惯都不同，写出来的代码必然带着自己的标签，有的人习惯controller写大量的业务逻辑，有的人习惯在service中之间调用远程服务，这样就导致了每个人的开发代码风格完全不同。<br>后续其他人修改的时候，一看，我靠这个人写的代码和我平常的习惯完全不同，修改的时候到底是按着自己以前的习惯改，还是跟着前辈们走，这又是个艰难的选择，选择一旦有偏差，你的后辈又维护你的代码的时候，恐怕就要骂人了。<br>所以一个好的应用分层需要具备以下几点:</p>
+<ul>
+<li>方便后续代码进行维护扩展。</li>
+<li>分层的效果需要让整个团队都接受</li>
+<li>各个层职责边界清晰<h3 id="2-如何进行分层"><a href="#2-如何进行分层" class="headerlink" title="2.如何进行分层"></a>2.如何进行分层</h3><h5 id="2-1阿里规范"><a href="#2-1阿里规范" class="headerlink" title="2.1阿里规范"></a>2.1阿里规范</h5>在阿里的编码规范中约束的分层如下:<img src="/2021/07/13/java-xiang-mu-fen-ceng/1626175175_1.png" class="">
+开放接口层: 可直接封装 Service 方法暴露成 RPC 接口;通过 Web 封装成 http 接口;进行 网关安全控制、流量控制等。<br>终端显示层: 各个端的模板渲染并执行显示的层。当前主要是 velocity 渲染，JS 渲染， JSP 渲染，移动端展示等。<br>Web 层: 主要是对访问控制进行转发，各类基本参数校验，或者不复用的业务简单处理等。<br>Service 层: 相对具体的业务逻辑服务层。<br>Manager 层: 通用业务处理层，它有如下特征:1. 对第三方平台封装的层，预处理返回结果及转化异常信息;2. 对Service层通用能力的下沉，如缓存方案、中间件通用处理;3. 与DAO层交互，对多个DAO的组合复用。<br>DAO 层: 数据访问层，与底层 MySQL、Oracle、Hbase 进行数据交互。<br>阿里巴巴规约中的分层比较清晰简单明了，但是描述得还是过于简单了，以及service层和manager层有很多同学还是有点分不清楚之间的关系，就导致了很多项目中根本没有Manager层的存在。下面介绍一下具体业务中应该如何实现分层<h5 id="2-2优化分层"><a href="#2-2优化分层" class="headerlink" title="2.2优化分层"></a>2.2优化分层</h5>从我们的业务开发中总结了一个较为的理想模型,这里要先说明一下由于我们的rpc框架选用的是thrift可能会比其他的一些rpc框架例如dubbo会多出一层,作用和controller层类似<img src="/2021/07/13/java-xiang-mu-fen-ceng/1626175175_2.png" class=""></li>
+</ul>
+<p>1.最上层controller和TService是我们阿里分层规范里面的第一层: 轻业务逻辑，参数校验，异常兜底。通常这种接口可以轻易更换接口类型,所以业务逻辑必须要轻，甚至不做具体逻辑。<br>2.Service：业务层，复用性较低，这里推荐每一个controller方法都得对应一个service,不要把业务编排放在controller中去做，为什么呢？<br>如果我们把业务编排放在controller层去做的话，如果以后我们要接入thrift,我们这里又需要把业务编排在做一次，这样会导致我们每接入一个入口层这个代码都得重新复制一份如下图所示:</p>
+<img src="/2021/07/13/java-xiang-mu-fen-ceng/1626175175_3.png" class="">
+<p>这样大量的重复工作必定会导致我们开发效率下降，所以我们需要把业务编排逻辑都得放进service中去做:</p>
+<img src="/2021/07/13/java-xiang-mu-fen-ceng/1626175175_4.png" class="">
+<p>3.Mannager：可复用逻辑层。这里的Mannager可以是单个服务的，比如我们的cache,mq等等，当然也可以是复合的，当你需要调用多个Mannager的时候，这个可以合为一个Mannager，比如逻辑上的连表查询等。如果是httpMannager或rpcMannager需要在这一层做一些数据转换<br>4.DAO：数据库访问层。主要负责“操作数据库的某张表，映射到某个java对象”，dao应该只允许自己的Service访问，其他Service要访问我的数据必须通过对应的Service。</p>
+<h3 id="3-分层领域模型的转换"><a href="#3-分层领域模型的转换" class="headerlink" title="3.分层领域模型的转换"></a>3.分层领域模型的转换</h3><p>在阿里巴巴编码规约中列举了下面几个领域模型规约:</p>
+<ul>
+<li>DO（Data Object）：与数据库表结构一一对应，通过DAO层向上传输数据源对象。</li>
+<li>DTO（Data Transfer Object）：数据传输对象，Service或Manager向外传输的对象。</li>
+<li>BO（Business Object）：业务对象。由Service层输出的封装业务逻辑的对象。</li>
+<li>AO（Application Object）：应用对象。在Web层与Service层之间抽象的复用对象模型，极为贴近展示层，复用度不高。</li>
+<li>VO（View Object）：显示层对象，通常是Web向模板渲染引擎层传输的对象。</li>
+<li>Query：数据查询对象，各层接收上层的查询请求。注意超过2个参数的查询封装，禁止使用Map类来传输。</li>
+</ul>
+<p>每一个层基本都自己对应的领域模型，这样就导致了有些人过于追求每一层都是用自己的领域模型，这样就导致了一个对象可能会出现3次甚至4次转换在一次请求中，当返回的时候同样也会出现3-4次转换，这样有可能一次完整的请求-返回会出现很多次对象转换。如果在开发中真的按照这么来，恐怕就别写其他的了，一天就光写这个重复无用的逻辑算了吧。<br>所以我们得采取一个折中的方案:</p>
+<ol>
+<li>允许Service/Manager可以操作数据领域模型，对于这个层级来说，本来自己做的工作也是做的是业务逻辑处理和数据组装。</li>
+<li>Controller/TService层的领域模型不允许传入DAO层，这样就不符合职责划分了。</li>
+<li>同理，不允许DAO层的数据传入到Controller/TService.</li>
+</ol>
+<img src="/2021/07/13/java-xiang-mu-fen-ceng/1626175175_5.png" class="">
+<h3 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h3><p>总的来说业务分层对于代码规范是比较重要，决定着以后的代码是否可复用，是否职责清晰，边界清晰。<br>当然这种分层其实见仁见智, 团队中的所有人的分层习惯也不同，所以很难权衡出一个标准的准则，总的来说只要满足职责逻辑清晰，后续维护容易，就是好的分层。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/13/java-xiang-mu-fen-ceng/" data-id="cl63lh9bp0008kkvzherg6igq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/10/12/java-she-ji-mo-shi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          设计模式（Group Of Four 23）【待补充】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MySQL数据库知识点梳理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/21/fan-she-fan-xu-lie-hua/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/12/java-she-ji-mo-shi/">设计模式（Group Of Four 23）【待补充】</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/13/java-xiang-mu-fen-ceng/">JAVA项目分层</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/">MySQL数据库知识点梳理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/29/java-ji-he/">JAVA集合</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Yangzk<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
