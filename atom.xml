@@ -205,7 +205,7 @@
     <link href="https://silentspeechcoder.github.io/2019/01/08/shell-jiao-ben-bao-cuo/"/>
     <id>https://silentspeechcoder.github.io/2019/01/08/shell-jiao-ben-bao-cuo/</id>
     <published>2019-01-08T03:26:57.000Z</published>
-    <updated>2022-07-27T17:05:57.627Z</updated>
+    <updated>2022-07-28T03:25:51.257Z</updated>
     
     <content type="html"><![CDATA[<p>shell脚本报错 “syntax error near unexpected token `fi’”</p><p>1.cat -v mysqlmonitor.sh命令查看代码<br>2.linux里面查看后自动在换行符后面带上了^M的标识<br>3.用vim打开文件，在命令行模式下输入:set ff=unix</p>]]></content>
     
@@ -218,12 +218,10 @@
     
     
     
-    <category term="工具" scheme="https://silentspeechcoder.github.io/categories/tool/"/>
+    <category term="问题记录" scheme="https://silentspeechcoder.github.io/categories/bugfix/"/>
     
     
     <category term="Linux" scheme="https://silentspeechcoder.github.io/tags/linux/"/>
-    
-    <category term="问题记录" scheme="https://silentspeechcoder.github.io/tags/bugrecord/"/>
     
   </entry>
   
