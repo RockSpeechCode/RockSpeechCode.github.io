@@ -410,14 +410,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    21 分
                 </div>
                 
 
@@ -1220,7 +1220,169 @@ public class Client &#123;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h3 id="组合模式-Composite"><a href="#组合模式-Composite" class="headerlink" title="组合模式 - Composite"></a>组合模式 - Composite</h3><ol>
-<li>描述：把部分和整体的关系用树形结构来表示，从而使客户端可以使用统一的方式处理部分对象和整体对象</li>
+<li><p>描述：把部分和整体的关系用树形结构来表示，从而使客户端可以使用统一的方式处理部分对象和整体对象</p>
+</li>
+<li><p>角色：</p>
+<ul>
+<li>抽象构件角色 - Component：定义了叶子和容器构件的共同点</li>
+<li>叶子构件角色 - Leaf：无子节点</li>
+<li>容器构件角色 - Composite：有容器特征，可以包含子节点</li>
+</ul>
+</li>
+<li><p>应用场景：操作系统的资源管理器；xml文件解析；oa组织树</p>
+</li>
+<li><p>实现方式：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface Component &#123;
+    void operation();
+&#125;
+
+public class CompositeImpl implements Component&#123;
+    private String name;
+    private List&lt;Component&gt; list &#x3D; new ArrayList&lt;&gt;();
+
+    public CompositeImpl(String name) &#123;
+        this.name &#x3D; name;
+    &#125;
+
+    public void add(Component component)&#123;
+        list.add(component);
+    &#125;
+
+    public void remove(Component component)&#123;
+        list.remove(component);
+    &#125;
+
+    public Component getChild(int index)&#123;
+        return list.get(index);
+    &#125;
+
+    @Override
+    public void operation() &#123;
+        System.out.println(&quot;CompositeImpl&quot;+name);
+        for(Component c:list)&#123;
+            c.operation();
+        &#125;
+    &#125;
+&#125;
+public class LeafOneImpl implements Component&#123;
+    private String name;
+
+    public LeafOneImpl(String name) &#123;
+        this.name &#x3D; name;
+    &#125;
+
+    @Override
+    public void operation() &#123;
+        System.out.println(&quot;ComponentImpl &quot; + name);
+    &#125;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+
+    public void setName(String name) &#123;
+        this.name &#x3D; name;
+    &#125;
+&#125;
+
+public class LeafTwoImpl implements Component&#123;
+    private String name;
+
+    public LeafTwoImpl(String name) &#123;
+        this.name &#x3D; name;
+    &#125;
+
+    @Override
+    public void operation() &#123;
+        System.out.println(&quot;ComponentTwoImpl &quot; + name);
+    &#125;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+
+    public void setName(String name) &#123;
+        this.name &#x3D; name;
+    &#125;
+&#125;
+
+public class Client &#123;
+    public static void main(String[] args) &#123;
+        Component c1 &#x3D; new LeafOneImpl(&quot;叶子节点1&quot;);
+        Component c2 &#x3D; new LeafTwoImpl(&quot;叶子节点2&quot;);
+        CompositeImpl c3 &#x3D; new CompositeImpl(&quot;容器节点&quot;);
+        CompositeImpl c4 &#x3D; new CompositeImpl(&quot;子容器节点&quot;);
+
+        c3.add(c1);
+        c4.add(c2);
+        c2.operation();
+        c3.operation();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h3 id="装饰模式-Decorator"><a href="#装饰模式-Decorator" class="headerlink" title="装饰模式 - Decorator"></a>装饰模式 - Decorator</h3><ol>
+<li><p>描述：动态地为一个对象增加新的功能，使用对象的关联关系代替继承关系，无需通过继承增加子类就能扩展对象的新功能。同时避免类型体系的快速膨胀。</p>
+</li>
+<li><p>角色：</p>
+<ul>
+<li>抽象构件角色 - Component：真实对象和装饰对象具有相同的接口</li>
+<li>具体构件角色 - ConcreteComponent：真实对象</li>
+<li>装饰角色 - Decorator：接受所有客户端的请求，并把请求转发给真实的对象。在调用真实对象前后增加新的功能</li>
+<li>具体装饰角色 - ConcreteDecorator：负责给构件对象增加新功能</li>
+</ul>
+</li>
+<li><p>应用场景：io流；</p>
+</li>
+<li><p>实现方式：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface Component &#123;
+    void run();
+&#125;
+
+public class ConcreteComponent implements Component&#123;
+    @Override
+    public void run() &#123;
+        System.out.println(&quot;ConcreteComponent run&quot;);
+    &#125;
+&#125;
+
+public class Decorator implements Component&#123;
+    private Component component;
+
+    public Decorator(Component component)&#123;
+        this.component &#x3D; component;
+    &#125;
+
+    @Override
+    public void run() &#123;
+        System.out.println(&quot;Decorator run&quot;);
+        component.run();
+    &#125;
+&#125;
+
+public class ConcreteDecorator extends Decorator&#123;
+    public ConcreteDecorator(Component component) &#123;
+        super(component);
+        addMethod();
+    &#125;
+
+    public void addMethod()&#123;
+        System.out.println(&quot;ConcreteDecorator addMethod&quot;);
+    &#125;
+&#125;
+
+public class Client &#123;
+    public static void main(String[] args) &#123;
+        ConcreteComponent concreteComponent &#x3D; new ConcreteComponent();
+        concreteComponent.run();
+        &#x2F;&#x2F;增加新功能
+        ConcreteDecorator concreteDecorator &#x3D; new ConcreteDecorator(concreteComponent);
+        concreteDecorator.addMethod();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h3 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式 -"></a>外观模式 -</h3><ol>
+<li>描述：为子系统提供统一的入口，封装子系统的复杂性，便于客户端调用</li>
+<li></li>
 </ol>
 
                 
@@ -1554,7 +1716,7 @@ public class Client &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">15.2k</span>
+                        class="white-color">17.3k</span>
             
             
             
