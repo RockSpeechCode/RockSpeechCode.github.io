@@ -4,8 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SilentSpeechCoder">
-    <meta name="description" content="">
+    <meta name="keywords" content="JAVA注解与反射, SilentSpeechCoder">
+    <meta name="description" content="JAVA注解与反射注解 - Annotation1. 描述
+不是程序本身，可以对程序做出解释
+可以被其他程序读取
+
+2. 格式​    @注解名(参数值|value={“参数值”})
+3. 内置注解
+@Override
+修饰方法。表示一个方">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +26,7 @@
 
     
 
-    <title>SilentSpeechCoder</title>
+    <title>JAVA注解与反射 | SilentSpeechCoder</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -247,12 +254,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">JAVA注解与反射</h1>
                 </div>
             </div>
         </div>
@@ -366,12 +373,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">JAVA</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/program/" class="post-category">
+                                编程
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -380,7 +400,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-21
+                    2022-02-07
                 </div>
                 
 
@@ -389,14 +409,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -419,7 +439,207 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="JAVA注解与反射"><a href="#JAVA注解与反射" class="headerlink" title="JAVA注解与反射"></a>JAVA注解与反射</h1><h2 id="注解-Annotation"><a href="#注解-Annotation" class="headerlink" title="注解 - Annotation"></a>注解 - Annotation</h2><h3 id="1-描述"><a href="#1-描述" class="headerlink" title="1. 描述"></a>1. 描述</h3><ul>
+<li>不是程序本身，可以对程序做出解释</li>
+<li>可以被其他程序读取</li>
+</ul>
+<h3 id="2-格式"><a href="#2-格式" class="headerlink" title="2. 格式"></a>2. 格式</h3><p>​    @注解名(参数值|value={“参数值”})</p>
+<h3 id="3-内置注解"><a href="#3-内置注解" class="headerlink" title="3. 内置注解"></a>3. 内置注解</h3><ul>
+<li><p>@Override</p>
+<p>修饰方法。表示一个方法声明打算重写父类方法</p>
+</li>
+<li><p>@Deprecated</p>
+<p>修饰方法属性和类。表示不鼓励程序员使用这样的元素</p>
+</li>
+<li><p>SuppressWarnings</p>
+<p>用来抑制编译时的警告信息</p>
+</li>
+</ul>
+<h3 id="4-元注解"><a href="#4-元注解" class="headerlink" title="4. 元注解"></a>4. 元注解</h3><p>​    负责注解其他注解<br>​    四个标准meta-annocation类型：</p>
+<ul>
+<li><p>@Target</p>
+<p>描述注解的使用范畴</p>
+<p>修饰范围：</p>
+<ul>
+<li>PACKAGE 包</li>
+<li>TYPE 类、接口、枚举、Annocation</li>
+<li>CONSTRUCTOR 类构造器</li>
+<li>FIELD 域</li>
+<li>METHOD 方法</li>
+<li>LOCAL_VARIABLE 局部变量</li>
+<li>PARAMETER 参数</li>
+</ul>
+</li>
+<li><p>@Retention</p>
+<p>表示需要在什么级别保存该注释信息，用于描述注解的生命周期</p>
+<p>取值：</p>
+<ul>
+<li>SOURCE 源文件中有效</li>
+<li>CLASS class文件中有效</li>
+<li>RUNTIME 运行时有效，此时可以被反射机制读取（自定义一般用RUNTIME）</li>
+</ul>
+</li>
+<li><p>@Documented</p>
+</li>
+<li><p>@Inherited</p>
+</li>
+</ul>
+<h3 id="5-自定义注解"><a href="#5-自定义注解" class="headerlink" title="5. 自定义注解"></a>5. 自定义注解</h3><ul>
+<li>@interface自动继承了java.lang.annocation.Annocation接口</li>
+<li>每一个方法实际上是声明了一个配置参数</li>
+<li>方法名称就是参数名称</li>
+<li>返回值类型就是参数的类型（只能是基本类型、Class、String、enum）</li>
+<li>可以通过default来声明参数的默认值</li>
+<li>如果只有一个参数成员，一般参数名为value</li>
+</ul>
+<h3 id="6-反射读取注解"><a href="#6-反射读取注解" class="headerlink" title="6. 反射读取注解"></a>6. 反射读取注解</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">@TestObjectTable(&quot;tb_test_object&quot;)
+public class TestObject &#123;
+    @TestObjectField(columnName &#x3D; &quot;id&quot;,type &#x3D; &quot;int&quot;,length &#x3D; 10)
+    private int id;
+    @TestObjectField(columnName &#x3D; &quot;name&quot;,type &#x3D; &quot;String&quot;,length &#x3D; 50)
+    private String name;
+&#125;
+
+@Target(value&#x3D; &#123;ElementType.FIELD&#125;)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface TestObjectField &#123;
+    String columnName();
+    String type();
+    int length();
+&#125;
+
+@Target(value&#x3D; &#123;ElementType.TYPE&#125;)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface TestObjectTable &#123;
+    String value();
+&#125;
+
+public static void main(String[] args) &#123;
+    try&#123;
+        Class clazz &#x3D; Class.forName(&quot;MyAnnotation.TestObject&quot;);
+        &#x2F;&#x2F; 获得类的所有有效注解
+        Annotation[] annotations &#x3D;  clazz.getAnnotations();
+        for(Annotation a:annotations)&#123;
+            System.out.println(a);
+        &#125;
+        &#x2F;&#x2F; 获得指定注解
+        System.out.println(clazz.getAnnotation(TestObjectTable.class));
+
+        &#x2F;&#x2F; 获得类的属性的注解
+        Field f &#x3D; clazz.getDeclaredField(&quot;name&quot;);
+        TestObjectField testObjectField &#x3D;  f.getAnnotation(TestObjectField.class);
+        System.out.println(testObjectField.columnName());
+        System.out.println(testObjectField.type());
+        System.out.println(testObjectField.length());
+    &#125; catch (Exception e)&#123;
+        e.printStackTrace();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="反射-reflection"><a href="#反射-reflection" class="headerlink" title="反射 - reflection"></a>反射 - reflection</h2><p>​    程序在运行时加载使用编译期间完全未知的类。在运行状态中，可以动态加载一个只有名称的类，对于任意一个已加载的类，都能够知道这个类的所有属性和方法，对于任意一个对象，都能调用任意一个方法和属性</p>
+<pre class="line-numbers language-none"><code class="language-none">Class c &#x3D; Class.forName(&quot;类名包路径&quot;); &#x2F;&#x2F; java.lang.Class，Reflection的根源<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>​    类加载完后，在堆内存中生成一个Class类型的对象，包含完整的类的结构的信息</p>
+<ul>
+<li><p>动态语言：程序运行时可以改变程序结构和变量类型。JAVA不是动态语言但是有一定的动态性</p>
+</li>
+<li><p>实现：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class TestObject &#123;
+
+    public TestObject()&#123;
+
+    &#125;
+
+    public TestObject(int id,String name)&#123;
+        this.id &#x3D; id;
+        this.name &#x3D; name;
+    &#125;
+    private int id;
+    private String name;
+&#125;
+
+public class Demo &#123;
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, NoSuchMethodException &#123;
+        String path &#x3D; &quot;Reflection.TestObject&quot;;
+        &#x2F;&#x2F; 方法一
+        Class clazz &#x3D; Class.forName(path);
+        &#x2F;&#x2F; 方法二
+        Class clazz2 &#x3D; path.getClass();
+
+        System.out.println(clazz);
+        &#x2F;&#x2F; 一个类只有一个class对象
+        System.out.println(clazz &#x3D;&#x3D; clazz2); &#x2F;&#x2F; true
+        System.out.println(clazz.hashCode());
+        System.out.println(clazz.getName());&#x2F;&#x2F; 获得包名
+        System.out.println(clazz.getSimpleName());&#x2F;&#x2F; 获得类名
+        System.out.println(clazz.hashCode());
+        System.out.println(clazz.getFields().length);&#x2F;&#x2F; 只能获得public
+        System.out.println(clazz.getDeclaredFields().length);&#x2F;&#x2F; 获得所有字段
+        System.out.println(clazz.getDeclaredField(&quot;name&quot;));&#x2F;&#x2F; 获得所有字段
+        System.out.println(clazz.getMethods());&#x2F;&#x2F; 获得public方法
+        System.out.println(clazz.getDeclaredMethod(&quot;getName&quot;,null));&#x2F;&#x2F; 获得方法,参数类型区分
+        System.out.println(clazz.getDeclaredMethod(&quot;setName&quot;,String.class));&#x2F;&#x2F; 获得方法,参数类型区分
+        System.out.println(clazz.getDeclaredConstructor(int.class,String.class));&#x2F;&#x2F; 获得有参构造器
+    &#125;
+&#125;
+
+public class DynamicReflectionDemo &#123;
+    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException &#123;
+        String path &#x3D; &quot;Reflection.TestObject&quot;;
+        Class&lt;TestObject&gt; clazz &#x3D; (Class&lt;TestObject&gt;)Class.forName(path);
+        &#x2F;&#x2F; 通过动态调用构造方法，构造对象
+        TestObject test&#x3D; clazz.newInstance(); &#x2F;&#x2F; java bean需要无参构造器
+        System.out.println(test);
+        Constructor&lt;TestObject&gt; c &#x3D; clazz.getDeclaredConstructor(int.class,String.class);
+        TestObject testWithParam &#x3D; c.newInstance(1,&quot;测试&quot;);
+        System.out.println(testWithParam.getName());&#x2F;&#x2F; 有参构造器创建对象
+        &#x2F;&#x2F; 通过反射API调用普通方法
+        Method method &#x3D; clazz.getDeclaredMethod(&quot;setName&quot;,String.class);
+        method.invoke(testWithParam,&quot;反射调用普通方法测试&quot;);
+        System.out.println(testWithParam.getName());
+        &#x2F;&#x2F; 通过反射API操作属性
+        Field f &#x3D; clazz.getDeclaredField(&quot;name&quot;);
+        f.setAccessible(true); &#x2F;&#x2F; 标记不需要做安全检察，可以直接访问
+        f.set(testWithParam,&quot;反射操作属性测试&quot;);
+        System.out.println(testWithParam.getName());
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>setAccessible</p>
+<p>性能问题：设为true取消安全检查，禁止安全检查可以提高反射的运行速度</p>
+</li>
+<li><p>动态编译</p>
+<ul>
+<li><p>通过runtime调用javac，启用新的进程取操作</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public void runTime() throws IOException &#123;
+    Runtime run &#x3D; Runtime.getRuntime();
+    Process process &#x3D; run.exec(&quot;java -cp d:&#x2F;myjava HelloWorld&quot;);
+    InputStream in &#x3D; process.getInputStream();
+    BufferedReader reader &#x3D; new BufferedReader(new InputStreamReader(in));
+    String info &#x3D; &quot;&quot;;
+    while ((info &#x3D; reader.readLine())!&#x3D;null)&#123;
+        System.out.println(info);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>javaCompiler动态编译</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public static int compileFile(String sourceFile)&#123;
+    JavaCompiler compiler &#x3D; ToolProvider.getSystemJavaCompiler();
+    int result &#x3D; compiler.run(null,null,null,sourceFile);
+    System.out.println(result &#x3D;&#x3D; 0?&quot;success&quot;:&quot;failed&quot;);
+    return result;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"> public void reflectCompile() throws NoSuchMethodException, MalformedURLException, ClassNotFoundException, InvocationTargetException, IllegalAccessException &#123;
+    URL[] urls &#x3D; new URL[]&#123;new URL(&quot;file:&#x2F;&quot;+ &quot;D:&#x2F;myjava&#x2F;&quot;)&#125;;
+    URLClassLoader loader &#x3D; new URLClassLoader(urls);
+    Class c &#x3D; loader.loadClass(&quot;HelloWorld&quot;);
+    c.getMethod(&quot;main&quot;,String[].class).invoke(null,(Object) new String[]&#123;&quot;aa&quot;,&quot;bb&quot;&#125;);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -445,7 +665,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://silentspeechcoder.github.io/2022/07/21/fan-she-fan-xu-lie-hua/">https://silentspeechcoder.github.io/2022/07/21/fan-she-fan-xu-lie-hua/</a>
+                    <a href="https://silentspeechcoder.github.io/2022/02/07/java-zhu-jie/">https://silentspeechcoder.github.io/2022/02/07/java-zhu-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -482,7 +702,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">JAVA</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -528,17 +752,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/07/28/java-zhu-jie/">
+                <a href="/2022/02/07/java-zhu-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="JAVA注解与反射">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">JAVA注解与反射</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -548,16 +773,29 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Yangzk
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/program/" class="post-category">
+                                    编程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">JAVA</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -747,7 +985,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.3k</span>
+                        class="white-color">32.7k</span>
             
             
             
@@ -988,7 +1226,7 @@ $(function () {
 
 <!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
     var parent = document.getElementById('fenlei');
-    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://silentspeechcoder.github.io/categories/program/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 编程 (7)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://silentspeechcoder.github.io/categories/bugfix/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 问题记录 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://silentspeechcoder.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://silentspeechcoder.github.io/categories/program/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 编程 (13)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://silentspeechcoder.github.io/categories/bugfix/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 问题记录 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://silentspeechcoder.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
     console.log('已挂载magnet')
     parent.insertAdjacentHTML("afterbegin",child)}
      </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
