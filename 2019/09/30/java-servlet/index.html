@@ -4,12 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Tomcat启动乱码, SilentSpeechCoder">
-    <meta name="description" content="Tomcat启动乱码修改tomcat的conf下的logging.properties中的参数，
-java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
+    <meta name="keywords" content="Servlet, SilentSpeechCoder">
+    <meta name="description" content="ServletC/S、B/S架构
+Client/Server架构
+在客户端安装特定软件
+图形显示效果好
+服务器功能升级，需要客户端也同步升级，不利于维护
 
-重启
-">
+
+Browser/Server架构
+无需安装客户端，浏览器可访问
+功能升级，只需升级">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +28,7 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
 
     
 
-    <title>Tomcat启动乱码 | SilentSpeechCoder</title>
+    <title>Servlet | SilentSpeechCoder</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -251,12 +256,12 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Tomcat启动乱码</h1>
+                    <h1 class="description center-align post-title">Servlet</h1>
                 </div>
             </div>
         </div>
@@ -384,8 +389,8 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/bugfix/" class="post-category">
-                                问题记录
+                            <a href="/categories/program/" class="post-category">
+                                编程
                             </a>
                         
                     </div>
@@ -397,7 +402,7 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-28
+                    2019-09-30
                 </div>
                 
 
@@ -406,14 +411,14 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    24
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    10 分
                 </div>
                 
 
@@ -436,10 +441,408 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Tomcat启动乱码"><a href="#Tomcat启动乱码" class="headerlink" title="Tomcat启动乱码"></a>Tomcat启动乱码</h1><p>修改tomcat的conf下的logging.properties中的参数，</p>
-<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties">java.util.logging.ConsoleHandler.encoding &#x3D; GBK<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h2 id="C-S、B-S架构"><a href="#C-S、B-S架构" class="headerlink" title="C/S、B/S架构"></a>C/S、B/S架构</h2><ol>
+<li>Client/Server架构<ul>
+<li>在客户端安装特定软件</li>
+<li>图形显示效果好</li>
+<li>服务器功能升级，需要客户端也同步升级，不利于维护</li>
+</ul>
+</li>
+<li>Browser/Server架构<ul>
+<li>无需安装客户端，浏览器可访问</li>
+<li>功能升级，只需升级服务器端</li>
+<li>图形显示效果一般</li>
+<li>需要通过http协议访问</li>
+</ul>
+</li>
+</ol>
+<h2 id="常见服务器"><a href="#常见服务器" class="headerlink" title="常见服务器"></a>常见服务器</h2><ol>
+<li>Tomcat 免费开源、支持servlet和JSP规范</li>
+<li>jetty 运行效率比Tomcat高</li>
+<li>TODO 后续补充…</li>
+</ol>
+<h2 id="Tomcat目录结构"><a href="#Tomcat目录结构" class="headerlink" title="Tomcat目录结构"></a>Tomcat目录结构</h2><ul>
+<li>bin 存放二进制可执行文件</li>
+<li>conf 存放配置信息</li>
+<li>lib 类库，jar包</li>
+<li>logs 日志文件</li>
+<li>temp 运行时产生的临时数据</li>
+<li>webapps 存放web项目</li>
+<li>work 运行时生成的文件</li>
+</ul>
+<h2 id="Servlet运行测试"><a href="#Servlet运行测试" class="headerlink" title="Servlet运行测试"></a>Servlet运行测试</h2><ol>
+<li><p>概念：</p>
+<p>Server Applet的简称，是服务端的程序，可交互式的处理客户端发送到服务端的请求，并完成操作响应。</p>
+</li>
+<li><p>作用：</p>
+<ul>
+<li>接收客户端请求，完成操作</li>
+<li>动态生成网页</li>
+<li>将包含操作结果的动态网页响应给客户端</li>
+</ul>
+</li>
+<li><p>开发环境：</p>
+<p>lib/servlet-api.jar配置到classpath中</p>
+</li>
+<li><p>实现Servlet的五个方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; Tomcat10的servlet-api.jar下包名改成了jakarta
+import jakarta.servlet.*;
+import java.io.IOException;
 
-<p>重启</p>
+public class MyServlet implements Servlet &#123;
+    public void init(ServletConfig servletConfig) throws ServletException &#123;
+
+    &#125;
+
+    public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException &#123;
+
+    &#125;
+
+    public void destroy()&#123;
+
+    &#125;
+
+    public String getServletInfo()&#123;
+        return null;
+    &#125;
+
+    public ServletConfig getServletConfig()&#123;
+        return null;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>配置web.xml</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span> 
+<span class="token comment">&lt;!--配置Servlet --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>myServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-class</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-class</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!--配置Servlet 正整数或0则在servlet加载时执行，值越小优先级越高。未配置或负数则在servlet被请求时再加载--></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>load-on-standup</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>load-on-standup</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- 对servlet做映射 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-mapping</span><span class="token punctuation">></span></span>
+	<span class="token comment">&lt;!-- 与servelet的name一致--></span>
+  	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>myServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/myservlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>重启Tomcat，访问localhost:8080/myWeb/myservlet</p>
+</li>
+</ol>
+<h2 id="IDEA部署Tomcat"><a href="#IDEA部署Tomcat" class="headerlink" title="IDEA部署Tomcat"></a>IDEA部署Tomcat</h2><img src="/2019/09/30/java-servlet/image-1.png" class="">
+
+<img src="/2019/09/30/java-servlet/image-2.png" class="">
+
+<img src="/2019/09/30/java-servlet/image-3.png" class="">
+
+
+
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><ol>
+<li><p>描述：超文本传输协议，给予请求和响应模式的、无状态的、应用层的协议，运行于TCP协议基础之上。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>支持客户端/服务器模式</li>
+<li>简单快速：客户端指向服务器发送请求方法和路径，服务器即可响应数据，通信速度很快</li>
+<li>灵活：http允许传输任意类型的数据，传输的数据类型由Content-type标识</li>
+<li>无连接：每次TCP连接只处理一个或多个请求，服务器处理完请求即断开连接，节省时间。（HTTP1.1会等几秒断开，如果有新连接则暂时不断）</li>
+<li>无状态：HTTP协议是无状态协议，对事务处理没有记忆能力</li>
+<li>HTTP1.1：一个TCP连接上可以传送多个HTTP请求，多个请求和响应可以重叠进行，增加更多的响应头和请求头，Connection报头来控制</li>
+</ul>
+</li>
+<li><p>通信流程：</p>
+<ul>
+<li>客户端与服务器建立连接（三次握手）</li>
+<li>客户端向服务端发送请求</li>
+<li>服务器接收请求，并根据请求返回响应为文件作为应答</li>
+<li>客户端与服务器关闭连接（四次挥手）</li>
+</ul>
+</li>
+<li><p>请求报文组成：</p>
+<ul>
+<li>请求行：请求方法/地址 URI协议/版本</li>
+<li>请求头：request header</li>
+<li>空行</li>
+<li>请求正文</li>
+</ul>
+</li>
+<li><p>响应报文组成：</p>
+<ul>
+<li>状态行</li>
+<li>响应头 response header</li>
+<li>空行</li>
+<li>响应正文</li>
+</ul>
+</li>
+</ol>
+<h2 id="Servlet-1"><a href="#Servlet-1" class="headerlink" title="Servlet"></a>Servlet</h2><ol>
+<li><p>核心接口和类</p>
+<p>除了实现Servlet接口，还可以通过继承GenericServlet或HttpServlet类实现</p>
+</li>
+<li><p>Servlet接口</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public void init(ServletConfig servletConfig);
+public void service(ServletRequest request, ServletResponse response);
+public void destroy();
+public String getServletInfo();
+public ServletConfig getServletConfig();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>GenericServlet抽象类</p>
+<p>提供了init()和destroy()的简单实现，只需继承后重写service()方法</p>
+</li>
+<li><p>HttpServlet类（推荐）</p>
+<p>与协议有关的实现，继承了GenericServlet。HTTPServlet子类通过service()方法判断请求类型查找子类重写的方法。HTTPServlet子类至少重写一个方法：doGet、doPost、doPut、doDelete</p>
+</li>
+</ol>
+<h2 id="注解（Servlet-3-0后支持）"><a href="#注解（Servlet-3-0后支持）" class="headerlink" title="注解（Servlet 3.0后支持）"></a>注解（Servlet 3.0后支持）</h2><p>@WebServlet(name,value,urlPatterns,loadOnStartup)</p>
+<ul>
+<li>name：同<servlet-name></li>
+<li>value：同<url-pattern>，可配置多个</li>
+<li>urlPatterns：同value，不能同时使用</li>
+<li>loadOnStartup：同<load-on-startup></li>
+</ul>
+<h2 id="Servlet注解"><a href="#Servlet注解" class="headerlink" title="Servlet注解"></a>Servlet注解</h2><ol>
+<li><p>request对象</p>
+<ul>
+<li><p>get明文传递，效率高，数据量小，不安全；post密文传递，数据量大，安全，效率低</p>
+</li>
+<li><p>主要方法</p>
+<ul>
+<li>String getParameter(String name) ：根据表单组件名称获取提交数据</li>
+<li>void setCharacterEncoding(String charset)：指定每个请求的编码</li>
+<li>getRequestDispatcher(“/otherServlet”)：转发跳转</li>
+<li>setAttribute(key,value)：存数据</li>
+<li>getAttribute(key)：取数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>response对象</p>
+<ul>
+<li><p>主要方法</p>
+<ul>
+<li>setHeader(String name,String value)：设置响应头</li>
+<li>setContentType(String type)：设置响应类型和响应式的编码格式</li>
+<li>setCharacterEncoding(String charset)：设置服务端响应内容的编码格式</li>
+<li>PrintWriter getWriter()：获取字符输出流</li>
+<li>sendRedirect(String targetURI)：页面重定向跳转</li>
+</ul>
+</li>
+<li><p>中文乱码</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">res.setCharacterEncoding(&quot;UTF-8&quot;);
+res.setHeader(&quot;Content-Type&quot;:&quot;text&#x2F;html;charset&#x3D;UTF-8&quot;);
+res.setContentType(&quot;text&#x2F;html;charset&#x3D;UTF-8&quot;);&#x2F;&#x2F;推荐<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h2 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h2><ul>
+<li>服务器行为，浏览器只做了一次请求，浏览器地址不变</li>
+<li>转发之间传输的信息不会丢失</li>
+<li>只能转发给统一个web应用下的组件</li>
+</ul>
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><ul>
+<li>客户端行为，浏览器做了两次请求，浏览器地址栏改变</li>
+<li>response没有作用域，两次请求的数据无法共享，信息会丢失</li>
+<li>?key=value传递明文数据，getParameter(key)取数据</li>
+<li>可以重定向到任何资源路径</li>
+</ul>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><ol>
+<li><p>实例化</p>
+<ul>
+<li>用户第一次访问servlet时由容器调用Servlet构造器创建具体的对象，也可以在启动时就创建</li>
+<li>只执行一次</li>
+</ul>
+</li>
+<li><p>初始化</p>
+<ul>
+<li><p>初始化阶段，init()方法会被调用</p>
+</li>
+<li><p>只被执行一次</p>
+</li>
+</ul>
+</li>
+<li><p>服务</p>
+<ul>
+<li>客户端发送请求时容器将请求和响应对象转发给servlet，传递给service方法</li>
+<li>根据请求次数执行多次</li>
+</ul>
+</li>
+<li><p>销毁</p>
+<ul>
+<li>Servlet容器停止或重启，销毁Servlet对象，并调用destroy()方法</li>
+<li>执行一次</li>
+</ul>
+</li>
+</ol>
+<h2 id="Servlet特性"><a href="#Servlet特性" class="headerlink" title="Servlet特性"></a>Servlet特性</h2><ol>
+<li><p>线程安全问题</p>
+<p>Tomcat容器可以同时多个线程并发访问同一个Servlet，如果在方法中对成员变量做修改，就会有线程安全的问题</p>
+</li>
+<li><p>保证线程安全</p>
+<ul>
+<li>synchronized：将存在线程安全的问题存放在同步代码块中。效率低不推荐</li>
+<li>实现SingleThreadModel接口，每个线程创建servlet实例，但是效率低已淘汰</li>
+<li>尽可能使用局部变量</li>
+</ul>
+</li>
+</ol>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>客户端状态管理，将状态保存在客户端</p>
+<ol>
+<li><p>描述：web服务器在HTTP响应头中附带给浏览器的一小段数据。浏览器在访问该web服务器时，都应在HTTP请求投中将这个Cookie回传给Web服务器</p>
+</li>
+<li><p>创建：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 创建cookie对象
+Cookie cookie &#x3D; new Cookie(&quot;name&quot;, &quot;value&quot;);
+&#x2F;&#x2F; 设置路径：访问权限
+cookie.setPath(&quot;&#x2F;webs&quot;);
+&#x2F;&#x2F; 生命周期 &gt;0：有效期，单位秒；0：浏览器关闭；-1：内存存储
+cookie.setMaxAge(-1);
+&#x2F;&#x2F; 响应
+resp.addCookie(cookie);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>获取Cookie</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">Cookie[] cookies &#x3D; request.getCookies();
+for(Cookie cookie:cookies)&#123;
+	System.out.println(cookie.getName()+cookie.getValue());
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>编码解码</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 编码
+URLEncoder.encode(&quot;中文&quot;,&quot;UTF-8&quot;);
+&#x2F;&#x2F; 解码
+URLDecoder.decode(cookie.getName(),&quot;UTF-8&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>优缺点：</p>
+<ul>
+<li><p>优点</p>
+<ol>
+<li>可配置到期规则</li>
+<li>简单，键值对</li>
+<li>数据持久性，过期之前一直保存在浏览器上</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>大小受限制</li>
+<li>用户可设置浏览器禁用Cookie</li>
+<li>安全风险：有可能被篡改</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><ol>
+<li><p>描述：用于记录用户的状态。一段时间内，单个客户端与Web服务器的一连串相关的交互过程</p>
+</li>
+<li><p>原理：</p>
+<ul>
+<li>服务器为每一次会话分配一个Session对象</li>
+<li>同一个浏览器（未关闭）发起的多次请求，同属于一次会话</li>
+<li>首次使用到Session时，服务器会自动创建Session，并创建Cookie存储SessionId发送回客户端</li>
+</ul>
+</li>
+<li><p>Session操作</p>
+<ol>
+<li><p>创建session</p>
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java">HttpSession session &#x3D; request.getSession();
+System.out.println(&quot;ID&quot;+session.getId())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>设置时效</p>
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java">session.setmaxInactiveInterval(seconds)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>保存数据</p>
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java">session.setAttribute(&quot;key&quot;,value);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>获取数据</p>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java">session.getAttribute(&quot;key&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>移除数据</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">session.removeAttribute(&quot;key&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>退出登录、注销</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">session.invalidate()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+</li>
+<li><p>生命周期</p>
+<ul>
+<li>开始：第一次使用到Session的请求产生，创建session</li>
+<li>结束：浏览器关闭/session超时/手动注销</li>
+</ul>
+</li>
+<li><p>浏览器禁用cookie解决方案-URL重写</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">String newURL&#x3D; response.encodeRedirectURL(&quot;&#x2F;要跳转的路径&quot;)
+response.sendRedirect(newURL)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="ServletContext对象"><a href="#ServletContext对象" class="headerlink" title="ServletContext对象"></a>ServletContext对象</h2><ol>
+<li><p>描述：全局对象，对应一个Tomcat中的web应用。Web服务器启动时，会为每一个web应用创建一块共享的存储区域。服务器关闭时销毁。</p>
+</li>
+<li><p>获取：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">getServletContext();&#x2F;&#x2F; this&#x2F;request&#x2F;session获取的ServletContext是同一个<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>作用：</p>
+<ol>
+<li><p>获取项目真实路径</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">servletContext.getRealPath(&quot;&#x2F;&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>获取项目上下文路径（应用程序名称）</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">servletContext.getContextPath();
+request.getContextPath();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>全局作用域的容器</p>
+<ul>
+<li><p>存储数据</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">servletContext.setAttribute(&quot;key&quot;,value);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>获取数据</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">servletContext.getAttribute(&quot;key&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>移除数据</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">servletContext.removeAttribute(&quot;key&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>一个应用对应一个Servlet上下文</li>
+<li>生命周期：只要容器不关闭、应用不卸载，servletContext就一直存在</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><ol>
+<li><p>描述：处于客户端与服务器目标资源之间的一道过滤技术。</p>
+</li>
+<li><p>作用：先于Servlet处理客户端请求；响应时根据执行流程再次反向执行Filter。解决多个Servlet共同代码冗余代码。</p>
+</li>
+<li><p>实现：</p>
+<ul>
+<li>编写Java类实现Filter接口</li>
+<li>在doFilter方法里设计拦截逻辑</li>
+<li>设置拦截路径</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@WebFilter(&quot;&#x2F;filter&quot;)
+public class MyFilter implements Filter &#123;
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123;
+        System.out.println(&quot;Request Filter&quot;);
+        filterChain.doFilter(servletRequest,servletResponse);
+        System.out.println(&quot;Response Filter&quot;);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>web.xml配置</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-class</span><span class="token punctuation">></span></span>com.learn.myservlet.learnservlet.MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-class</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-mapping</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/目标资源路径<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>过滤器链</p>
+<ol>
+<li>描述：一个web应用中可以编写多个Filter，一组Filter组合称为Filter链</li>
+<li>优先级：<ul>
+<li>如果为注解，按照泪泉名称的字符串顺序决定执行顺序</li>
+<li>如果为web.xml，按照filter-mapping注册顺序，从上到下</li>
+<li>web.xml配置优先注解</li>
+<li>如果注解和web.xml同时配置，会创建多个过滤器对象，造成多次过滤</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>拦截路径</p>
+<ul>
+<li>精确拦截，/test</li>
+<li>后缀拦截，*.jsp</li>
+<li>通配符拦截，/*</li>
+</ul>
+</li>
+</ol>
 
                 
             </div>
@@ -466,7 +869,7 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://silentspeechcoder.github.io/2021/09/28/wen-ti-ji-lu-tomcat-qi-dong-luan-ma/">https://silentspeechcoder.github.io/2021/09/28/wen-ti-ji-lu-tomcat-qi-dong-luan-ma/</a>
+                    <a href="https://silentspeechcoder.github.io/2019/09/30/java-servlet/">https://silentspeechcoder.github.io/2019/09/30/java-servlet/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -557,13 +960,13 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/30/java-servlet/">
+                <a href="/2020/04/12/java-duo-xian-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Servlet">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JAVA多线程">
                         
-                        <span class="card-title">Servlet</span>
+                        <span class="card-title">JAVA多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -574,7 +977,7 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-12
                         </span>
                         <span class="publish-author">
                             
@@ -606,13 +1009,13 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/26/wen-ti-ji-lu-servlet-zhao-bu-dao-bao/">
+                <a href="/2019/09/28/wen-ti-ji-lu-tomcat-qi-dong-luan-ma/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Servlet找不到包">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Tomcat启动乱码">
                         
-                        <span class="card-title">Servlet找不到包</span>
+                        <span class="card-title">Tomcat启动乱码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -623,7 +1026,7 @@ java.util.logging.ConsoleHandler.encoding &amp;#x3D; GBK
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-28
                             </span>
                         <span class="publish-author">
                             
