@@ -1,0 +1,1493 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SpringBoot, RockSpeechCoder">
+    <meta name="description" content="SpringBoot1. 描述   SpringBoot是整合Spring技术栈的一站式框架，SpringBoot是简化Spring技术栈的快速开发脚手架，能快速创建出生产级别的Spring应用。
+2. 优点
+Create stand-al">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>SpringBoot | RockSpeechCoder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="RockSpeechCoder" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">RockSpeechCoder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">RockSpeechCoder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">SpringBoot</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">JAVA</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/program/" class="post-category">
+                                编程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-05-02
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><h2 id="1-描述"><a href="#1-描述" class="headerlink" title="1. 描述"></a>1. 描述</h2><p>   SpringBoot是整合Spring技术栈的一站式框架，SpringBoot是简化Spring技术栈的快速开发脚手架，能快速创建出生产级别的Spring应用。</p>
+<h2 id="2-优点"><a href="#2-优点" class="headerlink" title="2. 优点"></a>2. 优点</h2><ul>
+<li>Create stand-alone Spring applications</li>
+<li>创建独立Spring应用</li>
+<li>Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)</li>
+<li>内嵌web服务器</li>
+<li>Provide opinionated ‘starter’ dependencies to simplify your build configuration</li>
+<li>自动starter依赖，简化构建配置</li>
+<li>Automatically configure Spring and 3rd party libraries whenever possible</li>
+<li>自动配置Spring以及第三方功能</li>
+<li>Provide production-ready features such as metrics, health checks, and externalized configuration</li>
+<li>提供生产级别的监控、健康检查及外部化配置</li>
+<li>Absolutely no code generation and no requirement for XML configuration</li>
+<li>无代码生成、无需编写XML</li>
+</ul>
+<h2 id="3-创建maven工程"><a href="#3-创建maven工程" class="headerlink" title="3. 创建maven工程"></a>3. 创建maven工程</h2><ol>
+<li><p>引入依赖</p>
+ <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.3.4.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- web场景启动器 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>主程序类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
+ * 主程序类
+ * @SpringBootApplication：这是一个SpringBoot应用
+ *&#x2F;
+@SpringBootApplication
+public class MainApplication &#123;
+
+    public static void main(String[] args) &#123;
+        SpringApplication.run(MainApplication.class,args);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>简化部署打jar包</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="4-依赖管理与自动配置"><a href="#4-依赖管理与自动配置" class="headerlink" title="4. 依赖管理与自动配置"></a>4. 依赖管理与自动配置</h2><ol>
+<li><p>依赖管理   </p>
+<ul>
+<li><p>父项目做依赖管理</p>
+   <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.3.4.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!--spring-boot-starter-parent的父项目--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.3.4.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>开发导入starter场景启动器</p>
+<ul>
+<li>spring-boot-starter-* ： *就某种场景</li>
+<li>只要引入starter，这个场景的所有常规需要的依赖我们都自动引入</li>
+<li>SpringBoot所有支持的场景<br><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter">https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter</a></li>
+<li>*-spring-boot-starter： 第三方为我们提供的简化开发的场景启动器。</li>
+<li>所有场景启动器最底层的依赖<code>spring-boot-starter-parent</code></li>
+</ul>
+</li>
+<li><p>无需关注版本号，自动版本仲裁</p>
+<ul>
+<li>引入依赖默认都可以不写版本</li>
+<li>引入非版本仲裁的jar，要写版本号</li>
+</ul>
+</li>
+<li><p>可以修改默认版本号</p>
+   <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mysql.version</span><span class="token punctuation">></span></span>5.1.43<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mysql.version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>自动配置</p>
+<ul>
+<li><p>自动配好Tomcat</p>
+<ul>
+<li>引入Tomcat依赖</li>
+<li>配置Tomcat</li>
+</ul>
+</li>
+<li><p>自动配好SpringMVC</p>
+<ul>
+<li>引入SpringMVC全套组件</li>
+<li>自动配好SpringMVC常用组件（功能）</li>
+</ul>
+</li>
+<li><p>自动配好Web常见功能，如：字符编码问题</p>
+<ul>
+<li>SpringBoot帮我们配置好了所有web开发的常见场景</li>
+</ul>
+</li>
+<li><p>默认的包结构</p>
+<ul>
+<li>主程序所在包及其下面的所有子包里面的组件都会被默认扫描进来</li>
+<li>无需以前的包扫描配置</li>
+<li>想要改变扫描路径，@SpringBootApplication(scanBasePackages=”包名”)或者@ComponentScan 指定扫描路径</li>
+</ul>
+</li>
+<li><p>各种配置拥有默认值</p>
+<ul>
+<li>默认配置最终都是映射到某个类上，如：MultipartProperties</li>
+<li>配置文件的值最终会绑定每个类上，这个类会在容器中创建对象</li>
+</ul>
+</li>
+<li><p>按需加载所有自动配置项</p>
+<ul>
+<li>引入了哪些场景这个场景的自动配置才会开启</li>
+<li>SpringBoot所有的自动配置功能都在 spring-boot-autoconfigure 包里面</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-底层注解"><a href="#5-底层注解" class="headerlink" title="5. 底层注解"></a>5. 底层注解</h2><pre><code>1. @Configuration
+
+   - 配置类里面使用@Bean标注在方法上给容器注册组件，默认也是单实例的
+
+   - 配置类本身也是组件
+
+   - proxyBeanMethods：代理bean的方法
+
+      - Full：(proxyBeanMethods = true)【保证每个@Bean方法被调用多少次返回的对象都是单实例的】
+      - Lite：(proxyBeanMethods = false)【每个@Bean方法被调用多少次返回的对象都是新创建的】
+      - 组件依赖必须使用Full模式默认。其他默认是否Lite模式
+
+2. @Import
+
+  导入组件：给容器中自动创建出这两个类型的组件、默认组件的名字就是全类名
+
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java">@Import(&#123;User.class, DBHelper.class&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+3. @Conditional
+
+  条件装配：满足Conditional指定的条件，则进行组件注入
+</code></pre>
+<ol start="4">
+<li><p>@ImportResource</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@ImportResource(&quot;classpath:beans.xml&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>配置绑定</p>
+<p>Java读取到properties文件中的内容，并且把它封装到JavaBean中</p>
+<ul>
+<li><p>@Component + @ConfigurationProperties</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
+ * 只有在容器中的组件，才会拥有SpringBoot提供的强大功能
+ *&#x2F;
+@Component
+@ConfigurationProperties(prefix &#x3D; &quot;mycar&quot;)
+public class Car&#123;
+    
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>@EnableConfigurationProperties + @ConfigurationProperties</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@EnableConfigurationProperties(Car.class)
+&#x2F;&#x2F;1、开启Car配置绑定功能
+&#x2F;&#x2F;2、把这个Car这个组件自动注册到容器中
+public class MyConfig &#123;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h2 id="6-自动配置原理"><a href="#6-自动配置原理" class="headerlink" title="6. 自动配置原理"></a>6. 自动配置原理</h2><p><strong>xxxxxAutoConfiguration —&gt; 组件  —&gt;</strong> <strong>xxxxProperties里面拿值  —-&gt; application.properties</strong></p>
+<ul>
+<li><p>SpringBoot先加载所有的自动配置类  xxxxxAutoConfiguration</p>
+</li>
+<li><p>每个自动配置类按照条件进行生效，默认都会绑定配置文件指定的值，xxxxProperties里面拿。xxxProperties和配置文件进行了绑定</p>
+</li>
+<li><p>生效的配置类就会给容器中装配很多组件</p>
+</li>
+<li><p>只要容器中有这些组件，相当于这些功能就有了</p>
+</li>
+<li><p>定制化配置</p>
+</li>
+<li><ul>
+<li>用户直接自己@Bean替换底层的组件</li>
+<li>用户去看这个组件是获取的配置文件什么值就去修改。</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<ol>
+<li><p>加载自动配置类</p>
+<ul>
+<li><p>@SpringBootConfiguration</p>
+</li>
+<li><p>@ComponentScan</p>
+</li>
+<li><p>@EnableAutoConfiguration</p>
+<ul>
+<li><p>@AutoConfigurationPackage</p>
+<p>@Import({AutoConfigurationPackages.Registrar.class})</p>
+<p>利用Registrar导入一系列组件</p>
+</li>
+<li><p>@Import({AutoConfigurationImportSelector.class})</p>
+<p>获取所有导入到容器中的配置类，从META-INF/spring.factories位置来加载一个文件。</p>
+<pre><code>默认扫描我们当前系统里面所有jar包META-INF/spring.factories位置的文件
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>按照条件装配规则（@Conditional），最终会按需配置。</p>
+</li>
+<li><p>修改默认配置，以用户修改的优先</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Bean
+@ConditionalOnBean(MultipartResolver.class)  &#x2F;&#x2F;容器中有这个类型组件
+@ConditionalOnMissingBean(name &#x3D; DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME) &#x2F;&#x2F;容器中没有这个名字 multipartResolver 的组件
+public MultipartResolver multipartResolver(MultipartResolver resolver) &#123;
+    &#x2F;&#x2F;给@Bean标注的方法传入了对象参数，这个参数的值就会从容器中找。
+    &#x2F;&#x2F;SpringMVC multipartResolver。防止有些用户配置的文件上传解析器不符合规范
+    &#x2F;&#x2F; Detect if the user has created a MultipartResolver but named it incorrectly
+    return resolver;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="7-Lombok"><a href="#7-Lombok" class="headerlink" title="7. Lombok"></a>7. Lombok</h2><ol>
+<li><p>依赖+插件</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;
+    &lt;artifactId&gt;lombok&lt;&#x2F;artifactId&gt;
+&lt;&#x2F;dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>@Data</p>
+<p>生成set/get</p>
+</li>
+<li><p>@ToString</p>
+</li>
+<li><p>@AllArgsConstructor</p>
+<p>全参构造器</p>
+</li>
+<li><p>@NoArgsConstructor</p>
+<p>无参构造器</p>
+</li>
+<li><p>@EqualsAndHashCode</p>
+</li>
+<li><p>@Slf4j</p>
+<p>log.info</p>
+</li>
+</ol>
+<h2 id="8-Web开发"><a href="#8-Web开发" class="headerlink" title="8. Web开发"></a>8. Web开发</h2><ol>
+<li><p>Rest原理（表单提交要使用REST的时候）</p>
+<ul>
+<li><p>表单提交会带上**_method=PUT**</p>
+</li>
+<li><p><strong>请求过来被</strong>HiddenHttpMethodFilter拦截</p>
+<ul>
+<li><p>请求是否正常，并且是POST</p>
+</li>
+<li><p>获取到**_method**的值。</p>
+<ul>
+<li>兼容以下请求；<strong>PUT</strong>.<strong>DELETE</strong>.<strong>PATCH</strong></li>
+<li><strong>原生request（post），包装模式requesWrapper重写了getMethod方法，返回的是传入的值。</strong></li>
+<li><strong>过滤器链放行的时候用wrapper。以后的方法调用getMethod是调用****requesWrapper的。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>参数处理原理</p>
+<ul>
+<li>HandlerMapping中找到能处理请求的Handler（Controller.method()）</li>
+<li>为当前Handler 找一个适配器 HandlerAdapter； <strong>RequestMappingHandlerAdapter</strong></li>
+<li>适配器执行目标方法并确定方法参数的每一个值</li>
+</ul>
+</li>
+</ol>
+<h2 id="9-SpringBoot启动过程"><a href="#9-SpringBoot启动过程" class="headerlink" title="9.SpringBoot启动过程"></a>9.SpringBoot启动过程</h2><ul>
+<li><p>创建 <strong>SpringApplication</strong></p>
+</li>
+<li><ul>
+<li>保存一些信息。</li>
+<li>判定当前应用的类型。ClassUtils。Servlet</li>
+<li><strong>bootstrappers****：初始启动引导器（</strong>List<Bootstrapper><strong>）：去spring.factories文件中找</strong> org.springframework.boot.<strong>Bootstrapper</strong></li>
+<li>找 <strong>ApplicationContextInitializer</strong>；去<strong>spring.factories****找</strong> <strong>ApplicationContextInitializer</strong></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>List&lt;ApplicationContextInitializer&lt;?&gt;&gt; <strong>initializers</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>找</strong> <strong>ApplicationListener  ；应用监听器。</strong>去<strong>spring.factories****找</strong> <strong>ApplicationListener</strong></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>List&lt;ApplicationListener&lt;?&gt;&gt; <strong>listeners</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>运行 <strong>SpringApplication</strong></p>
+</li>
+<li><ul>
+<li><strong>StopWatch</strong></li>
+<li><strong>记录应用的启动时间</strong></li>
+<li><strong>创建引导上下文（Context环境）****createBootstrapContext()</strong></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>获取到所有之前的 <strong>bootstrappers 挨个执行</strong> intitialize() 来完成对引导启动器上下文环境设置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>让当前应用进入<strong>headless</strong>模式。<strong>java.awt.headless</strong></li>
+<li><strong>获取所有</strong> <strong>RunListener****（运行监听器）【为了方便所有Listener进行事件感知】</strong></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>getSpringFactoriesInstances 去<strong>spring.factories****找</strong> <strong>SpringApplicationRunListener</strong>. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>遍历 <strong>SpringApplicationRunListener 调用 starting 方法；</strong></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><strong>相当于通知所有感兴趣系统正在启动过程的人，项目正在 starting。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>保存命令行参数；ApplicationArguments</li>
+<li>准备环境 prepareEnvironment（）;</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>返回或者创建基础环境信息对象。<strong>StandardServletEnvironment</strong></li>
+<li><strong>配置环境信息对象。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><ul>
+<li><strong>读取所有的配置源的配置属性值。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>绑定环境信息</li>
+<li>监听器调用 listener.environmentPrepared()；通知所有的监听器当前环境准备完成</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>创建IOC容器（createApplicationContext（））</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>根据项目类型（Servlet）创建容器，</li>
+<li>当前会创建 <strong>AnnotationConfigServletWebServerApplicationContext</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>准备ApplicationContext IOC容器的基本信息</strong>  <strong>prepareContext()</strong></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>保存环境信息</li>
+<li>IOC容器的后置处理流程。</li>
+<li>应用初始化器；applyInitializers；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><ul>
+<li>遍历所有的 <strong>ApplicationContextInitializer 。调用</strong> <strong>initialize.。来对ioc容器进行初始化扩展功能</strong></li>
+<li>遍历所有的 listener 调用 <strong>contextPrepared。EventPublishRunListenr；通知所有的监听器****contextPrepared</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><strong>所有的监听器 调用</strong> <strong>contextLoaded。通知所有的监听器</strong> <strong>contextLoaded；</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>刷新IOC容器。</strong>refreshContext</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>创建容器中的所有组件（Spring注解）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>容器刷新完成后工作？afterRefresh</li>
+<li>所有监听 器 调用 listeners.<strong>started</strong>(context); <strong>通知所有的监听器</strong> <strong>started</strong></li>
+<li><strong>调用所有runners；</strong>callRunners()</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><strong>获取容器中的</strong> <strong>ApplicationRunner</strong> </li>
+<li><strong>获取容器中的</strong>  <strong>CommandLineRunner</strong></li>
+<li><strong>合并所有runner并且按照@Order进行排序</strong></li>
+<li><strong>遍历所有的runner。调用 run</strong> <strong>方法</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>如果以上有异常，</strong></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><strong>调用Listener 的 failed</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>调用所有监听器的 running 方法</strong>  listeners.running(context); <strong>通知所有的监听器</strong> <strong>running</strong> </li>
+<li><strong>running如果有问题。继续通知 failed 。****调用所有 Listener 的</strong> <strong>failed；****通知所有的监听器</strong> <strong>failed</strong></li>
+</ul>
+</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Yangzk</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://Rockspeechcoder.github.io/2021/05/02/springboot/">https://Rockspeechcoder.github.io/2021/05/02/springboot/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Yangzk</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">JAVA</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/07/13/java-xiang-mu-fen-ceng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="JAVA项目分层">
+                        
+                        <span class="card-title">JAVA项目分层</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/program/" class="post-category">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">JAVA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/04/28/mysql-shu-ju-ku-zhi-shi-dian-shu-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="MySQL数据库知识点梳理">
+                        
+                        <span class="card-title">MySQL数据库知识点梳理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/program/" class="post-category">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/database/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2018-2022</span>
+            
+            <a href="/about" target="_blank">Yangzk</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">51.7k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/SilentSpeechCoder" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:yangzengkai_work@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1107949651" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1107949651" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('fenlei');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://Rockspeechcoder.github.io/categories/program/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 编程 (20)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://Rockspeechcoder.github.io/categories/bugfix/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 问题记录 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://Rockspeechcoder.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><!-- hexo injector body_end end --></body>
+
+</html>
