@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SSM框架 - MyBatis, RockSpeech">
+    <meta name="keywords" content="SSM框架 - MyBatis, RockRebuild">
     <meta name="description" content="SSM框架 - MyBatis1. 描述：   基于java的持久层框架，包括SQL Maps和Data Access Objects（DAO）
 2. MyBatis特性：
 支持定制化SQL、存储过程以及高级映射的优秀的持久层框架
@@ -22,7 +22,7 @@
 
     
 
-    <title>SSM框架 - MyBatis | RockSpeech</title>
+    <title>SSM框架 - MyBatis | RockRebuild</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -35,8 +35,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="RockSpeech" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.1"></head>
 
 
 <body>
@@ -48,7 +47,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">RockSpeech</span>
+                    <span class="logo-span">RockRebuild</span>
                 </a>
             </div>
             
@@ -147,7 +146,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">RockSpeech</div>
+        <div class="logo-name">RockRebuild</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -405,14 +404,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    11 分
                 </div>
                 
 
@@ -541,26 +540,26 @@
 </ul>
 </li>
 </ul>
-<h2 id="5-SqlSessionFactory"><a href="#5-SqlSessionFactory" class="headerlink" title="5. SqlSessionFactory"></a>5. SqlSessionFactory</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 获取核心配置文件的输入流
-InputStream r &#x3D;  Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);
-&#x2F;&#x2F; 获取SqlSessionFactoryBuilder对象
-SqlSessionFactoryBuilder sqlSessionFactoryBuilder &#x3D; new SqlSessionFactoryBuilder();
-&#x2F;&#x2F; 获取SqlSessionFactory对象
-SqlSessionFactory sqlSessionFactory &#x3D;  sqlSessionFactoryBuilder.build(r);
+<h2 id="5-SqlSessionFactory"><a href="#5-SqlSessionFactory" class="headerlink" title="5. SqlSessionFactory"></a>5. SqlSessionFactory</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 获取核心配置文件的输入流</span>
+<span class="token class-name">InputStream</span> r <span class="token operator">=</span>  <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"mybatis-config.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 获取SqlSessionFactoryBuilder对象</span>
+<span class="token class-name">SqlSessionFactoryBuilder</span> sqlSessionFactoryBuilder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 获取SqlSessionFactory对象</span>
+<span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span>  sqlSessionFactoryBuilder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-&#x2F;&#x2F; 获取sql的会话对象SqlSession(不会自动提交事务)，是MyBatis提供的操作数据库对象
-SqlSession sqlSession &#x3D; sqlSessionFactory.openSession();
-&#x2F;&#x2F; 获取sql的会话对象SqlSession(会自动提交事务)，是MyBatis提供的操作数据库对象
-&#x2F;&#x2F; SqlSession sqlSession &#x3D; sqlSessionFactory.openSession(true);
-&#x2F;&#x2F; 获取UserMapper的代理实现类对象
-UserMapper mapper &#x3D; sqlSession.getMapper(UserMapper.class);
-&#x2F;&#x2F; 调用mapper接口中的方法，实现添加用户信息的功能
-int result &#x3D; mapper.insertUser();
-System.out.println(&quot;结果：&quot; + result);
-&#x2F;&#x2F; 提交事务
-sqlSession.commit();
-&#x2F;&#x2F; 关闭SqlSession
-sqlSession.close();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// 获取sql的会话对象SqlSession(不会自动提交事务)，是MyBatis提供的操作数据库对象</span>
+<span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 获取sql的会话对象SqlSession(会自动提交事务)，是MyBatis提供的操作数据库对象</span>
+<span class="token comment">// SqlSession sqlSession = sqlSessionFactory.openSession(true);</span>
+<span class="token comment">// 获取UserMapper的代理实现类对象</span>
+<span class="token class-name">UserMapper</span> mapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">UserMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 调用mapper接口中的方法，实现添加用户信息的功能</span>
+<span class="token keyword">int</span> result <span class="token operator">=</span> mapper<span class="token punctuation">.</span><span class="token function">insertUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"结果："</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 提交事务</span>
+sqlSession<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 关闭SqlSession</span>
+sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -761,7 +760,7 @@ insert into t_emp values
 </ul>
 </li>
 <li><p>分页相关数据 </p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json">PageInfo&#123; pageNum&#x3D;8, pageSize&#x3D;4, size&#x3D;2, startRow&#x3D;29, endRow&#x3D;30, total&#x3D;30, pages&#x3D;8, list&#x3D;Page&#123;count&#x3D;true, pageNum&#x3D;8, pageSize&#x3D;4, startRow&#x3D;28, endRow&#x3D;32, total&#x3D;30, pages&#x3D;8, reasonable&#x3D;false, pageSizeZero&#x3D;false&#125;, prePage&#x3D;7, nextPage&#x3D;0, isFirstPage&#x3D;false, isLastPage&#x3D;true, hasPreviousPage&#x3D;true, hasNextPage&#x3D;false, navigatePages&#x3D;5, navigateFirstPage4, navigateLastPage8, navigatepageNums&#x3D;[4, 5, 6, 7, 8] &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">PageInfo<span class="token punctuation">&#123;</span> pageNum=<span class="token number">8</span><span class="token punctuation">,</span> pageSize=<span class="token number">4</span><span class="token punctuation">,</span> size=<span class="token number">2</span><span class="token punctuation">,</span> startRow=<span class="token number">29</span><span class="token punctuation">,</span> endRow=<span class="token number">30</span><span class="token punctuation">,</span> total=<span class="token number">30</span><span class="token punctuation">,</span> pages=<span class="token number">8</span><span class="token punctuation">,</span> list=Page<span class="token punctuation">&#123;</span>count=<span class="token boolean">true</span><span class="token punctuation">,</span> pageNum=<span class="token number">8</span><span class="token punctuation">,</span> pageSize=<span class="token number">4</span><span class="token punctuation">,</span> startRow=<span class="token number">28</span><span class="token punctuation">,</span> endRow=<span class="token number">32</span><span class="token punctuation">,</span> total=<span class="token number">30</span><span class="token punctuation">,</span> pages=<span class="token number">8</span><span class="token punctuation">,</span> reasonable=<span class="token boolean">false</span><span class="token punctuation">,</span> pageSizeZero=<span class="token boolean">false</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> prePage=<span class="token number">7</span><span class="token punctuation">,</span> nextPage=<span class="token number">0</span><span class="token punctuation">,</span> isFirstPage=<span class="token boolean">false</span><span class="token punctuation">,</span> isLastPage=<span class="token boolean">true</span><span class="token punctuation">,</span> hasPreviousPage=<span class="token boolean">true</span><span class="token punctuation">,</span> hasNextPage=<span class="token boolean">false</span><span class="token punctuation">,</span> navigatePages=<span class="token number">5</span><span class="token punctuation">,</span> navigateFirstPage4<span class="token punctuation">,</span> navigateLastPage8<span class="token punctuation">,</span> navigatepageNums=<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>pageNum：当前页的页码 </li>
@@ -806,7 +805,7 @@ insert into t_emp values
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://RockSpeech.github.io/2020/05/17/ssm-kuang-jia-mybatis/">https://RockSpeech.github.io/2020/05/17/ssm-kuang-jia-mybatis/</a>
+                    <a href="https://RockRebuild.github.io/2020/05/17/ssm-kuang-jia-mybatis/">https://RockRebuild.github.io/2020/05/17/ssm-kuang-jia-mybatis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1116,7 +1115,7 @@ insert into t_emp values
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2018-2022</span>
+                <span id="year">2018-2024</span>
             
             <a href="/about" target="_blank">Yangzk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1124,7 +1123,7 @@ insert into t_emp values
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.7k</span>
+                        class="white-color">50.5k</span>
             
             
             
@@ -1150,7 +1149,7 @@ insert into t_emp values
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/RockSpeech" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/RockRebuild" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
@@ -1363,12 +1362,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
-    var parent = document.getElementById('fenlei');
-    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/program/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 编程 (20)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/bugfix/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 问题记录 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://RockSpeech.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
-    console.log('已挂载magnet')
-    parent.insertAdjacentHTML("afterbegin",child)}
-     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
-    <style></style><!-- hexo injector body_end end --></body>
+</body>
 
 </html>

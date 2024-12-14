@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SSM框架 - Spring, RockSpeech">
+    <meta name="keywords" content="SSM框架 - Spring, RockRebuild">
     <meta name="description" content="Spring1. 描述   轻量级框架。创建性能良好、易于测试、可重用的代码
 2. Spring Framework
 特性：
@@ -27,7 +27,7 @@
 
     
 
-    <title>SSM框架 - Spring | RockSpeech</title>
+    <title>SSM框架 - Spring | RockRebuild</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -40,8 +40,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="RockSpeech" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.1"></head>
 
 
 <body>
@@ -53,7 +52,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">RockSpeech</span>
+                    <span class="logo-span">RockRebuild</span>
                 </a>
             </div>
             
@@ -152,7 +151,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">RockSpeech</div>
+        <div class="logo-name">RockRebuild</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -410,7 +409,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.3k
+                    5.2k
                 </div>
                 
 
@@ -542,20 +541,20 @@
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!-- bean的后置处理器要放入IOC容器才能生效 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>myBeanProcessor<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.atguigu.spring.process.MyBeanProcessor<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class MyBeanProcessor implements BeanPostProcessor &#123;
-    @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName)
-    throws BeansException &#123;
-        System.out.println(&quot;☆☆☆&quot; + beanName + &quot; &#x3D; &quot; + bean);
-        return bean;
-    &#125;
-    @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName)
-    throws BeansException &#123;
-        System.out.println(&quot;★★★&quot; + beanName + &quot; &#x3D; &quot; + bean);
-        return bean;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyBeanProcessor</span> <span class="token keyword">implements</span> <span class="token class-name">BeanPostProcessor</span> <span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">postProcessBeforeInitialization</span><span class="token punctuation">(</span><span class="token class-name">Object</span> bean<span class="token punctuation">,</span> <span class="token class-name">String</span> beanName<span class="token punctuation">)</span>
+    <span class="token keyword">throws</span> <span class="token class-name">BeansException</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"☆☆☆"</span> <span class="token operator">+</span> beanName <span class="token operator">+</span> <span class="token string">" = "</span> <span class="token operator">+</span> bean<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">postProcessAfterInitialization</span><span class="token punctuation">(</span><span class="token class-name">Object</span> bean<span class="token punctuation">,</span> <span class="token class-name">String</span> beanName<span class="token punctuation">)</span>
+    <span class="token keyword">throws</span> <span class="token class-name">BeansException</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"★★★"</span> <span class="token operator">+</span> beanName <span class="token operator">+</span> <span class="token string">" = "</span> <span class="token operator">+</span> bean<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>bean对象初始化（需在配置bean时指定初始化方法 init-method=”initMethod”）</p>
 </li>
 <li><p>bean对象初始化之后操作（由bean的后置处理器负责，实现BeanPostProcessor接口， 且配置到IOC容器中）</p>
@@ -587,15 +586,15 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>helloworld<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.learn.ssm.pojo.HelloWorld<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>获取ioc及bean对象</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 获取ioc容器
-ApplicationContext ioc &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
-&#x2F;&#x2F; 获取ioc容器的bean（方式1）
-HelloWorld bean &#x3D; (HelloWorld) ioc.getBean(&quot;helloworld&quot;);
-&#x2F;&#x2F; 【常用】获取ioc容器的bean（方式2）要求IOC容器中指定类型的bean有且只能有一个
-HelloWorld bean &#x3D; ac.getBean(HelloWorld.class);
-&#x2F;&#x2F; 获取ioc容器的bean（方式3）
-HelloWorld bean &#x3D; ac.getBean(&quot;helloworld&quot;, HelloWorld.class);
-bean.learnSpring();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 获取ioc容器</span>
+<span class="token class-name">ApplicationContext</span> ioc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 获取ioc容器的bean（方式1）</span>
+<span class="token class-name">HelloWorld</span> bean <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">HelloWorld</span><span class="token punctuation">)</span> ioc<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"helloworld"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 【常用】获取ioc容器的bean（方式2）要求IOC容器中指定类型的bean有且只能有一个</span>
+<span class="token class-name">HelloWorld</span> bean <span class="token operator">=</span> ac<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token class-name">HelloWorld</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 获取ioc容器的bean（方式3）</span>
+<span class="token class-name">HelloWorld</span> bean <span class="token operator">=</span> ac<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"helloworld"</span><span class="token punctuation">,</span> <span class="token class-name">HelloWorld</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+bean<span class="token punctuation">.</span><span class="token function">learnSpring</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>创建对象（利用反射及工厂模式）</p>
 <p>一个bean对应一个对象（单例），接口不能</p>
 <img src="/2020/10/02/ssm-kuang-jia-spring/image-2.png" class="">
@@ -703,24 +702,24 @@ bean.learnSpring();<span aria-hidden="true" class="line-numbers-rows"><span></sp
 </li>
 <li><p>FactoryBean</p>
 <p>配置一个 FactoryBean类型的实现类bean，在获取bean的时候得到的并不是class属性中配置的实现类的对象，而是 getObject()方法的返回值（交给ioc管理）。通过这种机制，Spring可以把复杂组件创建的详细过程和繁琐细节都屏蔽起来</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class UserFactoryBean implements FactoryBean&lt;User&gt; &#123;
-    @Override
-    public User getObject() throws Exception &#123;
-        return new User();
-    &#125;
-    @Override
-    public Class&lt;?&gt; getObjectType() &#123;
-    	return User.class;
-    &#125;
-&#125;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserFactoryBean</span> <span class="token keyword">implements</span> <span class="token class-name">FactoryBean</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">getObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span></span> <span class="token function">getObjectType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token keyword">return</span> <span class="token class-name">User</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-@Test
-public void testUserFactoryBean()&#123;
-	&#x2F;&#x2F;获取IOC容器
-	ApplicationContext ac &#x3D; new ClassPathXmlApplicationContext(&quot;spring-factorybean.xml&quot;);
-    User user &#x3D; (User) ac.getBean(&quot;user&quot;);
-    System.out.println(user);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testUserFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token comment">//获取IOC容器</span>
+	<span class="token class-name">ApplicationContext</span> ac <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"spring-factorybean.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">User</span> user <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">User</span><span class="token punctuation">)</span> ac<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.atguigu.bean.UserFactoryBean<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>基于xml的自动装配</p>
@@ -861,47 +860,47 @@ expression="全类名"/>--></span>
 <li><p>获取信息</p>
 <ul>
 <li><p>获取连接点信息</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Before(&quot;execution(public int com.aop.annotation.TestImpl.*(..))&quot;) 
-public void beforeMethod(JoinPoint joinPoint)&#123; 
-    &#x2F;&#x2F;获取连接点的声明信息 
-    String methodName &#x3D; joinPoint.getSignature().getName(); 
-    &#x2F;&#x2F;获取目标方法到的实参信息 
-    String args &#x3D; Arrays.toString(joinPoint.getArgs()); 
-    System.out.println(&quot;Logger--&gt;前置通知，方法名：&quot;+methodName+&quot;，参数：&quot;+args); 
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Before</span><span class="token punctuation">(</span><span class="token string">"execution(public int com.aop.annotation.TestImpl.*(..))"</span><span class="token punctuation">)</span> 
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">beforeMethod</span><span class="token punctuation">(</span><span class="token class-name">JoinPoint</span> joinPoint<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> 
+    <span class="token comment">//获取连接点的声明信息 </span>
+    <span class="token class-name">String</span> methodName <span class="token operator">=</span> joinPoint<span class="token punctuation">.</span><span class="token function">getSignature</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">//获取目标方法到的实参信息 </span>
+    <span class="token class-name">String</span> args <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>joinPoint<span class="token punctuation">.</span><span class="token function">getArgs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Logger-->前置通知，方法名："</span><span class="token operator">+</span>methodName<span class="token operator">+</span><span class="token string">"，参数："</span><span class="token operator">+</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>获取目标方法返回值</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@AfterReturning(value &#x3D; &quot;execution(* com.aop.annotation.TestImpl.*(..))&quot;, returning &#x3D; &quot;result&quot;)
-public void afterReturningMethod(JoinPoint joinPoint, Object result)&#123;
-    String methodName &#x3D; joinPoint.getSignature().getName();
-    System.out.println(&quot;Logger--&gt;返回通知，方法名：&quot;+methodName+&quot;，结果：&quot;+result);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@AfterReturning</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"execution(* com.aop.annotation.TestImpl.*(..))"</span><span class="token punctuation">,</span> returning <span class="token operator">=</span> <span class="token string">"result"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterReturningMethod</span><span class="token punctuation">(</span><span class="token class-name">JoinPoint</span> joinPoint<span class="token punctuation">,</span> <span class="token class-name">Object</span> result<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> methodName <span class="token operator">=</span> joinPoint<span class="token punctuation">.</span><span class="token function">getSignature</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Logger-->返回通知，方法名："</span><span class="token operator">+</span>methodName<span class="token operator">+</span><span class="token string">"，结果："</span><span class="token operator">+</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>获取目标方法的异常</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@AfterThrowing(value &#x3D; &quot;execution(* com.aop.annotation.TestImpl.*(..))&quot;, throwing &#x3D; &quot;ex&quot;)
-public void afterThrowingMethod(JoinPoint joinPoint, Throwable ex)&#123;
-    String methodName &#x3D; joinPoint.getSignature().getName();
-    System.out.println(&quot;Logger--&gt;异常通知，方法名：&quot;+methodName+&quot;，异常：&quot;+ex);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@AfterThrowing</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"execution(* com.aop.annotation.TestImpl.*(..))"</span><span class="token punctuation">,</span> throwing <span class="token operator">=</span> <span class="token string">"ex"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterThrowingMethod</span><span class="token punctuation">(</span><span class="token class-name">JoinPoint</span> joinPoint<span class="token punctuation">,</span> <span class="token class-name">Throwable</span> ex<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> methodName <span class="token operator">=</span> joinPoint<span class="token punctuation">.</span><span class="token function">getSignature</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Logger-->异常通知，方法名："</span><span class="token operator">+</span>methodName<span class="token operator">+</span><span class="token string">"，异常："</span><span class="token operator">+</span>ex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>@Around</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Around(&quot;execution(* com.aop.annotation.TestImpl.*(..))&quot;)
-public Object aroundMethod(ProceedingJoinPoint joinPoint)&#123;
-    String methodName &#x3D; joinPoint.getSignature().getName();
-    String args &#x3D; Arrays.toString(joinPoint.getArgs());
-    Object result &#x3D; null;
-    try &#123;
-    	System.out.println(&quot;环绕通知--&gt;目标对象方法执行之前&quot;);
-    	&#x2F;&#x2F;目标方法的执行，目标方法的返回值一定要返回给外界调用者
-    	result &#x3D; joinPoint.proceed();
-    	System.out.println(&quot;环绕通知--&gt;目标对象方法返回值之后&quot;);
-    &#125; catch (Throwable throwable) &#123;
-    	throwable.printStackTrace();
-    	System.out.println(&quot;环绕通知--&gt;目标对象方法出现异常时&quot;);
-    &#125; finally &#123;
-    	System.out.println(&quot;环绕通知--&gt;目标对象方法执行完毕&quot;);
-    &#125;
-    return result;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Around</span><span class="token punctuation">(</span><span class="token string">"execution(* com.aop.annotation.TestImpl.*(..))"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">aroundMethod</span><span class="token punctuation">(</span><span class="token class-name">ProceedingJoinPoint</span> joinPoint<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> methodName <span class="token operator">=</span> joinPoint<span class="token punctuation">.</span><span class="token function">getSignature</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> args <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>joinPoint<span class="token punctuation">.</span><span class="token function">getArgs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Object</span> result <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"环绕通知-->目标对象方法执行之前"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token comment">//目标方法的执行，目标方法的返回值一定要返回给外界调用者</span>
+    	result <span class="token operator">=</span> joinPoint<span class="token punctuation">.</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"环绕通知-->目标对象方法返回值之后"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Throwable</span> throwable<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	throwable<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"环绕通知-->目标对象方法出现异常时"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"环绕通知-->目标对象方法执行完毕"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>切面的优先级<br>相同目标方法上同时存在多个切面时，切面的优先级控制切面的内外嵌套顺序。 </p>
 <ul>
 <li><p>外部切面的优先级比内部切面的优先级高</p>
@@ -978,12 +977,12 @@ public Object aroundMethod(ProceedingJoinPoint joinPoint)&#123;
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dataSource<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>druidDataSource<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>测试类</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(&quot;classpath:spring-jdbc.xml&quot;)
-public class JDBCTemplateTest &#123;
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RunWith</span><span class="token punctuation">(</span><span class="token class-name">SpringJUnit4ClassRunner</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ContextConfiguration</span><span class="token punctuation">(</span><span class="token string">"classpath:spring-jdbc.xml"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JDBCTemplateTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">JdbcTemplate</span> jdbcTemplate<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>基于注解</p>
 <ol>
 <li>添加事务配置</li>
@@ -1085,7 +1084,7 @@ public class JDBCTemplateTest &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://RockSpeech.github.io/2020/10/02/ssm-kuang-jia-spring/">https://RockSpeech.github.io/2020/10/02/ssm-kuang-jia-spring/</a>
+                    <a href="https://RockRebuild.github.io/2020/10/02/ssm-kuang-jia-spring/">https://RockRebuild.github.io/2020/10/02/ssm-kuang-jia-spring/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1395,7 +1394,7 @@ public class JDBCTemplateTest &#123;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2018-2022</span>
+                <span id="year">2018-2024</span>
             
             <a href="/about" target="_blank">Yangzk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1403,7 +1402,7 @@ public class JDBCTemplateTest &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.7k</span>
+                        class="white-color">50.5k</span>
             
             
             
@@ -1429,7 +1428,7 @@ public class JDBCTemplateTest &#123;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/RockSpeech" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/RockRebuild" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
@@ -1642,12 +1641,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
-    var parent = document.getElementById('fenlei');
-    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/program/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 编程 (20)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/bugfix/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 问题记录 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://RockSpeech.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
-    console.log('已挂载magnet')
-    parent.insertAdjacentHTML("afterbegin",child)}
-     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
-    <style></style><!-- hexo injector body_end end --></body>
+</body>
 
 </html>

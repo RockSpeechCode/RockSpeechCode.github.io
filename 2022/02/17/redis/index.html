@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringBoot, RockSpeech">
+    <meta name="keywords" content="SpringBoot, RockRebuild">
     <meta name="description" content="Redis描述REmote DIctionary Server(Redis) 是 key-value 存储系统，是跨平台的非关系型数据库。
 redis基于内存操作，cpu不是redis性能瓶颈，瓶颈是根据机器的内存和网络带宽，单线程。多线程">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@ redis基于内存操作，cpu不是redis性能瓶颈，瓶颈是根据机器的�
 
     
 
-    <title>SpringBoot | RockSpeech</title>
+    <title>SpringBoot | RockRebuild</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -33,8 +33,7 @@ redis基于内存操作，cpu不是redis性能瓶颈，瓶颈是根据机器的�
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="RockSpeech" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.1"></head>
 
 
 <body>
@@ -46,7 +45,7 @@ redis基于内存操作，cpu不是redis性能瓶颈，瓶颈是根据机器的�
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">RockSpeech</span>
+                    <span class="logo-span">RockRebuild</span>
                 </a>
             </div>
             
@@ -145,7 +144,7 @@ redis基于内存操作，cpu不是redis性能瓶颈，瓶颈是根据机器的�
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">RockSpeech</div>
+        <div class="logo-name">RockRebuild</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -403,7 +402,7 @@ redis基于内存操作，cpu不是redis性能瓶颈，瓶颈是根据机器的�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.6k
+                    4.5k
                 </div>
                 
 
@@ -563,10 +562,10 @@ redis基于内存操作，cpu不是redis性能瓶颈，瓶颈是根据机器的�
 <li>执行事务</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">multi
-set k1 v1
-set k2 v2
+<span class="token builtin class-name">set</span> k1 v1
+<span class="token builtin class-name">set</span> k2 v2
 get k1
-exec<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token builtin class-name">exec</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>取消事务 <code>dicard</code></li>
@@ -594,51 +593,51 @@ exec<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 </ul>
 <h2 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h2><ol>
 <li><p>依赖</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&lt;dependencies&gt;
-    &lt;!--导入Jedis的包--&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;redis.clients&lt;&#x2F;groupId&gt;
-        &lt;artifactId&gt;jedis&lt;&#x2F;artifactId&gt;
-        &lt;version&gt;4.2.3&lt;&#x2F;version&gt;
-    &lt;&#x2F;dependency&gt;
-    &lt;!--导入fastjson的包--&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;com.alibaba&lt;&#x2F;groupId&gt;
-        &lt;artifactId&gt;fastjson&lt;&#x2F;artifactId&gt;
-        &lt;version&gt;2.0.13&lt;&#x2F;version&gt;
-    &lt;&#x2F;dependency&gt;
-&lt;&#x2F;dependencies&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token generics"><span class="token punctuation">&lt;</span>dependencies<span class="token punctuation">></span></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>导入<span class="token class-name">Jedis</span>的包<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">></span></span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>redis<span class="token punctuation">.</span>clients<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>jedis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">></span></span><span class="token number">4.2</span><span class="token number">.3</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>导入fastjson的包<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">></span></span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>com<span class="token punctuation">.</span>alibaba<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>fastjson<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">></span></span><span class="token number">2.0</span><span class="token number">.13</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>测试ping</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class TestPingRedis &#123;
-    public static void main(String[] args) &#123;
-        Jedis jedis &#x3D; new Jedis(&quot;127.0.0.1&quot;,6379);
-        System.out.println(jedis.ping());
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestPingRedis</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Jedis</span> jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span><span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>jedis<span class="token punctuation">.</span><span class="token function">ping</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>测试事务</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public static void main(String[] args) &#123;
-    Jedis jedis &#x3D; new Jedis(&quot;127.0.0.1&quot;,6379);
-    jedis.flushDB();
-    JSONObject jsonObject &#x3D; new JSONObject();
-    jsonObject.put(&quot;a&quot;,&quot;one&quot;);
-    jsonObject.put(&quot;b&quot;,&quot;two&quot;);
-    jsonObject.put(&quot;c&quot;,&quot;three&quot;);
-    &#x2F;&#x2F; 开启事务
-    Transaction transaction &#x3D; jedis.multi();
-    try&#123;
-        transaction.set(&quot;json1&quot;,jsonObject.toString());
-        transaction.set(&quot;json2&quot;,jsonObject.toString());
-        transaction.exec();
-    &#125;
-    catch(Exception e)&#123;
-        transaction.discard();
-        e.printStackTrace();
-    &#125;finally &#123;
-        System.out.println(jedis.get(&quot;json1&quot;));
-        System.out.println(jedis.get(&quot;json2&quot;));
-        jedis.close();
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Jedis</span> jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span><span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    jedis<span class="token punctuation">.</span><span class="token function">flushDB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">JSONObject</span> jsonObject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    jsonObject<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"one"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    jsonObject<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"two"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    jsonObject<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">,</span><span class="token string">"three"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 开启事务</span>
+    <span class="token class-name">Transaction</span> transaction <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">multi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span><span class="token punctuation">&#123;</span>
+        transaction<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"json1"</span><span class="token punctuation">,</span>jsonObject<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        transaction<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"json2"</span><span class="token punctuation">,</span>jsonObject<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        transaction<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        transaction<span class="token punctuation">.</span><span class="token function">discard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"json1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"json2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="整合SpringBoot"><a href="#整合SpringBoot" class="headerlink" title="整合SpringBoot"></a>整合SpringBoot</h2><p>springboot 2.x后，jedis被替换为了lettuce。jedis多个线程操作不安全，jedis pool（BIO）。lettuce采用netty，可以在多个线程中共享（NIO）</p>
 <pre><code>  &#123;% asset_img image-48.png %&#125;
@@ -646,27 +645,27 @@ exec<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 <p>Redis配置文件</p>
 <ul>
 <li><p>network</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bind 127.0.0.1 #绑定ip
-protected-mode yes #保护模式
-port 6379 #端口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">bind</span> <span class="token number">127.0</span>.0.1 <span class="token comment">#绑定ip</span>
+protected-mode <span class="token function">yes</span> <span class="token comment">#保护模式</span>
+port <span class="token number">6379</span> <span class="token comment">#端口</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>general</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">daemonize yes #守护进程的方式运行，默认是no
-pidfile &#x2F;var&#x2F;run&#x2F;redis_6379.pid #指定后台运行的pid文件
-loglevel notice # 日志等级
-logfile &quot;&quot; # 日志文件位置
-databases 16 # 数据库数量，默认16个<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">daemonize <span class="token function">yes</span> <span class="token comment">#守护进程的方式运行，默认是no</span>
+pidfile /var/run/redis_6379.pid <span class="token comment">#指定后台运行的pid文件</span>
+loglevel notice <span class="token comment"># 日志等级</span>
+logfile <span class="token string">""</span> <span class="token comment"># 日志文件位置</span>
+databases <span class="token number">16</span> <span class="token comment"># 数据库数量，默认16个</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>快照</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">save 3600 100 # 规定时间内，做了多少次操作会持久化到文件.rdb .aof
-stop-writes-on-bgsave-error yes # 持久化出错是否继续工作
-rdbcompression yes # 是否压缩rdb文件
-rdbchecksum yes # 保存rdb文件的时候错误校验
-dir .&#x2F; # rdb文件的位置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">save <span class="token number">3600</span> <span class="token number">100</span> <span class="token comment"># 规定时间内，做了多少次操作会持久化到文件.rdb .aof</span>
+stop-writes-on-bgsave-error <span class="token function">yes</span> <span class="token comment"># 持久化出错是否继续工作</span>
+rdbcompression <span class="token function">yes</span> <span class="token comment"># 是否压缩rdb文件</span>
+rdbchecksum <span class="token function">yes</span> <span class="token comment"># 保存rdb文件的时候错误校验</span>
+<span class="token function">dir</span> ./ <span class="token comment"># rdb文件的位置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>安全</p>
 <pre class="line-numbers language-none"><code class="language-none">requirepass password # 设置密码，命令config set requirepass &quot;password&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>限制</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">maxclients 1000 # 设置连接redis客户端最大数量
-maxmemory &lt;bytes&gt; # redis配置最大的内存容量
-maxmemory-policy noeviction # 内存到达上限的处理策略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">maxclients <span class="token number">1000</span> <span class="token comment"># 设置连接redis客户端最大数量</span>
+maxmemory <span class="token operator">&lt;</span>bytes<span class="token operator">></span> <span class="token comment"># redis配置最大的内存容量</span>
+maxmemory-policy noeviction <span class="token comment"># 内存到达上限的处理策略</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><p>maxmemory-policy</p>
@@ -688,10 +687,10 @@ maxmemory-policy noeviction # 内存到达上限的处理策略<span aria-hidden
 </ul>
 </li>
 <li><p>Append Only模式 aof配置</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">appendonly no # 默认不开启aof，默认使用rdb方式持久化
-appendfsync everysec # 每秒执行一次sync，可能丢失1s的数据
-appendfsync always # 每次修改执行sync，消耗性能
-appendfsync no # 不执行sync，操作系统自己同步<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">appendonly no <span class="token comment"># 默认不开启aof，默认使用rdb方式持久化</span>
+appendfsync everysec <span class="token comment"># 每秒执行一次sync，可能丢失1s的数据</span>
+appendfsync always <span class="token comment"># 每次修改执行sync，消耗性能</span>
+appendfsync no <span class="token comment"># 不执行sync，操作系统自己同步</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h2 id="持久化RDB（redis-database）"><a href="#持久化RDB（redis-database）" class="headerlink" title="持久化RDB（redis database）"></a>持久化RDB（redis database）</h2><pre><code>  &#123;% asset_img image-49.png %&#125;
 </code></pre>
@@ -778,7 +777,7 @@ appendfsync no # 不执行sync，操作系统自己同步<span aria-hidden="true
 <img src="/2022/02/17/redis/image-52.png" class="">
 <ul>
 <li><p>配置从机</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">slaveof 127.0.0.1 6379 # 从属于主机的地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">slaveof <span class="token number">127.0</span>.0.1 <span class="token number">6379</span> <span class="token comment"># 从属于主机的地址</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <img src="/2022/02/17/redis/image-53.png" class="">
 <ul>
@@ -821,7 +820,7 @@ appendfsync no # 不执行sync，操作系统自己同步<span aria-hidden="true
 <img src="/2022/02/17/redis/image-57.png" class="">
 <ul>
 <li><p>启动哨兵</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-sentinel ..&#x2F;etc&#x2F;sentinal.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-sentinel <span class="token punctuation">..</span>/etc/sentinal.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>优点</p>
 <ol>
 <li>哨兵模式，基于主从复制模式，所有主从配置的优点它都有</li>
@@ -836,76 +835,76 @@ appendfsync no # 不执行sync，操作系统自己同步<span aria-hidden="true
 </ol>
 </li>
 <li><p>哨兵配置</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># Example sentinel.conf
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Example sentinel.conf</span>
  
-# 哨兵sentinel实例运行的端口 默认26379
-port 26379
+<span class="token comment"># 哨兵sentinel实例运行的端口 默认26379</span>
+port <span class="token number">26379</span>
  
-# 哨兵sentinel的工作目录
-dir &#x2F;tmp
+<span class="token comment"># 哨兵sentinel的工作目录</span>
+<span class="token function">dir</span> /tmp
  
-# 哨兵sentinel监控的redis主节点的 ip port 
-# master-name  可以自己命名的主节点名字 只能由字母A-z、数字0-9 、这三个字符&quot;.-_&quot;组成。
-# quorum 当这些quorum个数sentinel哨兵认为master主节点失联 那么这时 客观上认为主节点失联了
-# sentinel monitor &lt;master-name&gt; &lt;ip&gt; &lt;redis-port&gt; &lt;quorum&gt;
-sentinel monitor mymaster 127.0.0.1 6379 1
+<span class="token comment"># 哨兵sentinel监控的redis主节点的 ip port </span>
+<span class="token comment"># master-name  可以自己命名的主节点名字 只能由字母A-z、数字0-9 、这三个字符".-_"组成。</span>
+<span class="token comment"># quorum 当这些quorum个数sentinel哨兵认为master主节点失联 那么这时 客观上认为主节点失联了</span>
+<span class="token comment"># sentinel monitor &lt;master-name> &lt;ip> &lt;redis-port> &lt;quorum></span>
+sentinel monitor mymaster <span class="token number">127.0</span>.0.1 <span class="token number">6379</span> <span class="token number">1</span>
  
-# 当在Redis实例中开启了requirepass foobared 授权密码 这样所有连接Redis实例的客户端都要提供密码
-# 设置哨兵sentinel 连接主从的密码 注意必须为主从设置一样的验证密码
-# sentinel auth-pass &lt;master-name&gt; &lt;password&gt;
+<span class="token comment"># 当在Redis实例中开启了requirepass foobared 授权密码 这样所有连接Redis实例的客户端都要提供密码</span>
+<span class="token comment"># 设置哨兵sentinel 连接主从的密码 注意必须为主从设置一样的验证密码</span>
+<span class="token comment"># sentinel auth-pass &lt;master-name> &lt;password></span>
 sentinel auth-pass mymaster MySUPER--secret-0123passw0rd
  
  
-# 指定多少毫秒之后 主节点没有应答哨兵sentinel 此时 哨兵主观上认为主节点下线 默认30秒
-# sentinel down-after-milliseconds &lt;master-name&gt; &lt;milliseconds&gt;
-sentinel down-after-milliseconds mymaster 30000
+<span class="token comment"># 指定多少毫秒之后 主节点没有应答哨兵sentinel 此时 哨兵主观上认为主节点下线 默认30秒</span>
+<span class="token comment"># sentinel down-after-milliseconds &lt;master-name> &lt;milliseconds></span>
+sentinel down-after-milliseconds mymaster <span class="token number">30000</span>
  
-# 这个配置项指定了在发生failover主备切换时最多可以有多少个slave同时对新的master进行 同步，
+<span class="token comment"># 这个配置项指定了在发生failover主备切换时最多可以有多少个slave同时对新的master进行 同步，</span>
 这个数字越小，完成failover所需的时间就越长，
 但是如果这个数字越大，就意味着越 多的slave因为replication而不可用。
-可以通过将这个值设为 1 来保证每次只有一个slave 处于不能处理命令请求的状态。
-# sentinel parallel-syncs &lt;master-name&gt; &lt;numslaves&gt;
-sentinel parallel-syncs mymaster 1
+可以通过将这个值设为 <span class="token number">1</span> 来保证每次只有一个slave 处于不能处理命令请求的状态。
+<span class="token comment"># sentinel parallel-syncs &lt;master-name> &lt;numslaves></span>
+sentinel parallel-syncs mymaster <span class="token number">1</span>
  
  
  
-# 故障转移的超时时间 failover-timeout 可以用在以下这些方面： 
-#1. 同一个sentinel对同一个master两次failover之间的间隔时间。
-#2. 当一个slave从一个错误的master那里同步数据开始计算时间。直到slave被纠正为向正确的master那里同步数据时。
-#3.当想要取消一个正在进行的failover所需要的时间。  
-#4.当进行failover时，配置所有slaves指向新的master所需的最大时间。不过，即使过了这个超时，slaves依然会被正确配置为指向master，但是就不按parallel-syncs所配置的规则来了
-# 默认三分钟
-# sentinel failover-timeout &lt;master-name&gt; &lt;milliseconds&gt;
-sentinel failover-timeout mymaster 180000
+<span class="token comment"># 故障转移的超时时间 failover-timeout 可以用在以下这些方面： </span>
+<span class="token comment">#1. 同一个sentinel对同一个master两次failover之间的间隔时间。</span>
+<span class="token comment">#2. 当一个slave从一个错误的master那里同步数据开始计算时间。直到slave被纠正为向正确的master那里同步数据时。</span>
+<span class="token comment">#3.当想要取消一个正在进行的failover所需要的时间。  </span>
+<span class="token comment">#4.当进行failover时，配置所有slaves指向新的master所需的最大时间。不过，即使过了这个超时，slaves依然会被正确配置为指向master，但是就不按parallel-syncs所配置的规则来了</span>
+<span class="token comment"># 默认三分钟</span>
+<span class="token comment"># sentinel failover-timeout &lt;master-name> &lt;milliseconds></span>
+sentinel failover-timeout mymaster <span class="token number">180000</span>
  
-# SCRIPTS EXECUTION
+<span class="token comment"># SCRIPTS EXECUTION</span>
  
-#配置当某一事件发生时所需要执行的脚本，可以通过脚本来通知管理员，例如当系统运行不正常时发邮件通知相关人员。
-#对于脚本的运行结果有以下规则：
-#若脚本执行后返回1，那么该脚本稍后将会被再次执行，重复次数目前默认为10
-#若脚本执行后返回2，或者比2更高的一个返回值，脚本将不会重复执行。
-#如果脚本在执行过程中由于收到系统中断信号被终止了，则同返回值为1时的行为相同。
-#一个脚本的最大执行时间为60s，如果超过这个时间，脚本将会被一个SIGKILL信号终止，之后重新执行。
+<span class="token comment">#配置当某一事件发生时所需要执行的脚本，可以通过脚本来通知管理员，例如当系统运行不正常时发邮件通知相关人员。</span>
+<span class="token comment">#对于脚本的运行结果有以下规则：</span>
+<span class="token comment">#若脚本执行后返回1，那么该脚本稍后将会被再次执行，重复次数目前默认为10</span>
+<span class="token comment">#若脚本执行后返回2，或者比2更高的一个返回值，脚本将不会重复执行。</span>
+<span class="token comment">#如果脚本在执行过程中由于收到系统中断信号被终止了，则同返回值为1时的行为相同。</span>
+<span class="token comment">#一个脚本的最大执行时间为60s，如果超过这个时间，脚本将会被一个SIGKILL信号终止，之后重新执行。</span>
  
-#通知型脚本:当sentinel有任何警告级别的事件发生时（比如说redis实例的主观失效和客观失效等等），将会去调用这个脚本，
-#这时这个脚本应该通过邮件，SMS等方式去通知系统管理员关于系统不正常运行的信息。调用该脚本时，将传给脚本两个参数，
-#一个是事件的类型，
-#一个是事件的描述。
-#如果sentinel.conf配置文件中配置了这个脚本路径，那么必须保证这个脚本存在于这个路径，并且是可执行的，否则sentinel无法正常启动成功。
-#通知脚本
-# sentinel notification-script &lt;master-name&gt; &lt;script-path&gt;
-  sentinel notification-script mymaster &#x2F;var&#x2F;redis&#x2F;notify.sh
+<span class="token comment">#通知型脚本:当sentinel有任何警告级别的事件发生时（比如说redis实例的主观失效和客观失效等等），将会去调用这个脚本，</span>
+<span class="token comment">#这时这个脚本应该通过邮件，SMS等方式去通知系统管理员关于系统不正常运行的信息。调用该脚本时，将传给脚本两个参数，</span>
+<span class="token comment">#一个是事件的类型，</span>
+<span class="token comment">#一个是事件的描述。</span>
+<span class="token comment">#如果sentinel.conf配置文件中配置了这个脚本路径，那么必须保证这个脚本存在于这个路径，并且是可执行的，否则sentinel无法正常启动成功。</span>
+<span class="token comment">#通知脚本</span>
+<span class="token comment"># sentinel notification-script &lt;master-name> &lt;script-path></span>
+  sentinel notification-script mymaster /var/redis/notify.sh
  
-# 客户端重新配置主节点参数脚本
-# 当一个master由于failover而发生改变时，这个脚本将会被调用，通知相关的客户端关于master地址已经发生改变的信息。
-# 以下参数将会在调用脚本时传给脚本:
-# &lt;master-name&gt; &lt;role&gt; &lt;state&gt; &lt;from-ip&gt; &lt;from-port&gt; &lt;to-ip&gt; &lt;to-port&gt;
-# 目前&lt;state&gt;总是“failover”,
-# &lt;role&gt;是“leader”或者“observer”中的一个。 
-# 参数 from-ip, from-port, to-ip, to-port是用来和旧的master和新的master(即旧的slave)通信的
-# 这个脚本应该是通用的，能被多次调用，不是针对性的。
-# sentinel client-reconfig-script &lt;master-name&gt; &lt;script-path&gt;
-sentinel client-reconfig-script mymaster &#x2F;var&#x2F;redis&#x2F;reconfig.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token comment"># 客户端重新配置主节点参数脚本</span>
+<span class="token comment"># 当一个master由于failover而发生改变时，这个脚本将会被调用，通知相关的客户端关于master地址已经发生改变的信息。</span>
+<span class="token comment"># 以下参数将会在调用脚本时传给脚本:</span>
+<span class="token comment"># &lt;master-name> &lt;role> &lt;state> &lt;from-ip> &lt;from-port> &lt;to-ip> &lt;to-port></span>
+<span class="token comment"># 目前&lt;state>总是“failover”,</span>
+<span class="token comment"># &lt;role>是“leader”或者“observer”中的一个。 </span>
+<span class="token comment"># 参数 from-ip, from-port, to-ip, to-port是用来和旧的master和新的master(即旧的slave)通信的</span>
+<span class="token comment"># 这个脚本应该是通用的，能被多次调用，不是针对性的。</span>
+<span class="token comment"># sentinel client-reconfig-script &lt;master-name> &lt;script-path></span>
+sentinel client-reconfig-script mymaster /var/redis/reconfig.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h2 id="Redis缓存穿透"><a href="#Redis缓存穿透" class="headerlink" title="Redis缓存穿透"></a>Redis缓存穿透</h2><ul>
 <li><p>描述：</p>
@@ -978,7 +977,7 @@ sentinel client-reconfig-script mymaster &#x2F;var&#x2F;redis&#x2F;reconfig.sh<s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://RockSpeech.github.io/2022/02/17/redis/">https://RockSpeech.github.io/2022/02/17/redis/</a>
+                    <a href="https://RockRebuild.github.io/2022/02/17/redis/">https://RockRebuild.github.io/2022/02/17/redis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1288,7 +1287,7 @@ sentinel client-reconfig-script mymaster &#x2F;var&#x2F;redis&#x2F;reconfig.sh<s
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2018-2022</span>
+                <span id="year">2018-2024</span>
             
             <a href="/about" target="_blank">Yangzk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1296,7 +1295,7 @@ sentinel client-reconfig-script mymaster &#x2F;var&#x2F;redis&#x2F;reconfig.sh<s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.7k</span>
+                        class="white-color">50.5k</span>
             
             
             
@@ -1322,7 +1321,7 @@ sentinel client-reconfig-script mymaster &#x2F;var&#x2F;redis&#x2F;reconfig.sh<s
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/RockSpeech" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/RockRebuild" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
@@ -1535,12 +1534,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
-    var parent = document.getElementById('fenlei');
-    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/program/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 编程 (20)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/bugfix/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 问题记录 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://RockSpeech.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
-    console.log('已挂载magnet')
-    parent.insertAdjacentHTML("afterbegin",child)}
-     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
-    <style></style><!-- hexo injector body_end end --></body>
+</body>
 
 </html>

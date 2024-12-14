@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SSM框架 - SpringMVC, RockSpeech">
+    <meta name="keywords" content="SSM框架 - SpringMVC, RockRebuild">
     <meta name="description" content="SpringMVC1. 描述​    MVC是一种软件架构的思想，将软件按照模型、视图、控制器来划分，SpringMVC 是 Spring 为表述层开发提供的一整套完备的解决方案。在表述层框架历经 Strust、 WebWork、Strus">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -19,7 +19,7 @@
 
     
 
-    <title>SSM框架 - SpringMVC | RockSpeech</title>
+    <title>SSM框架 - SpringMVC | RockRebuild</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -32,8 +32,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="RockSpeech" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.1"></head>
 
 
 <body>
@@ -45,7 +44,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">RockSpeech</span>
+                    <span class="logo-span">RockRebuild</span>
                 </a>
             </div>
             
@@ -144,7 +143,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">RockSpeech</div>
+        <div class="logo-name">RockRebuild</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -402,14 +401,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    4.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    16 分
                 </div>
                 
 
@@ -629,19 +628,19 @@
 </ol>
 <h2 id="5-SpringMVC获取请求参数"><a href="#5-SpringMVC获取请求参数" class="headerlink" title="5. SpringMVC获取请求参数"></a>5. SpringMVC获取请求参数</h2><ol>
 <li><p>通过ServletAPI获取</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RequestMapping(&quot;&#x2F;testParam&quot;)
-public String testParam(HttpServletRequest request)&#123;
-    String username &#x3D; request.getParameter(&quot;username&quot;);
-    String password &#x3D; request.getParameter(&quot;password&quot;);
-    System.out.println(&quot;username:&quot;+username+&quot;,password:&quot;+password);
-    return &quot;success&quot;;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/testParam"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">testParam</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> username <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> password <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"username:"</span><span class="token operator">+</span>username<span class="token operator">+</span><span class="token string">",password:"</span><span class="token operator">+</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">"success"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>通过控制器方法的形参获取</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RequestMapping(&quot;&#x2F;testParam&quot;)
-public String testParam(String username, String password)&#123;
-    System.out.println(&quot;username:&quot;+username+&quot;,password:&quot;+password);
-    return &quot;success&quot;;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/testParam"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">testParam</span><span class="token punctuation">(</span><span class="token class-name">String</span> username<span class="token punctuation">,</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"username:"</span><span class="token operator">+</span>username<span class="token operator">+</span><span class="token string">",password:"</span><span class="token operator">+</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">"success"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>@RequestParam</p>
 <ul>
 <li>@RequestParam是将请求参数和控制器方法的形参创建映射关系 </li>
@@ -673,20 +672,20 @@ public String testParam(String username, String password)&#123;
 </li>
 <li><p>通过POJO获取</p>
 <p>可以在控制器方法的形参位置设置一个实体类类型的形参，此时若浏览器传输的请求参数的参数名和实 体类中的属性名一致，那么请求参数就会为此属性赋值</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RequestMapping(&quot;&#x2F;testpojo&quot;)
-public String testPOJO(User user)&#123;
-    System.out.println(user);
-    return &quot;success&quot;;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/testpojo"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">testPOJO</span><span class="token punctuation">(</span><span class="token class-name">User</span> user<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">"success"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="6-RequestBody"><a href="#6-RequestBody" class="headerlink" title="6. @RequestBody"></a>6. @RequestBody</h2><ol>
 <li><p>@RequestBody</p>
 <p>可以获取请求体信息，使用@RequestBody注解标识控制器方法的形参，当前请求的请求体就会为当前注解所标识的形参赋值</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RequestMapping(&quot;&#x2F;test&#x2F;RequestBody&quot;)
-public String testRequestBody(@RequestBody String requestBody)&#123;
-    System.out.println(&quot;requestBody:&quot;+requestBody);
-    return &quot;success&quot;;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/test/RequestBody"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">testRequestBody</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">String</span> requestBody<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"requestBody:"</span><span class="token operator">+</span>requestBody<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">"success"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>@RequestBody获取json格式的请求参数</p>
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!-- 导入jackson的依赖 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
@@ -695,24 +694,24 @@ public String testRequestBody(@RequestBody String requestBody)&#123;
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.12.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;将json格式的数据转换为map集合
-@RequestMapping(&quot;&#x2F;test&#x2F;RequestBody&#x2F;json&quot;)
-public void testRequestBody(@RequestBody Map&lt;String, Object&gt; map,
-HttpServletResponse response) throws IOException &#123;
-    System.out.println(map);
-    &#x2F;&#x2F;&#123;username&#x3D;admin, password&#x3D;123456&#125;
-    response.getWriter().print(&quot;hello,axios&quot;);
-&#125;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//将json格式的数据转换为map集合</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/test/RequestBody/json"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testRequestBody</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map<span class="token punctuation">,</span>
+<span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#123;username=admin, password=123456&#125;</span>
+    response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello,axios"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-&#x2F;&#x2F;将json格式的数据转换为实体类对象
-@RequestMapping(&quot;&#x2F;test&#x2F;RequestBody&#x2F;json&quot;)
-public void testRequestBody(@RequestBody User user, HttpServletResponse
-response) throws IOException &#123;
-    System.out.println(user);
-    &#x2F;&#x2F;User&#123;id&#x3D;null, username&#x3D;&#39;admin&#39;, password&#x3D;&#39;123456&#39;, age&#x3D;null,
-    gender&#x3D;&#39;null&#39;&#125;
-    response.getWriter().print(&quot;hello,axios&quot;);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token comment">//将json格式的数据转换为实体类对象</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/test/RequestBody/json"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testRequestBody</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">User</span> user<span class="token punctuation">,</span> <span class="token class-name">HttpServletResponse</span>
+response<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//User&#123;id=null, username='admin', password='123456', age=null,</span>
+    gender<span class="token operator">=</span><span class="token char">'null'</span><span class="token punctuation">&#125;</span>
+    response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello,axios"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="7-ResponseBody"><a href="#7-ResponseBody" class="headerlink" title="7. @ResponseBody"></a>7. @ResponseBody</h2><ol>
 <li><p>@ResponseBody</p>
@@ -727,35 +726,35 @@ response) throws IOException &#123;
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.12.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;响应浏览器list集合
-@RequestMapping(&quot;&#x2F;test&#x2F;ResponseBody&#x2F;json&quot;)
-@ResponseBody
-public List&lt;User&gt; testResponseBody()&#123;
-    User user1 &#x3D; new User(1001,&quot;admin1&quot;,&quot;123456&quot;,23,&quot;男&quot;);
-    User user2 &#x3D; new User(1002,&quot;admin2&quot;,&quot;123456&quot;,23,&quot;男&quot;);
-    User user3 &#x3D; new User(1003,&quot;admin3&quot;,&quot;123456&quot;,23,&quot;男&quot;);
-    List&lt;User&gt; list &#x3D; Arrays.asList(user1, user2, user3);
-    return list;
-&#125;
-&#x2F;&#x2F;响应浏览器map集合
-@RequestMapping(&quot;&#x2F;test&#x2F;ResponseBody&#x2F;json&quot;)
-@ResponseBody
-public Map&lt;String, Object&gt; testResponseBody()&#123;
-    User user1 &#x3D; new User(1001,&quot;admin1&quot;,&quot;123456&quot;,23,&quot;男&quot;);
-    User user2 &#x3D; new User(1002,&quot;admin2&quot;,&quot;123456&quot;,23,&quot;男&quot;);
-    User user3 &#x3D; new User(1003,&quot;admin3&quot;,&quot;123456&quot;,23,&quot;男&quot;);
-    Map&lt;String, Object&gt; map &#x3D; new HashMap&lt;&gt;();
-    map.put(&quot;1001&quot;, user1);
-    map.put(&quot;1002&quot;, user2);
-    map.put(&quot;1003&quot;, user3);
-    return map;
-&#125;
-&#x2F;&#x2F;响应浏览器实体类对象
-@RequestMapping(&quot;&#x2F;test&#x2F;ResponseBody&#x2F;json&quot;)
-@ResponseBody
-public User testResponseBody()&#123;
-	return user;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//响应浏览器list集合</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/test/ResponseBody/json"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ResponseBody</span>
+<span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> <span class="token function">testResponseBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">User</span> user1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token number">1001</span><span class="token punctuation">,</span><span class="token string">"admin1"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">User</span> user2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token number">1002</span><span class="token punctuation">,</span><span class="token string">"admin2"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">User</span> user3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token number">1003</span><span class="token punctuation">,</span><span class="token string">"admin3"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>user1<span class="token punctuation">,</span> user2<span class="token punctuation">,</span> user3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> list<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//响应浏览器map集合</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/test/ResponseBody/json"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ResponseBody</span>
+<span class="token keyword">public</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> <span class="token function">testResponseBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">User</span> user1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token number">1001</span><span class="token punctuation">,</span><span class="token string">"admin1"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">User</span> user2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token number">1002</span><span class="token punctuation">,</span><span class="token string">"admin2"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">User</span> user3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token number">1003</span><span class="token punctuation">,</span><span class="token string">"admin3"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"1001"</span><span class="token punctuation">,</span> user1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"1002"</span><span class="token punctuation">,</span> user2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"1003"</span><span class="token punctuation">,</span> user3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//响应浏览器实体类对象</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/test/ResponseBody/json"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ResponseBody</span>
+<span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">testResponseBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> user<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="8-RestController注解"><a href="#8-RestController注解" class="headerlink" title="8. @RestController注解"></a>8. @RestController注解</h2><p>​    @RestController注解是springMVC提供的一个复合注解，标识在控制器的类上，就相当于为类添加了 @Controller注解，并且为其中的每个方法添加了@ResponseBody注解</p>
 <h2 id="9-拦截器"><a href="#9-拦截器" class="headerlink" title="9. 拦截器"></a>9. 拦截器</h2><ol>
@@ -797,117 +796,117 @@ mvc:exclude-mapping设置需要排除的请求，即不需要拦截的请求
 <h2 id="10-注解配置MVC"><a href="#10-注解配置MVC" class="headerlink" title="10. 注解配置MVC"></a>10. 注解配置MVC</h2><ol>
 <li><p>创建初始化类，代替web.xml</p>
 <p>在Servlet3.0环境中，容器会在类路径中查找实现javax.servlet.ServletContainerInitializer接口的类， 如果找到的话就用它来配置Servlet容器。 Spring提供了这个接口的实现，名为 SpringServletContainerInitializer，这个类反过来又会查找实现WebApplicationInitializer的类并将配 置的任务交给它们来完成。Spring3.2引入了一个便利的WebApplicationInitializer基础实现，名为 AbstractAnnotationConfigDispatcherServletInitializer，当我们的类扩展了 AbstractAnnotationConfigDispatcherServletInitializer并将其部署到Servlet3.0容器的时候，容器会自 动发现它，并用它来配置Servlet上下文。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class WebInit extends AbstractAnnotationConfigDispatcherServletInitializer &#123;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WebInit</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractAnnotationConfigDispatcherServletInitializer</span> <span class="token punctuation">&#123;</span>
     
-    &#x2F;**
+    <span class="token comment">/**
     * 指定spring的配置类
     * @return
-    *&#x2F;
-    @Override
-    protected Class&lt;?&gt;[] getRootConfigClasses() &#123;
-    	return new Class[]&#123;SpringConfig.class&#125;;
-    &#125;
+    */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span></span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getRootConfigClasses</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token class-name">SpringConfig</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    &#x2F;**
+    <span class="token comment">/**
     * 指定SpringMVC的配置类
     * @return
-    *&#x2F;
+    */</span>
     
-    @Override
-    protected Class&lt;?&gt;[] getServletConfigClasses() &#123;
-    	return new Class[]&#123;WebConfig.class&#125;;
-    &#125;
-    &#x2F;**
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span></span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getServletConfigClasses</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token class-name">WebConfig</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/**
     * 指定DispatcherServlet的映射规则，即url-pattern
     * @return
-    *&#x2F;
+    */</span>
     
-    @Override
-    protected String[] getServletMappings() &#123;
-    	return new String[]&#123;&quot;&#x2F;&quot;&#125;;
-    &#125;
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getServletMappings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token string">"/"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    &#x2F;**
+    <span class="token comment">/**
     * 添加过滤器
     * @return
-    *&#x2F;
-    @Override
-    protected Filter[] getServletFilters() &#123;
-        CharacterEncodingFilter encodingFilter &#x3D; new CharacterEncodingFilter();
-        encodingFilter.setEncoding(&quot;UTF-8&quot;);
-        encodingFilter.setForceRequestEncoding(true);
-        HiddenHttpMethodFilter hiddenHttpMethodFilter &#x3D; new
-        HiddenHttpMethodFilter();
-        return new Filter[]&#123;encodingFilter, hiddenHttpMethodFilter&#125;;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token class-name">Filter</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getServletFilters</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">CharacterEncodingFilter</span> encodingFilter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CharacterEncodingFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        encodingFilter<span class="token punctuation">.</span><span class="token function">setEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        encodingFilter<span class="token punctuation">.</span><span class="token function">setForceRequestEncoding</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">HiddenHttpMethodFilter</span> hiddenHttpMethodFilter <span class="token operator">=</span> <span class="token keyword">new</span>
+        <span class="token class-name">HiddenHttpMethodFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Filter</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span>encodingFilter<span class="token punctuation">,</span> hiddenHttpMethodFilter<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>创建SpringConfig配置类，代替spring的配置文件</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
-public class SpringConfig &#123;
-	&#x2F;&#x2F;ssm整合之后，spring的配置信息写在此类中
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringConfig</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//ssm整合之后，spring的配置信息写在此类中</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>创建WebConfig配置类，代替SpringMVC的配置文件</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
-&#x2F;&#x2F;扫描组件
-@ComponentScan(&quot;com.atguigu.mvc.controller&quot;)
-&#x2F;&#x2F;开启MVC注解驱动
-@EnableWebMvc
-public class WebConfig implements WebMvcConfigurer &#123;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token comment">//扫描组件</span>
+<span class="token annotation punctuation">@ComponentScan</span><span class="token punctuation">(</span><span class="token string">"com.atguigu.mvc.controller"</span><span class="token punctuation">)</span>
+<span class="token comment">//开启MVC注解驱动</span>
+<span class="token annotation punctuation">@EnableWebMvc</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WebConfig</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span> <span class="token punctuation">&#123;</span>
     
-    &#x2F;&#x2F;使用默认的servlet处理静态资源
-    @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer
-    configurer) &#123;
-    	configurer.enable();
-    &#125;
+    <span class="token comment">//使用默认的servlet处理静态资源</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">configureDefaultServletHandling</span><span class="token punctuation">(</span><span class="token class-name">DefaultServletHandlerConfigurer</span>
+    configurer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	configurer<span class="token punctuation">.</span><span class="token function">enable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    &#x2F;&#x2F;配置文件上传解析器
-    @Bean
-    public CommonsMultipartResolver multipartResolver()&#123;
-    	return new CommonsMultipartResolver();
-    &#125;
+    <span class="token comment">//配置文件上传解析器</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonsMultipartResolver</span> <span class="token function">multipartResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    	<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonsMultipartResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    &#x2F;&#x2F;配置拦截器
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) &#123;
-    	MyInterceptor MyInterceptor &#x3D; new MyInterceptor();
-    	registry.addInterceptor(MyInterceptor).addPathPatterns(&quot;&#x2F;**&quot;);
-    &#125;
+    <span class="token comment">//配置拦截器</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addInterceptors</span><span class="token punctuation">(</span><span class="token class-name">InterceptorRegistry</span> registry<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token class-name">MyInterceptor</span> <span class="token class-name">MyInterceptor</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	registry<span class="token punctuation">.</span><span class="token function">addInterceptor</span><span class="token punctuation">(</span><span class="token class-name">MyInterceptor</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addPathPatterns</span><span class="token punctuation">(</span><span class="token string">"/**"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    &#x2F;&#x2F;配置生成模板解析器
-    @Bean
-    public ITemplateResolver templateResolver() &#123;
-        WebApplicationContext webApplicationContext &#x3D;
-        ContextLoader.getCurrentWebApplicationContext();
-        &#x2F;&#x2F; ServletContextTemplateResolver需要一个ServletContext作为构造参数，可通过
-        WebApplicationContext 的方法获得
-        ServletContextTemplateResolver templateResolver &#x3D; new
-        ServletContextTemplateResolver(
-        webApplicationContext.getServletContext());
-        templateResolver.setPrefix(&quot;&#x2F;WEB-INF&#x2F;templates&#x2F;&quot;);
-        templateResolver.setSuffix(&quot;.html&quot;);
-        templateResolver.setCharacterEncoding(&quot;UTF-8&quot;);
-        templateResolver.setTemplateMode(TemplateMode.HTML);
-        return templateResolver;
-    &#125;
+    <span class="token comment">//配置生成模板解析器</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">ITemplateResolver</span> <span class="token function">templateResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">WebApplicationContext</span> webApplicationContext <span class="token operator">=</span>
+        <span class="token class-name">ContextLoader</span><span class="token punctuation">.</span><span class="token function">getCurrentWebApplicationContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// ServletContextTemplateResolver需要一个ServletContext作为构造参数，可通过</span>
+        <span class="token class-name">WebApplicationContext</span> 的方法获得
+        <span class="token class-name">ServletContextTemplateResolver</span> templateResolver <span class="token operator">=</span> <span class="token keyword">new</span>
+        <span class="token class-name">ServletContextTemplateResolver</span><span class="token punctuation">(</span>
+        webApplicationContext<span class="token punctuation">.</span><span class="token function">getServletContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateResolver<span class="token punctuation">.</span><span class="token function">setPrefix</span><span class="token punctuation">(</span><span class="token string">"/WEB-INF/templates/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateResolver<span class="token punctuation">.</span><span class="token function">setSuffix</span><span class="token punctuation">(</span><span class="token string">".html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateResolver<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateResolver<span class="token punctuation">.</span><span class="token function">setTemplateMode</span><span class="token punctuation">(</span><span class="token class-name">TemplateMode</span><span class="token punctuation">.</span>HTML<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> templateResolver<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    &#x2F;&#x2F;生成模板引擎并为模板引擎注入模板解析器
-    @Bean
-    public SpringTemplateEngine templateEngine(ITemplateResolver templateResolver) &#123;
-        SpringTemplateEngine templateEngine &#x3D; new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver);
-        return templateEngine;
-    &#125;
+    <span class="token comment">//生成模板引擎并为模板引擎注入模板解析器</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">SpringTemplateEngine</span> <span class="token function">templateEngine</span><span class="token punctuation">(</span><span class="token class-name">ITemplateResolver</span> templateResolver<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">SpringTemplateEngine</span> templateEngine <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SpringTemplateEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateEngine<span class="token punctuation">.</span><span class="token function">setTemplateResolver</span><span class="token punctuation">(</span>templateResolver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> templateEngine<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    &#x2F;&#x2F;生成视图解析器并为解析器注入模板引擎
-    @Bean
-    public ViewResolver viewResolver(SpringTemplateEngine templateEngine) &#123;
-    ThymeleafViewResolver viewResolver &#x3D; new ThymeleafViewResolver();
-    viewResolver.setCharacterEncoding(&quot;UTF-8&quot;);
-    viewResolver.setTemplateEngine(templateEngine);
-    return viewResolver;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    <span class="token comment">//生成视图解析器并为解析器注入模板引擎</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">ViewResolver</span> <span class="token function">viewResolver</span><span class="token punctuation">(</span><span class="token class-name">SpringTemplateEngine</span> templateEngine<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">ThymeleafViewResolver</span> viewResolver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThymeleafViewResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    viewResolver<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    viewResolver<span class="token punctuation">.</span><span class="token function">setTemplateEngine</span><span class="token punctuation">(</span>templateEngine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> viewResolver<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="11-SpringMVC执行流程"><a href="#11-SpringMVC执行流程" class="headerlink" title="11. SpringMVC执行流程"></a>11. SpringMVC执行流程</h2><ol>
 <li><p>SpringMVC常用组件</p>
@@ -959,7 +958,7 @@ public class WebConfig implements WebMvcConfigurer &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://RockSpeech.github.io/2021/02/11/ssm-kuang-jia-springmvc/">https://RockSpeech.github.io/2021/02/11/ssm-kuang-jia-springmvc/</a>
+                    <a href="https://RockRebuild.github.io/2021/02/11/ssm-kuang-jia-springmvc/">https://RockRebuild.github.io/2021/02/11/ssm-kuang-jia-springmvc/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1269,7 +1268,7 @@ public class WebConfig implements WebMvcConfigurer &#123;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2018-2022</span>
+                <span id="year">2018-2024</span>
             
             <a href="/about" target="_blank">Yangzk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1277,7 +1276,7 @@ public class WebConfig implements WebMvcConfigurer &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.7k</span>
+                        class="white-color">50.5k</span>
             
             
             
@@ -1303,7 +1302,7 @@ public class WebConfig implements WebMvcConfigurer &#123;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/RockSpeech" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/RockRebuild" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
@@ -1516,12 +1515,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
-    var parent = document.getElementById('fenlei');
-    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/program/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 编程 (20)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/bugfix/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 问题记录 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://RockSpeech.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
-    console.log('已挂载magnet')
-    parent.insertAdjacentHTML("afterbegin",child)}
-     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
-    <style></style><!-- hexo injector body_end end --></body>
+</body>
 
 </html>

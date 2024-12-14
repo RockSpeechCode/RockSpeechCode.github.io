@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JAVA多线程, RockSpeech">
+    <meta name="keywords" content="JAVA多线程, RockRebuild">
     <meta name="description" content="JAVA 多线程并发并行
 并发：两个或多个事件在同一时间段发生（交替）
 
@@ -27,7 +27,7 @@
 
     
 
-    <title>JAVA多线程 | RockSpeech</title>
+    <title>JAVA多线程 | RockRebuild</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -40,8 +40,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="RockSpeech" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.1"></head>
 
 
 <body>
@@ -53,7 +52,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">RockSpeech</span>
+                    <span class="logo-span">RockRebuild</span>
                 </a>
             </div>
             
@@ -152,7 +151,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">RockSpeech</div>
+        <div class="logo-name">RockRebuild</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -492,31 +491,31 @@
 <p>方式二避免了单继承的局限性，增强了程序的扩展性，降低了耦合性</p>
 <ul>
 <li><p>匿名内部类实现线程创建</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; Thread子类实现
-new Thread()&#123;
-    @Override
-    public void run()&#123;
-        System.out.println(Thread.currentThread().getName());
-    &#125;
-&#125;.start();
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// Thread子类实现</span>
+<span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-&#x2F;&#x2F; Runnable接口实现
-new Thread(new Runnable()&#123;
-    @Override
-    public void run()&#123;
-        System.out.println(Thread.currentThread().getName());
-    &#125;
-&#125;).start();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token comment">// Runnable接口实现</span>
+<span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 获取当前线程名称
-Thread.currentThread().getName(); 
-&#x2F;&#x2F; 获取线程名称
-Thread t1 &#x3D; new Thread();
-t1.getName();
-&#x2F;&#x2F; 设置线程名称
-t1.setName(&quot;线程1&quot;);
-&#x2F;&#x2F; 当前线程暂停执行指定的毫秒数
-Thread.sleep(1000);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 获取当前线程名称</span>
+<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// 获取线程名称</span>
+<span class="token class-name">Thread</span> t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+t1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 设置线程名称</span>
+t1<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"线程1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 当前线程暂停执行指定的毫秒数</span>
+<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -524,9 +523,9 @@ Thread.sleep(1000);<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <h3 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h3><ol>
 <li><p>同步代码块</p>
 <p>线程执行到synchronized会检查是否有锁对象，如果有进入同步中执行，如果没有就阻塞等待。同步执行完归还同步锁</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">synchronized(同步锁对象)&#123;
-	&#x2F;&#x2F; 需要同步的代码
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">synchronized</span><span class="token punctuation">(</span>同步锁对象<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token comment">// 需要同步的代码</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>同步方法</p>
 <ul>
 <li>方法上添加synchronized，同步锁对象是this</li>
@@ -535,10 +534,10 @@ Thread.sleep(1000);<span aria-hidden="true" class="line-numbers-rows"><span></sp
 </li>
 <li><p>锁机制（Lock锁）更先进</p>
 <p>在成员位置创建一个ReentrantLock（实现了Lock接口）对象，在出现安全问题的代码前调用lock获取锁，在出现安全问题的代码后调用unlock释放锁。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">Lock l &#x3D; new Lock();
-l.lock();
-&#x2F;&#x2F; 线程安全问题代码
-l.unlock(); &#x2F;&#x2F; 一般放在try catch后的finally中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Lock</span> l <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+l<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 线程安全问题代码</span>
+l<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 一般放在try catch后的finally中</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h2><ul>
 <li>New：新创建的线程，尚未执行</li>
@@ -585,16 +584,16 @@ l.unlock(); &#x2F;&#x2F; 一般放在try catch后的finally中<span aria-hidden=
 <p>java.util.concurrent.Executors:线程池的工厂类</p>
 <ul>
 <li><p>创建线程池</p>
- <pre class="line-numbers language-java" data-language="java"><code class="language-java">ExecutorService es &#x3D; Executors.newFixedThreadPool(2);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">ExecutorService</span> es <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>submit执行线程任务</p>
- <pre class="line-numbers language-java" data-language="java"><code class="language-java">es.submit(new Runnable() &#123;
-    @Override
-    public void run() &#123;
-    	System.out.println(Thread.currentThread().getName());
-    &#125;
-&#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java">es<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>销毁线程池（不建议使用）</p>
- <pre class="line-numbers language-java" data-language="java"><code class="language-java">es.shutdown();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java">es<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 
                 
@@ -622,7 +621,7 @@ l.unlock(); &#x2F;&#x2F; 一般放在try catch后的finally中<span aria-hidden=
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://RockSpeech.github.io/2020/04/12/java-duo-xian-cheng/">https://RockSpeech.github.io/2020/04/12/java-duo-xian-cheng/</a>
+                    <a href="https://RockRebuild.github.io/2020/04/12/java-duo-xian-cheng/">https://RockRebuild.github.io/2020/04/12/java-duo-xian-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -932,7 +931,7 @@ l.unlock(); &#x2F;&#x2F; 一般放在try catch后的finally中<span aria-hidden=
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2018-2022</span>
+                <span id="year">2018-2024</span>
             
             <a href="/about" target="_blank">Yangzk</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -940,7 +939,7 @@ l.unlock(); &#x2F;&#x2F; 一般放在try catch后的finally中<span aria-hidden=
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">51.7k</span>
+                        class="white-color">50.5k</span>
             
             
             
@@ -966,7 +965,7 @@ l.unlock(); &#x2F;&#x2F; 一般放在try catch后的finally中<span aria-hidden=
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/RockSpeech" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/RockRebuild" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
@@ -1179,12 +1178,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('fenlei') && (location.pathname ==='/'|| '/' ==='all')){
-    var parent = document.getElementById('fenlei');
-    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/program/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 编程 (20)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://RockSpeech.github.io/categories/bugfix/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 问题记录 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://RockSpeech.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
-    console.log('已挂载magnet')
-    parent.insertAdjacentHTML("afterbegin",child)}
-     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: linear-gradient( 135deg, #91EAE4,#86A8E7,#7F7FD5)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
-    <style></style><!-- hexo injector body_end end --></body>
+</body>
 
 </html>
