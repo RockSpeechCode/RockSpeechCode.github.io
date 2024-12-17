@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>stop方法中断线程不安全</title>
+      <link href="/2023/12/17/stop-fang-fa-zhong-duan-xian-cheng-bu-an-quan/"/>
+      <url>/2023/12/17/stop-fang-fa-zhong-duan-xian-cheng-bu-an-quan/</url>
+      
+        <content type="html"><![CDATA[<ol><li>调用 stop() 方法会立刻停止 run() 方法中剩余的全部工作，会导致一些清理性的工作的得不到完成，如文件，数据库等的关闭。</li><li>调用 stop() 方法会立即释放该线程所持有的所有的锁，导致数据得不到同步，出现数据不一致的问题。<br>解决：</li><li>使用 interrupt()，在当前线程中打一个停止的标记</li><li>使用标志位<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">boolean</span> exitFlag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// 退出标志</span><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>exitFlag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token comment">// 执行线程的任务</span>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Thread is running..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 模拟一些工作</span>        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token comment">// 处理中断（如果需要）</span>            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">interrupt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 重新设置中断状态</span>        <span class="token punctuation">&#125;</span>    <span class="token punctuation">&#125;</span>    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Thread is stopping..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    exitFlag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// 设置退出标志为true</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题记录 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>权限模型</title>
+      <link href="/2023/01/05/quan-xian-mo-xing/"/>
+      <url>/2023/01/05/quan-xian-mo-xing/</url>
+      
+        <content type="html"><![CDATA[<h1 id="权限模型RBAC"><a href="#权限模型RBAC" class="headerlink" title="权限模型RBAC"></a>权限模型RBAC</h1><p>RBAC 其实是一种分析模型，主要分为：<strong>基本模型 RBAC0</strong>、<strong>角色分层模型 RBAC1</strong>、<strong>角色限制模型 RBAC2</strong> 和 <strong>统一模型 RBAC3</strong>。</p><p>RBAC 权限模型是基于角色的权限控制。模型中有几个关键的术语：</p><ul><li>用户：系统接口及访问的操作者</li><li>权限：能够访问某接口或者做某操作的授权资格</li><li>角色：具有一类相同操作权限的用户的总称</li></ul><h3 id="1-RBAC0"><a href="#1-RBAC0" class="headerlink" title="1. RBAC0"></a>1. RBAC0</h3><p>RBAC0 是由四部分构成：用户、角色、会话、许可</p><ul><li>用户和角色的含义很简单，通过字面意思即可明白，</li><li><strong>会话：</strong>指用户被赋予角色的过程，称之为会话或者是说激活角色；</li><li><strong>许可：</strong> 就是角色拥有的权限（操作和和被控制的对象），简单的说就是用户可使用的功能或者可查看的数据。</li></ul><h3 id="2-RBAC1"><a href="#2-RBAC1" class="headerlink" title="2. RBAC1"></a>2. RBAC1</h3><p>​    RBAC1 是在 RBAC0 权限模型的基础上，在角色中加入了继承的概念，添加了继承的概念后，角色就有了上下级或者等级关系。</p><p>​    上层角色拥有下层的所有角色的权限，且上层角色可拥有额外的权限。</p><h3 id="3-RBAC2"><a href="#3-RBAC2" class="headerlink" title="3. RBAC2"></a>3. RBAC2</h3><p>​    RBAC2 是在 RBAC0 权限模型的基础上，在用户和角色以及会话和角色之间分别加入了约束的概念（职责分离），职责分离指的是同一个人不能拥有两种特定的权限。</p><h3 id="4-RBAC3"><a href="#4-RBAC3" class="headerlink" title="4. RBAC3"></a>4. RBAC3</h3><p>​    RBAC3 是 RBAC1 与 RBAC2 的合集，所以 RBAC3 包含继承和约束。</p><p>对于系统中大量的用户的权限设置可以更好的建立管理，角色的引入让具有相同权限的用户可以统一关联到相同的角色中，这样只需要在系统中设置一次角色的权限，后续的用户便可以直接关联这些角色，这样就省去了重复设置权限的过程。</p><p>其他权限模型：</p><ul><li>ACL 模型：访问控制列表，每一个客体都有一个列表，列表中记录的是哪些主体可以对这个客体做哪些行为</li><li>DAC 模型：自主访问控制，允许主体可以将自己拥有的权限自主地授予其他主体，所以权限可以任意传递</li><li>MAC 模型：强制访问控制，MAC 模型中主要的是双向验证机制。常见于机密机构或者其他等级观念强烈的行业，如军用和市政安全领域的软件。主体有一个权限标识，客体也有一个权限标识，而主体能否对该客体进行操作取决于双方的权限标识的关系</li><li>ABAC 模型：基于属性的访问控制，通过动态计算一个或一组属性是否满足某种机制来授权，是一种很灵活的权限模型，可以按需实现不同颗粒度的权限控制</li><li>RBAC 模型：基于角色的权限访问控制</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构和算法</title>
       <link href="/2022/07/22/shu-ju-jie-gou-he-suan-fa/"/>
       <url>/2022/07/22/shu-ju-jie-gou-he-suan-fa/</url>
